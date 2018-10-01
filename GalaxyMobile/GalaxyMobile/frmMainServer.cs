@@ -13,7 +13,11 @@ namespace GalaxyMobile
 {
     public partial class frmMainServer : Form
     {
-        public frmMainServer(string username,int matruycap)
+        public frmMainServer(string username,string matruycap)
+        {
+            InitializeComponent();
+        }
+        public frmMainServer()
         {
             InitializeComponent();
         }

@@ -20,3 +20,15 @@ D:\DoAn1\DoAn1\GalaxyMobile\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 D:\DoAn1\DoAn1\GalaxyMobile\Model\obj\Debug\Model.csproj.CopyComplete
 D:\DoAn1\DoAn1\GalaxyMobile\Model\obj\Debug\Model.dll
 D:\DoAn1\DoAn1\GalaxyMobile\Model\obj\Debug\Model.pdb
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\Model\bin\Debug\Model.dll.config
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\Model\bin\Debug\Model.dll
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\Model\bin\Debug\Model.pdb
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\Model\bin\Debug\EntityFramework.dll
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\Model\bin\Debug\EntityFramework.xml
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\Model\obj\Debug\Model.csproj.CopyComplete
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\Model\obj\Debug\Model.dll
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\Model\obj\Debug\Model.pdb
