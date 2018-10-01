@@ -13,17 +13,23 @@ namespace GalaxyMobile
 {
     public partial class frmMainServer : Form
     {
-        public frmMainServer(string username,int matruycap)
+        public frmMainServer(TaiKhoan username,int matruycap)
         {
             InitializeComponent();
+            User = username;
+            MaTruyCap = matruycap;
         }
+        //public frmMainServer()
+        //{
+        //    InitializeComponent();
+        //}
 
         private TaiKhoan User;
         private int MaTruyCap;
         private void frmMainServer_Load(object sender, EventArgs e)
         {
             LoadKhoHang();
-
+            PhanQuyen();
         }
         #region Kho Hang
         public void LoadKhoHang()
@@ -35,7 +41,16 @@ namespace GalaxyMobile
             cmBoxKhoHang.ValueMember = "MaCuaHang";
 
         }
-
+        public void PhanQuyen()
+        {
+            if(MaTruyCap==1)
+            {
+                tabControlMainServer.Controls.Remove(tabNhanVien);
+                tabControlMainServer.Controls.Remove(tabTaiKhoan);
+                tabControlMainServer.Controls.Remove(tabNhanVien);
+            }
+            label12.Text = User.UserName;
+        }
         private void dgvKhoHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try

@@ -153,7 +153,6 @@
             this.pnlMainServer.Name = "pnlMainServer";
             this.pnlMainServer.Size = new System.Drawing.Size(945, 525);
             this.pnlMainServer.TabIndex = 0;
-            this.pnlMainServer.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMainServer_Paint);
             // 
             // pnlTimKiem
             // 

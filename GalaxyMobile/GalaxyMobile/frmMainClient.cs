@@ -13,9 +13,11 @@ namespace GalaxyMobile
 {
     public partial class frmMainClient : Form
     {
-        public frmMainClient(string username, int matruycap)
+        public frmMainClient(TaiKhoan username, int matruycap)
         {
             InitializeComponent();
+            User = username;
+            MaTruyCap = matruycap;
         }
         private TaiKhoan User;
         private int MaTruyCap;

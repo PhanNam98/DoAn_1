@@ -368,7 +368,7 @@
             // 
             // ngayLapHDDataGridViewTextBoxColumn
             // 
-            this.ngayLapHDDataGridViewTextBoxColumn.DataPropertyName = "NgayLapHD";
+            ngayLapHDDataGridViewTextBoxColumn.DataPropertyName = "NgayLapHD";
             this.ngayLapHDDataGridViewTextBoxColumn.HeaderText = "Ngày Lập";
             this.ngayLapHDDataGridViewTextBoxColumn.Name = "ngayLapHDDataGridViewTextBoxColumn";
             this.ngayLapHDDataGridViewTextBoxColumn.ReadOnly = true;
