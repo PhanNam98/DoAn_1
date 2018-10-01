@@ -1,0 +1,7 @@
+CREATE PROCEDURE GetLNV
+AS
+BEGIN
+	select *
+	from LoaiNV
+END
+GO
