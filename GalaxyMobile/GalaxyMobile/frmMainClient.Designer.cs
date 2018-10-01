@@ -30,27 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlClinet = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvHD = new System.Windows.Forms.DataGridView();
-            this.hoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.pnlTimKiem = new System.Windows.Forms.Panel();
+            this.btnDongSearch = new System.Windows.Forms.Button();
+            this.cmBoxTimKiemTheo = new System.Windows.Forms.ComboBox();
+            this.txtboxTimKiem = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnlTimKiem = new System.Windows.Forms.Panel();
-            this.txtboxTimKiem = new System.Windows.Forms.TextBox();
-            this.cmBoxTimKiemTheo = new System.Windows.Forms.ComboBox();
-            this.btnDongSearch = new System.Windows.Forms.Button();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSuaHD = new System.Windows.Forms.Button();
+            this.btnLoadHD = new System.Windows.Forms.Button();
+            this.btnCTHD = new System.Windows.Forms.Button();
+            this.btnXoaHD = new System.Windows.Forms.Button();
+            this.btnThemHD = new System.Windows.Forms.Button();
+            this.dgvHD = new System.Windows.Forms.DataGridView();
             this.maHoaDonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,28 +55,11 @@
             this.tinhTrangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hTGiaoHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayLapHDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnThemHD = new System.Windows.Forms.Button();
-            this.btnCTHD = new System.Windows.Forms.Button();
-            this.btnXoaHD = new System.Windows.Forms.Button();
-            this.btnSuaHD = new System.Windows.Forms.Button();
-            this.btnLoadHD = new System.Windows.Forms.Button();
+            this.hoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnLoadSP = new System.Windows.Forms.Button();
             this.btnChiTietSP = new System.Windows.Forms.Button();
             this.dgvSP = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtboxTenDongSP = new System.Windows.Forms.TextBox();
-            this.txtboxMaDongSP = new System.Windows.Forms.TextBox();
-            this.cmBoxLoaiSP = new System.Windows.Forms.ComboBox();
-            this.cmBoxHSX = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnLoadDSP = new System.Windows.Forms.Button();
-            this.dgvDongSP = new System.Windows.Forms.DataGridView();
-            this.dongSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maDSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,26 +77,46 @@
             this.trongLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thongTinKhacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nămSXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtboxTenDongSP = new System.Windows.Forms.TextBox();
+            this.txtboxMaDongSP = new System.Windows.Forms.TextBox();
+            this.cmBoxLoaiSP = new System.Windows.Forms.ComboBox();
+            this.cmBoxHSX = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnLoadDSP = new System.Windows.Forms.Button();
+            this.dgvDongSP = new System.Windows.Forms.DataGridView();
             this.maDSPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenDongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maHSXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maLSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
             this.pnlClinet.SuspendLayout();
+            this.pnlTimKiem.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoaDonBindingSource)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.pnlTimKiem.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dongSanPhamBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlClinet
@@ -131,144 +131,40 @@
             this.pnlClinet.Size = new System.Drawing.Size(945, 525);
             this.pnlClinet.TabIndex = 0;
             // 
-            // tabControl1
+            // pnlTimKiem
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Controls.Add(this.tabPage8);
-            this.tabControl1.Location = new System.Drawing.Point(26, 27);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(894, 473);
-            this.tabControl1.TabIndex = 0;
+            this.pnlTimKiem.Controls.Add(this.btnDongSearch);
+            this.pnlTimKiem.Controls.Add(this.cmBoxTimKiemTheo);
+            this.pnlTimKiem.Controls.Add(this.txtboxTimKiem);
+            this.pnlTimKiem.Location = new System.Drawing.Point(648, 3);
+            this.pnlTimKiem.Name = "pnlTimKiem";
+            this.pnlTimKiem.Size = new System.Drawing.Size(288, 40);
+            this.pnlTimKiem.TabIndex = 9;
+            this.pnlTimKiem.Visible = false;
             // 
-            // tabPage1
+            // btnDongSearch
             // 
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(886, 447);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Hoá Đơn";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.btnDongSearch.Location = new System.Drawing.Point(253, 10);
+            this.btnDongSearch.Name = "btnDongSearch";
+            this.btnDongSearch.Size = new System.Drawing.Size(34, 23);
+            this.btnDongSearch.TabIndex = 2;
+            this.btnDongSearch.Text = "X";
+            this.btnDongSearch.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // cmBoxTimKiemTheo
             // 
-            this.tabPage2.Controls.Add(this.btnLoadSP);
-            this.tabPage2.Controls.Add(this.btnChiTietSP);
-            this.tabPage2.Controls.Add(this.dgvSP);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(886, 447);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Sản Phẩm";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.cmBoxTimKiemTheo.FormattingEnabled = true;
+            this.cmBoxTimKiemTheo.Location = new System.Drawing.Point(161, 12);
+            this.cmBoxTimKiemTheo.Name = "cmBoxTimKiemTheo";
+            this.cmBoxTimKiemTheo.Size = new System.Drawing.Size(88, 21);
+            this.cmBoxTimKiemTheo.TabIndex = 1;
             // 
-            // tabPage3
+            // txtboxTimKiem
             // 
-            this.tabPage3.Controls.Add(this.groupBox2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(886, 447);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Dòng Sản Phẩm";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(886, 447);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Nhà Sản Xuất";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(886, 447);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Nhân Viên";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(886, 447);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Thống Kê";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(886, 447);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Của Hàng";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnSuaHD);
-            this.panel1.Controls.Add(this.btnLoadHD);
-            this.panel1.Controls.Add(this.btnCTHD);
-            this.panel1.Controls.Add(this.btnXoaHD);
-            this.panel1.Controls.Add(this.btnThemHD);
-            this.panel1.Controls.Add(this.dgvHD);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(880, 441);
-            this.panel1.TabIndex = 0;
-            // 
-            // dgvHD
-            // 
-            this.dgvHD.AllowUserToAddRows = false;
-            this.dgvHD.AllowUserToDeleteRows = false;
-            this.dgvHD.AutoGenerateColumns = false;
-            this.dgvHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maHoaDonDataGridViewTextBoxColumn,
-            this.maKHDataGridViewTextBoxColumn,
-            this.maNVDataGridViewTextBoxColumn,
-            this.maCuaHangDataGridViewTextBoxColumn,
-            this.tinhTrangDataGridViewTextBoxColumn,
-            this.hTGiaoHangDataGridViewTextBoxColumn,
-            this.ngayLapHDDataGridViewTextBoxColumn});
-            this.dgvHD.DataSource = this.hoaDonBindingSource;
-            this.dgvHD.Location = new System.Drawing.Point(20, 12);
-            this.dgvHD.Name = "dgvHD";
-            this.dgvHD.ReadOnly = true;
-            this.dgvHD.Size = new System.Drawing.Size(835, 339);
-            this.dgvHD.TabIndex = 0;
-            // 
-            // hoaDonBindingSource
-            // 
-            this.hoaDonBindingSource.DataSource = typeof(Model.HoaDon);
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Location = new System.Drawing.Point(583, 15);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(62, 23);
-            this.btnTimKiem.TabIndex = 8;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.txtboxTimKiem.Location = new System.Drawing.Point(3, 12);
+            this.txtboxTimKiem.Name = "txtboxTimKiem";
+            this.txtboxTimKiem.Size = new System.Drawing.Size(152, 20);
+            this.txtboxTimKiem.TabIndex = 0;
             // 
             // panel4
             // 
@@ -310,50 +206,121 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Chào, ";
             // 
-            // pnlTimKiem
+            // btnTimKiem
             // 
-            this.pnlTimKiem.Controls.Add(this.btnDongSearch);
-            this.pnlTimKiem.Controls.Add(this.cmBoxTimKiemTheo);
-            this.pnlTimKiem.Controls.Add(this.txtboxTimKiem);
-            this.pnlTimKiem.Enabled = false;
-            this.pnlTimKiem.Location = new System.Drawing.Point(648, 3);
-            this.pnlTimKiem.Name = "pnlTimKiem";
-            this.pnlTimKiem.Size = new System.Drawing.Size(288, 40);
-            this.pnlTimKiem.TabIndex = 9;
+            this.btnTimKiem.Location = new System.Drawing.Point(583, 15);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(62, 23);
+            this.btnTimKiem.TabIndex = 8;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
             // 
-            // txtboxTimKiem
+            // tabControl1
             // 
-            this.txtboxTimKiem.Location = new System.Drawing.Point(3, 12);
-            this.txtboxTimKiem.Name = "txtboxTimKiem";
-            this.txtboxTimKiem.Size = new System.Drawing.Size(152, 20);
-            this.txtboxTimKiem.TabIndex = 0;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Location = new System.Drawing.Point(26, 27);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(894, 473);
+            this.tabControl1.TabIndex = 0;
             // 
-            // cmBoxTimKiemTheo
+            // tabPage1
             // 
-            this.cmBoxTimKiemTheo.FormattingEnabled = true;
-            this.cmBoxTimKiemTheo.Location = new System.Drawing.Point(161, 12);
-            this.cmBoxTimKiemTheo.Name = "cmBoxTimKiemTheo";
-            this.cmBoxTimKiemTheo.Size = new System.Drawing.Size(88, 21);
-            this.cmBoxTimKiemTheo.TabIndex = 1;
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(886, 447);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Hoá Đơn";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnDongSearch
+            // panel1
             // 
-            this.btnDongSearch.Location = new System.Drawing.Point(253, 10);
-            this.btnDongSearch.Name = "btnDongSearch";
-            this.btnDongSearch.Size = new System.Drawing.Size(34, 23);
-            this.btnDongSearch.TabIndex = 2;
-            this.btnDongSearch.Text = "X";
-            this.btnDongSearch.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.btnSuaHD);
+            this.panel1.Controls.Add(this.btnLoadHD);
+            this.panel1.Controls.Add(this.btnCTHD);
+            this.panel1.Controls.Add(this.btnXoaHD);
+            this.panel1.Controls.Add(this.btnThemHD);
+            this.panel1.Controls.Add(this.dgvHD);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(880, 441);
+            this.panel1.TabIndex = 0;
             // 
-            // tabPage8
+            // btnSuaHD
             // 
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(886, 447);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "Khách Hàng";
-            this.tabPage8.UseVisualStyleBackColor = true;
+            this.btnSuaHD.Location = new System.Drawing.Point(664, 372);
+            this.btnSuaHD.Name = "btnSuaHD";
+            this.btnSuaHD.Size = new System.Drawing.Size(75, 42);
+            this.btnSuaHD.TabIndex = 1;
+            this.btnSuaHD.Text = "Chỉnh Sửa";
+            this.btnSuaHD.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadHD
+            // 
+            this.btnLoadHD.Location = new System.Drawing.Point(286, 372);
+            this.btnLoadHD.Name = "btnLoadHD";
+            this.btnLoadHD.Size = new System.Drawing.Size(75, 42);
+            this.btnLoadHD.TabIndex = 1;
+            this.btnLoadHD.Text = "Load";
+            this.btnLoadHD.UseVisualStyleBackColor = true;
+            // 
+            // btnCTHD
+            // 
+            this.btnCTHD.Location = new System.Drawing.Point(423, 372);
+            this.btnCTHD.Name = "btnCTHD";
+            this.btnCTHD.Size = new System.Drawing.Size(75, 42);
+            this.btnCTHD.TabIndex = 1;
+            this.btnCTHD.Text = "Chi Tiết Hoá Đơn";
+            this.btnCTHD.UseVisualStyleBackColor = true;
+            // 
+            // btnXoaHD
+            // 
+            this.btnXoaHD.Location = new System.Drawing.Point(780, 372);
+            this.btnXoaHD.Name = "btnXoaHD";
+            this.btnXoaHD.Size = new System.Drawing.Size(75, 42);
+            this.btnXoaHD.TabIndex = 1;
+            this.btnXoaHD.Text = "Xoá";
+            this.btnXoaHD.UseVisualStyleBackColor = true;
+            // 
+            // btnThemHD
+            // 
+            this.btnThemHD.Location = new System.Drawing.Point(541, 372);
+            this.btnThemHD.Name = "btnThemHD";
+            this.btnThemHD.Size = new System.Drawing.Size(75, 42);
+            this.btnThemHD.TabIndex = 1;
+            this.btnThemHD.Text = "Thêm";
+            this.btnThemHD.UseVisualStyleBackColor = true;
+            // 
+            // dgvHD
+            // 
+            this.dgvHD.AllowUserToAddRows = false;
+            this.dgvHD.AllowUserToDeleteRows = false;
+            this.dgvHD.AutoGenerateColumns = false;
+            this.dgvHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maHoaDonDataGridViewTextBoxColumn,
+            this.maKHDataGridViewTextBoxColumn,
+            this.maNVDataGridViewTextBoxColumn,
+            this.maCuaHangDataGridViewTextBoxColumn,
+            this.tinhTrangDataGridViewTextBoxColumn,
+            this.hTGiaoHangDataGridViewTextBoxColumn,
+            this.ngayLapHDDataGridViewTextBoxColumn});
+            this.dgvHD.DataSource = this.hoaDonBindingSource;
+            this.dgvHD.Location = new System.Drawing.Point(20, 12);
+            this.dgvHD.Name = "dgvHD";
+            this.dgvHD.ReadOnly = true;
+            this.dgvHD.Size = new System.Drawing.Size(835, 339);
+            this.dgvHD.TabIndex = 0;
             // 
             // maHoaDonDataGridViewTextBoxColumn
             // 
@@ -406,50 +373,22 @@
             this.ngayLapHDDataGridViewTextBoxColumn.Name = "ngayLapHDDataGridViewTextBoxColumn";
             this.ngayLapHDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // btnThemHD
+            // hoaDonBindingSource
             // 
-            this.btnThemHD.Location = new System.Drawing.Point(541, 372);
-            this.btnThemHD.Name = "btnThemHD";
-            this.btnThemHD.Size = new System.Drawing.Size(75, 42);
-            this.btnThemHD.TabIndex = 1;
-            this.btnThemHD.Text = "Thêm";
-            this.btnThemHD.UseVisualStyleBackColor = true;
+            this.hoaDonBindingSource.DataSource = typeof(Model.HoaDon);
             // 
-            // btnCTHD
+            // tabPage2
             // 
-            this.btnCTHD.Location = new System.Drawing.Point(423, 372);
-            this.btnCTHD.Name = "btnCTHD";
-            this.btnCTHD.Size = new System.Drawing.Size(75, 42);
-            this.btnCTHD.TabIndex = 1;
-            this.btnCTHD.Text = "Chi Tiết Hoá Đơn";
-            this.btnCTHD.UseVisualStyleBackColor = true;
-            // 
-            // btnXoaHD
-            // 
-            this.btnXoaHD.Location = new System.Drawing.Point(780, 372);
-            this.btnXoaHD.Name = "btnXoaHD";
-            this.btnXoaHD.Size = new System.Drawing.Size(75, 42);
-            this.btnXoaHD.TabIndex = 1;
-            this.btnXoaHD.Text = "Xoá";
-            this.btnXoaHD.UseVisualStyleBackColor = true;
-            // 
-            // btnSuaHD
-            // 
-            this.btnSuaHD.Location = new System.Drawing.Point(664, 372);
-            this.btnSuaHD.Name = "btnSuaHD";
-            this.btnSuaHD.Size = new System.Drawing.Size(75, 42);
-            this.btnSuaHD.TabIndex = 1;
-            this.btnSuaHD.Text = "Chỉnh Sửa";
-            this.btnSuaHD.UseVisualStyleBackColor = true;
-            // 
-            // btnLoadHD
-            // 
-            this.btnLoadHD.Location = new System.Drawing.Point(286, 372);
-            this.btnLoadHD.Name = "btnLoadHD";
-            this.btnLoadHD.Size = new System.Drawing.Size(75, 42);
-            this.btnLoadHD.TabIndex = 1;
-            this.btnLoadHD.Text = "Load";
-            this.btnLoadHD.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.btnLoadSP);
+            this.tabPage2.Controls.Add(this.btnChiTietSP);
+            this.tabPage2.Controls.Add(this.dgvSP);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(886, 447);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Sản Phẩm";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnLoadSP
             // 
@@ -504,6 +443,140 @@
             this.dgvSP.ReadOnly = true;
             this.dgvSP.Size = new System.Drawing.Size(863, 355);
             this.dgvSP.TabIndex = 3;
+            // 
+            // maSPDataGridViewTextBoxColumn
+            // 
+            this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
+            this.maSPDataGridViewTextBoxColumn.HeaderText = "MaSP";
+            this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
+            this.maSPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maDSPDataGridViewTextBoxColumn
+            // 
+            this.maDSPDataGridViewTextBoxColumn.DataPropertyName = "MaDSP";
+            this.maDSPDataGridViewTextBoxColumn.HeaderText = "MaDSP";
+            this.maDSPDataGridViewTextBoxColumn.Name = "maDSPDataGridViewTextBoxColumn";
+            this.maDSPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenSPDataGridViewTextBoxColumn
+            // 
+            this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
+            this.tenSPDataGridViewTextBoxColumn.HeaderText = "TenSP";
+            this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
+            this.tenSPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cPUDataGridViewTextBoxColumn
+            // 
+            this.cPUDataGridViewTextBoxColumn.DataPropertyName = "CPU";
+            this.cPUDataGridViewTextBoxColumn.HeaderText = "CPU";
+            this.cPUDataGridViewTextBoxColumn.Name = "cPUDataGridViewTextBoxColumn";
+            this.cPUDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ramDataGridViewTextBoxColumn
+            // 
+            this.ramDataGridViewTextBoxColumn.DataPropertyName = "Ram";
+            this.ramDataGridViewTextBoxColumn.HeaderText = "Ram";
+            this.ramDataGridViewTextBoxColumn.Name = "ramDataGridViewTextBoxColumn";
+            this.ramDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // boNhoTrongDataGridViewTextBoxColumn
+            // 
+            this.boNhoTrongDataGridViewTextBoxColumn.DataPropertyName = "BoNhoTrong";
+            this.boNhoTrongDataGridViewTextBoxColumn.HeaderText = "BoNhoTrong";
+            this.boNhoTrongDataGridViewTextBoxColumn.Name = "boNhoTrongDataGridViewTextBoxColumn";
+            this.boNhoTrongDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // boNhoNgoaiDataGridViewTextBoxColumn
+            // 
+            this.boNhoNgoaiDataGridViewTextBoxColumn.DataPropertyName = "BoNhoNgoai";
+            this.boNhoNgoaiDataGridViewTextBoxColumn.HeaderText = "BoNhoNgoai";
+            this.boNhoNgoaiDataGridViewTextBoxColumn.Name = "boNhoNgoaiDataGridViewTextBoxColumn";
+            this.boNhoNgoaiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // simDataGridViewTextBoxColumn
+            // 
+            this.simDataGridViewTextBoxColumn.DataPropertyName = "Sim";
+            this.simDataGridViewTextBoxColumn.HeaderText = "Sim";
+            this.simDataGridViewTextBoxColumn.Name = "simDataGridViewTextBoxColumn";
+            this.simDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // manHinhDataGridViewTextBoxColumn
+            // 
+            this.manHinhDataGridViewTextBoxColumn.DataPropertyName = "ManHinh";
+            this.manHinhDataGridViewTextBoxColumn.HeaderText = "ManHinh";
+            this.manHinhDataGridViewTextBoxColumn.Name = "manHinhDataGridViewTextBoxColumn";
+            this.manHinhDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dungLuongPinDataGridViewTextBoxColumn
+            // 
+            this.dungLuongPinDataGridViewTextBoxColumn.DataPropertyName = "DungLuongPin";
+            this.dungLuongPinDataGridViewTextBoxColumn.HeaderText = "DungLuongPin";
+            this.dungLuongPinDataGridViewTextBoxColumn.Name = "dungLuongPinDataGridViewTextBoxColumn";
+            this.dungLuongPinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cameraDataGridViewTextBoxColumn
+            // 
+            this.cameraDataGridViewTextBoxColumn.DataPropertyName = "Camera";
+            this.cameraDataGridViewTextBoxColumn.HeaderText = "Camera";
+            this.cameraDataGridViewTextBoxColumn.Name = "cameraDataGridViewTextBoxColumn";
+            this.cameraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cardManHinhDataGridViewTextBoxColumn
+            // 
+            this.cardManHinhDataGridViewTextBoxColumn.DataPropertyName = "CardManHinh";
+            this.cardManHinhDataGridViewTextBoxColumn.HeaderText = "CardManHinh";
+            this.cardManHinhDataGridViewTextBoxColumn.Name = "cardManHinhDataGridViewTextBoxColumn";
+            this.cardManHinhDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oSDataGridViewTextBoxColumn
+            // 
+            this.oSDataGridViewTextBoxColumn.DataPropertyName = "OS";
+            this.oSDataGridViewTextBoxColumn.HeaderText = "OS";
+            this.oSDataGridViewTextBoxColumn.Name = "oSDataGridViewTextBoxColumn";
+            this.oSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // portDataGridViewTextBoxColumn
+            // 
+            this.portDataGridViewTextBoxColumn.DataPropertyName = "Port";
+            this.portDataGridViewTextBoxColumn.HeaderText = "Port";
+            this.portDataGridViewTextBoxColumn.Name = "portDataGridViewTextBoxColumn";
+            this.portDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // trongLuongDataGridViewTextBoxColumn
+            // 
+            this.trongLuongDataGridViewTextBoxColumn.DataPropertyName = "TrongLuong";
+            this.trongLuongDataGridViewTextBoxColumn.HeaderText = "TrongLuong";
+            this.trongLuongDataGridViewTextBoxColumn.Name = "trongLuongDataGridViewTextBoxColumn";
+            this.trongLuongDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // thongTinKhacDataGridViewTextBoxColumn
+            // 
+            this.thongTinKhacDataGridViewTextBoxColumn.DataPropertyName = "ThongTinKhac";
+            this.thongTinKhacDataGridViewTextBoxColumn.HeaderText = "ThongTinKhac";
+            this.thongTinKhacDataGridViewTextBoxColumn.Name = "thongTinKhacDataGridViewTextBoxColumn";
+            this.thongTinKhacDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nămSXDataGridViewTextBoxColumn
+            // 
+            this.nămSXDataGridViewTextBoxColumn.DataPropertyName = "NămSX";
+            this.nămSXDataGridViewTextBoxColumn.HeaderText = "NămSX";
+            this.nămSXDataGridViewTextBoxColumn.Name = "nămSXDataGridViewTextBoxColumn";
+            this.nămSXDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sanPhamBindingSource
+            // 
+            this.sanPhamBindingSource.DataSource = typeof(Model.SanPham);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(886, 447);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Dòng Sản Phẩm";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -659,133 +732,6 @@
             this.dgvDongSP.Size = new System.Drawing.Size(465, 328);
             this.dgvDongSP.TabIndex = 0;
             // 
-            // dongSanPhamBindingSource
-            // 
-            this.dongSanPhamBindingSource.DataSource = typeof(Model.DongSanPham);
-            // 
-            // sanPhamBindingSource
-            // 
-            this.sanPhamBindingSource.DataSource = typeof(Model.SanPham);
-            // 
-            // maSPDataGridViewTextBoxColumn
-            // 
-            this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
-            this.maSPDataGridViewTextBoxColumn.HeaderText = "MaSP";
-            this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
-            this.maSPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // maDSPDataGridViewTextBoxColumn
-            // 
-            this.maDSPDataGridViewTextBoxColumn.DataPropertyName = "MaDSP";
-            this.maDSPDataGridViewTextBoxColumn.HeaderText = "MaDSP";
-            this.maDSPDataGridViewTextBoxColumn.Name = "maDSPDataGridViewTextBoxColumn";
-            this.maDSPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenSPDataGridViewTextBoxColumn
-            // 
-            this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
-            this.tenSPDataGridViewTextBoxColumn.HeaderText = "TenSP";
-            this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
-            this.tenSPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cPUDataGridViewTextBoxColumn
-            // 
-            this.cPUDataGridViewTextBoxColumn.DataPropertyName = "CPU";
-            this.cPUDataGridViewTextBoxColumn.HeaderText = "CPU";
-            this.cPUDataGridViewTextBoxColumn.Name = "cPUDataGridViewTextBoxColumn";
-            this.cPUDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ramDataGridViewTextBoxColumn
-            // 
-            this.ramDataGridViewTextBoxColumn.DataPropertyName = "Ram";
-            this.ramDataGridViewTextBoxColumn.HeaderText = "Ram";
-            this.ramDataGridViewTextBoxColumn.Name = "ramDataGridViewTextBoxColumn";
-            this.ramDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // boNhoTrongDataGridViewTextBoxColumn
-            // 
-            this.boNhoTrongDataGridViewTextBoxColumn.DataPropertyName = "BoNhoTrong";
-            this.boNhoTrongDataGridViewTextBoxColumn.HeaderText = "BoNhoTrong";
-            this.boNhoTrongDataGridViewTextBoxColumn.Name = "boNhoTrongDataGridViewTextBoxColumn";
-            this.boNhoTrongDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // boNhoNgoaiDataGridViewTextBoxColumn
-            // 
-            this.boNhoNgoaiDataGridViewTextBoxColumn.DataPropertyName = "BoNhoNgoai";
-            this.boNhoNgoaiDataGridViewTextBoxColumn.HeaderText = "BoNhoNgoai";
-            this.boNhoNgoaiDataGridViewTextBoxColumn.Name = "boNhoNgoaiDataGridViewTextBoxColumn";
-            this.boNhoNgoaiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // simDataGridViewTextBoxColumn
-            // 
-            this.simDataGridViewTextBoxColumn.DataPropertyName = "Sim";
-            this.simDataGridViewTextBoxColumn.HeaderText = "Sim";
-            this.simDataGridViewTextBoxColumn.Name = "simDataGridViewTextBoxColumn";
-            this.simDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // manHinhDataGridViewTextBoxColumn
-            // 
-            this.manHinhDataGridViewTextBoxColumn.DataPropertyName = "ManHinh";
-            this.manHinhDataGridViewTextBoxColumn.HeaderText = "ManHinh";
-            this.manHinhDataGridViewTextBoxColumn.Name = "manHinhDataGridViewTextBoxColumn";
-            this.manHinhDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dungLuongPinDataGridViewTextBoxColumn
-            // 
-            this.dungLuongPinDataGridViewTextBoxColumn.DataPropertyName = "DungLuongPin";
-            this.dungLuongPinDataGridViewTextBoxColumn.HeaderText = "DungLuongPin";
-            this.dungLuongPinDataGridViewTextBoxColumn.Name = "dungLuongPinDataGridViewTextBoxColumn";
-            this.dungLuongPinDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cameraDataGridViewTextBoxColumn
-            // 
-            this.cameraDataGridViewTextBoxColumn.DataPropertyName = "Camera";
-            this.cameraDataGridViewTextBoxColumn.HeaderText = "Camera";
-            this.cameraDataGridViewTextBoxColumn.Name = "cameraDataGridViewTextBoxColumn";
-            this.cameraDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cardManHinhDataGridViewTextBoxColumn
-            // 
-            this.cardManHinhDataGridViewTextBoxColumn.DataPropertyName = "CardManHinh";
-            this.cardManHinhDataGridViewTextBoxColumn.HeaderText = "CardManHinh";
-            this.cardManHinhDataGridViewTextBoxColumn.Name = "cardManHinhDataGridViewTextBoxColumn";
-            this.cardManHinhDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oSDataGridViewTextBoxColumn
-            // 
-            this.oSDataGridViewTextBoxColumn.DataPropertyName = "OS";
-            this.oSDataGridViewTextBoxColumn.HeaderText = "OS";
-            this.oSDataGridViewTextBoxColumn.Name = "oSDataGridViewTextBoxColumn";
-            this.oSDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // portDataGridViewTextBoxColumn
-            // 
-            this.portDataGridViewTextBoxColumn.DataPropertyName = "Port";
-            this.portDataGridViewTextBoxColumn.HeaderText = "Port";
-            this.portDataGridViewTextBoxColumn.Name = "portDataGridViewTextBoxColumn";
-            this.portDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // trongLuongDataGridViewTextBoxColumn
-            // 
-            this.trongLuongDataGridViewTextBoxColumn.DataPropertyName = "TrongLuong";
-            this.trongLuongDataGridViewTextBoxColumn.HeaderText = "TrongLuong";
-            this.trongLuongDataGridViewTextBoxColumn.Name = "trongLuongDataGridViewTextBoxColumn";
-            this.trongLuongDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // thongTinKhacDataGridViewTextBoxColumn
-            // 
-            this.thongTinKhacDataGridViewTextBoxColumn.DataPropertyName = "ThongTinKhac";
-            this.thongTinKhacDataGridViewTextBoxColumn.HeaderText = "ThongTinKhac";
-            this.thongTinKhacDataGridViewTextBoxColumn.Name = "thongTinKhacDataGridViewTextBoxColumn";
-            this.thongTinKhacDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nămSXDataGridViewTextBoxColumn
-            // 
-            this.nămSXDataGridViewTextBoxColumn.DataPropertyName = "NămSX";
-            this.nămSXDataGridViewTextBoxColumn.HeaderText = "NămSX";
-            this.nămSXDataGridViewTextBoxColumn.Name = "nămSXDataGridViewTextBoxColumn";
-            this.nămSXDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // maDSPDataGridViewTextBoxColumn1
             // 
             this.maDSPDataGridViewTextBoxColumn1.DataPropertyName = "MaDSP";
@@ -814,6 +760,60 @@
             this.maLSPDataGridViewTextBoxColumn.Name = "maLSPDataGridViewTextBoxColumn";
             this.maLSPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // dongSanPhamBindingSource
+            // 
+            this.dongSanPhamBindingSource.DataSource = typeof(Model.DongSanPham);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(886, 447);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Nhà Sản Xuất";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(886, 447);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Nhân Viên";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(886, 447);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Thống Kê";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(886, 447);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Của Hàng";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(886, 447);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Khách Hàng";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
             // frmMainClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -823,24 +823,24 @@
             this.Name = "frmMainClient";
             this.Text = "frmMainClient";
             this.pnlClinet.ResumeLayout(false);
+            this.pnlTimKiem.ResumeLayout(false);
+            this.pnlTimKiem.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoaDonBindingSource)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.pnlTimKiem.ResumeLayout(false);
-            this.pnlTimKiem.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dongSanPhamBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
