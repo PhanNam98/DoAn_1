@@ -329,6 +329,31 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="delNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetAllNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetNV2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spThemNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="macuahang" Type="varchar" Mode="In" />
+    <Parameter Name="maloainv" Type="varchar" Mode="In" />
+    <Parameter Name="tennv" Type="nvarchar" Mode="In" />
+    <Parameter Name="gioitinh" Type="nvarchar" Mode="In" />
+    <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="luong" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="updateNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="macuahang" Type="varchar" Mode="In" />
+    <Parameter Name="maloainv" Type="varchar" Mode="In" />
+    <Parameter Name="tennv" Type="nvarchar" Mode="In" />
+    <Parameter Name="gioitinh" Type="nvarchar" Mode="In" />
+    <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="luong" Type="decimal" Mode="In" />
+  </Function>
   <Function Name="USP_GetAllCuaHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="USP_GetAllKhoHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="GalaxyMobileModelStoreContainer">

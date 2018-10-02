@@ -175,5 +175,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetAllNV" FunctionName="GalaxyMobileModel.Store.GetAllNV" />
+    <FunctionImportMapping FunctionImportName="GetNV2" FunctionName="GalaxyMobileModel.Store.GetNV2" />
+    <FunctionImportMapping FunctionImportName="delNV" FunctionName="GalaxyMobileModel.Store.delNV" />
+    <FunctionImportMapping FunctionImportName="spThemNV" FunctionName="GalaxyMobileModel.Store.spThemNV" />
+    <FunctionImportMapping FunctionImportName="updateNV" FunctionName="GalaxyMobileModel.Store.updateNV" />
   </EntityContainerMapping>
 </Mapping>

@@ -13,3 +13,18 @@ begin
 	from KhoHang k
 end 
 go
+ALTER PROCEDURE GetAllNV
+AS
+BEGIN
+	select *
+	from NhanVien
+END
+GO
+go
+ALTER PROCEDURE GetNV2
+AS
+BEGIN
+	select n.MaNV, n.MaCuaHang,n.MaLoaiNV,n.TenNV,n.GioiTinh,n.DiaChi,n.SDT,n.Luong
+	from NhanVien n
+END
+GO

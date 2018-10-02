@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using BUS;
+using DAO;
 namespace GalaxyMobile
 {
     public partial class frmMainServer : Form
@@ -113,6 +114,56 @@ namespace GalaxyMobile
         }
         #endregion
 
+        #region NhanVien
+
+        public void LoadNV()
+        {
+            nhanVienBindingSource.DataSource = NhanVienBUS.GetNV();
+        }
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadNV();
+        }
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy thứ tự record hiện hành 
+                int r = dgvNhanVien.CurrentCell.RowIndex;
+                // Lấy MaKH của record hiện hành 
+                string strMANV =
+                dgvNhanVien.Rows[r].Cells[0].Value.ToString();
+                NhanVienBUS.DelNhanVien(strMANV);
+                LoadNV();
+                //dgvNV_CellClick(null, null);
+                MessageBox.Show("Đã xóa xong!");
+            }
+            catch
+            {
+                MessageBox.Show("Không được phép xóa nhân viên này");
+            }
+        }
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            decimal tien = Convert.ToDecimal(txtLuong.Text);
+            NhanVienBUS.InsertNV(txtMaNV.Text, txtCH.Text, txtLoai.Text, txtTenNV.Text, txtSex.Text, txtDiaChi.Text, txtSDT.Text, tien);
+            LoadNV();
+        }
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        #endregion
 
 
 
@@ -142,6 +193,19 @@ namespace GalaxyMobile
 
         }
 
-       
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlKho_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

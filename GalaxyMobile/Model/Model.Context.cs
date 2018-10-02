@@ -63,5 +63,108 @@ namespace Model
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KhoHang>("USP_GetAllKhoHang", mergeOption);
         }
+    
+        public virtual ObjectResult<NhanVien> GetAllNV()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<NhanVien>("GetAllNV");
+        }
+    
+        public virtual ObjectResult<NhanVien> GetAllNV(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<NhanVien>("GetAllNV", mergeOption);
+        }
+    
+        public virtual ObjectResult<NhanVien> GetNV2()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<NhanVien>("GetNV2");
+        }
+    
+        public virtual ObjectResult<NhanVien> GetNV2(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<NhanVien>("GetNV2", mergeOption);
+        }
+    
+        public virtual int delNV(string manv)
+        {
+            var manvParameter = manv != null ?
+                new ObjectParameter("manv", manv) :
+                new ObjectParameter("manv", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("delNV", manvParameter);
+        }
+    
+        public virtual int spThemNV(string manv, string macuahang, string maloainv, string tennv, string gioitinh, string diachi, string sdt, Nullable<decimal> luong)
+        {
+            var manvParameter = manv != null ?
+                new ObjectParameter("manv", manv) :
+                new ObjectParameter("manv", typeof(string));
+    
+            var macuahangParameter = macuahang != null ?
+                new ObjectParameter("macuahang", macuahang) :
+                new ObjectParameter("macuahang", typeof(string));
+    
+            var maloainvParameter = maloainv != null ?
+                new ObjectParameter("maloainv", maloainv) :
+                new ObjectParameter("maloainv", typeof(string));
+    
+            var tennvParameter = tennv != null ?
+                new ObjectParameter("tennv", tennv) :
+                new ObjectParameter("tennv", typeof(string));
+    
+            var gioitinhParameter = gioitinh != null ?
+                new ObjectParameter("gioitinh", gioitinh) :
+                new ObjectParameter("gioitinh", typeof(string));
+    
+            var diachiParameter = diachi != null ?
+                new ObjectParameter("diachi", diachi) :
+                new ObjectParameter("diachi", typeof(string));
+    
+            var sdtParameter = sdt != null ?
+                new ObjectParameter("sdt", sdt) :
+                new ObjectParameter("sdt", typeof(string));
+    
+            var luongParameter = luong.HasValue ?
+                new ObjectParameter("luong", luong) :
+                new ObjectParameter("luong", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spThemNV", manvParameter, macuahangParameter, maloainvParameter, tennvParameter, gioitinhParameter, diachiParameter, sdtParameter, luongParameter);
+        }
+    
+        public virtual int updateNV(string manv, string macuahang, string maloainv, string tennv, string gioitinh, string diachi, string sdt, Nullable<decimal> luong)
+        {
+            var manvParameter = manv != null ?
+                new ObjectParameter("manv", manv) :
+                new ObjectParameter("manv", typeof(string));
+    
+            var macuahangParameter = macuahang != null ?
+                new ObjectParameter("macuahang", macuahang) :
+                new ObjectParameter("macuahang", typeof(string));
+    
+            var maloainvParameter = maloainv != null ?
+                new ObjectParameter("maloainv", maloainv) :
+                new ObjectParameter("maloainv", typeof(string));
+    
+            var tennvParameter = tennv != null ?
+                new ObjectParameter("tennv", tennv) :
+                new ObjectParameter("tennv", typeof(string));
+    
+            var gioitinhParameter = gioitinh != null ?
+                new ObjectParameter("gioitinh", gioitinh) :
+                new ObjectParameter("gioitinh", typeof(string));
+    
+            var diachiParameter = diachi != null ?
+                new ObjectParameter("diachi", diachi) :
+                new ObjectParameter("diachi", typeof(string));
+    
+            var sdtParameter = sdt != null ?
+                new ObjectParameter("sdt", sdt) :
+                new ObjectParameter("sdt", typeof(string));
+    
+            var luongParameter = luong.HasValue ?
+                new ObjectParameter("luong", luong) :
+                new ObjectParameter("luong", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updateNV", manvParameter, macuahangParameter, maloainvParameter, tennvParameter, gioitinhParameter, diachiParameter, sdtParameter, luongParameter);
+        }
     }
 }

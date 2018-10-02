@@ -334,6 +334,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="delNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="manv" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetAllNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetNV2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spThemNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="manv" Type="varchar" Mode="In" />
+          <Parameter Name="macuahang" Type="varchar" Mode="In" />
+          <Parameter Name="maloainv" Type="varchar" Mode="In" />
+          <Parameter Name="tennv" Type="nvarchar" Mode="In" />
+          <Parameter Name="gioitinh" Type="nvarchar" Mode="In" />
+          <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+          <Parameter Name="sdt" Type="varchar" Mode="In" />
+          <Parameter Name="luong" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="updateNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="manv" Type="varchar" Mode="In" />
+          <Parameter Name="macuahang" Type="varchar" Mode="In" />
+          <Parameter Name="maloainv" Type="varchar" Mode="In" />
+          <Parameter Name="tennv" Type="nvarchar" Mode="In" />
+          <Parameter Name="gioitinh" Type="nvarchar" Mode="In" />
+          <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+          <Parameter Name="sdt" Type="varchar" Mode="In" />
+          <Parameter Name="luong" Type="decimal" Mode="In" />
+        </Function>
         <Function Name="USP_GetAllCuaHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="USP_GetAllKhoHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="GalaxyMobileModelStoreContainer">
@@ -684,6 +709,31 @@
             <End Role="ChiTietSP" EntitySet="ChiTietSPs" />
             <End Role="KhoHang" EntitySet="KhoHangs" />
           </AssociationSet>
+          <FunctionImport Name="GetAllNV" EntitySet="NhanViens" ReturnType="Collection(GalaxyMobileModel.NhanVien)" />
+          <FunctionImport Name="GetNV2" EntitySet="NhanViens" ReturnType="Collection(GalaxyMobileModel.NhanVien)" />
+          <FunctionImport Name="delNV">
+            <Parameter Name="manv" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spThemNV">
+            <Parameter Name="manv" Mode="In" Type="String" />
+            <Parameter Name="macuahang" Mode="In" Type="String" />
+            <Parameter Name="maloainv" Mode="In" Type="String" />
+            <Parameter Name="tennv" Mode="In" Type="String" />
+            <Parameter Name="gioitinh" Mode="In" Type="String" />
+            <Parameter Name="diachi" Mode="In" Type="String" />
+            <Parameter Name="sdt" Mode="In" Type="String" />
+            <Parameter Name="luong" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="updateNV">
+            <Parameter Name="manv" Mode="In" Type="String" />
+            <Parameter Name="macuahang" Mode="In" Type="String" />
+            <Parameter Name="maloainv" Mode="In" Type="String" />
+            <Parameter Name="tennv" Mode="In" Type="String" />
+            <Parameter Name="gioitinh" Mode="In" Type="String" />
+            <Parameter Name="diachi" Mode="In" Type="String" />
+            <Parameter Name="sdt" Mode="In" Type="String" />
+            <Parameter Name="luong" Mode="In" Type="Decimal" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="sysdiagram">
           <Key>
@@ -857,6 +907,56 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="GetAllNV_Result">
+          <Property Type="String" Name="MaNV" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaCuaHang" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaLoaiNV" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="TenNV" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="GioiTinh" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SDT" Nullable="true" MaxLength="13" />
+          <Property Type="Decimal" Name="Luong" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="GetAllNV1_Result">
+          <Property Type="String" Name="MaNV" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaCuaHang" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaLoaiNV" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="TenNV" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="GioiTinh" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SDT" Nullable="true" MaxLength="13" />
+          <Property Type="Decimal" Name="Luong" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="GetAllNV_Result1">
+          <Property Type="String" Name="MaNV" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaCuaHang" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaLoaiNV" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="TenNV" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="GioiTinh" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SDT" Nullable="true" MaxLength="13" />
+          <Property Type="Decimal" Name="Luong" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="GetAllNV_Result2">
+          <Property Type="String" Name="MaNV" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaCuaHang" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaLoaiNV" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="TenNV" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="GioiTinh" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SDT" Nullable="true" MaxLength="13" />
+          <Property Type="Decimal" Name="Luong" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="GetNV2_Result">
+          <Property Type="String" Name="MaNV" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaCuaHang" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaLoaiNV" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="TenNV" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="GioiTinh" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SDT" Nullable="true" MaxLength="13" />
+          <Property Type="Decimal" Name="Luong" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1037,6 +1137,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetAllNV" FunctionName="GalaxyMobileModel.Store.GetAllNV" />
+          <FunctionImportMapping FunctionImportName="GetNV2" FunctionName="GalaxyMobileModel.Store.GetNV2" />
+          <FunctionImportMapping FunctionImportName="delNV" FunctionName="GalaxyMobileModel.Store.delNV" />
+          <FunctionImportMapping FunctionImportName="spThemNV" FunctionName="GalaxyMobileModel.Store.spThemNV" />
+          <FunctionImportMapping FunctionImportName="updateNV" FunctionName="GalaxyMobileModel.Store.updateNV" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
