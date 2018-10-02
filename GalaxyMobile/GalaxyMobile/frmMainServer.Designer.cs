@@ -151,11 +151,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabThongKe = new System.Windows.Forms.TabPage();
-<<<<<<< HEAD
+
             this.txtCH = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-=======
->>>>>>> 8032bb75c7ee292f7c5b20f7035630b24be35652
+
+
             this.pnlMainServer.SuspendLayout();
             this.pnlTimKiem.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -174,13 +174,12 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dongSanPhamBindingSource)).BeginInit();
-<<<<<<< HEAD
+
             this.tabNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
             this.panel.SuspendLayout();
-=======
->>>>>>> 8032bb75c7ee292f7c5b20f7035630b24be35652
+
             this.tabCuaHang.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -828,10 +827,10 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dòng Sản Phẩm";
-<<<<<<< HEAD
+
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-=======
->>>>>>> 8032bb75c7ee292f7c5b20f7035630b24be35652
+
+
             // 
             // groupBox3
             // 
@@ -1068,11 +1067,11 @@
             this.tabNhanVien.Location = new System.Drawing.Point(4, 22);
             this.tabNhanVien.Name = "tabNhanVien";
             this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
-<<<<<<< HEAD
+
             this.tabNhanVien.Size = new System.Drawing.Size(925, 454);
-=======
+
             this.tabNhanVien.Size = new System.Drawing.Size(881, 454);
->>>>>>> 8032bb75c7ee292f7c5b20f7035630b24be35652
+
             this.tabNhanVien.TabIndex = 4;
             this.tabNhanVien.Text = "Nhân Viên";
             this.tabNhanVien.UseVisualStyleBackColor = true;
@@ -1498,7 +1497,7 @@
             this.tabThongKe.Text = "Thống Kê";
             this.tabThongKe.UseVisualStyleBackColor = true;
             // 
-<<<<<<< HEAD
+
             // txtCH
             // 
             this.txtCH.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1516,8 +1515,8 @@
             this.label20.TabIndex = 14;
             this.label20.Text = "Cửa Hàng :";
             // 
-=======
->>>>>>> 8032bb75c7ee292f7c5b20f7035630b24be35652
+
+
             // frmMainServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1550,14 +1549,13 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dongSanPhamBindingSource)).EndInit();
-<<<<<<< HEAD
+
             this.tabNhanVien.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
-=======
->>>>>>> 8032bb75c7ee292f7c5b20f7035630b24be35652
+
             this.tabCuaHang.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
