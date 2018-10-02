@@ -20,5 +20,26 @@ namespace DAO
             }
             //return a;
         }
+        public int matruycap(string name, string pass)
+        {
+            TaiKhoan a = new TaiKhoan();
+            using (GalaxyMobileEntities dbs = new GalaxyMobileEntities())
+            {
+               string loaitk= dbs.TaiKhoans.SingleOrDefault(p => p.UserName == name && p.Password == pass).MaLoaiTK;
+                if (loaitk == "admin")
+                    return 0;
+                else
+                    if (loaitk == "qlk")
+                    return 1;
+                else
+                     if (loaitk == "qlns")
+                    return 2;
+                if (loaitk == "qlch")
+                    return 3;
+                return 4;
+                
+            }
+             
+        }
     }
 }

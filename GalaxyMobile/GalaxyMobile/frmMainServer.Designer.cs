@@ -151,8 +151,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabThongKe = new System.Windows.Forms.TabPage();
+<<<<<<< HEAD
             this.txtCH = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
+=======
+>>>>>>> 8032bb75c7ee292f7c5b20f7035630b24be35652
             this.pnlMainServer.SuspendLayout();
             this.pnlTimKiem.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -171,10 +174,13 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dongSanPhamBindingSource)).BeginInit();
+<<<<<<< HEAD
             this.tabNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
             this.panel.SuspendLayout();
+=======
+>>>>>>> 8032bb75c7ee292f7c5b20f7035630b24be35652
             this.tabCuaHang.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -190,7 +196,90 @@
             this.pnlMainServer.Name = "pnlMainServer";
             this.pnlMainServer.Size = new System.Drawing.Size(945, 525);
             this.pnlMainServer.TabIndex = 0;
-            this.pnlMainServer.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMainServer_Paint);
+            // 
+            // pnlTimKiem
+            // 
+            this.pnlTimKiem.Controls.Add(this.btnDongSearch);
+            this.pnlTimKiem.Controls.Add(this.cmBoxTimKiemTheo);
+            this.pnlTimKiem.Controls.Add(this.txtboxTimKiem);
+            this.pnlTimKiem.Location = new System.Drawing.Point(657, 3);
+            this.pnlTimKiem.Name = "pnlTimKiem";
+            this.pnlTimKiem.Size = new System.Drawing.Size(288, 46);
+            this.pnlTimKiem.TabIndex = 6;
+            this.pnlTimKiem.Visible = false;
+            // 
+            // btnDongSearch
+            // 
+            this.btnDongSearch.Location = new System.Drawing.Point(253, 10);
+            this.btnDongSearch.Name = "btnDongSearch";
+            this.btnDongSearch.Size = new System.Drawing.Size(34, 23);
+            this.btnDongSearch.TabIndex = 2;
+            this.btnDongSearch.Text = "X";
+            this.btnDongSearch.UseVisualStyleBackColor = true;
+            // 
+            // cmBoxTimKiemTheo
+            // 
+            this.cmBoxTimKiemTheo.FormattingEnabled = true;
+            this.cmBoxTimKiemTheo.Location = new System.Drawing.Point(161, 12);
+            this.cmBoxTimKiemTheo.Name = "cmBoxTimKiemTheo";
+            this.cmBoxTimKiemTheo.Size = new System.Drawing.Size(88, 21);
+            this.cmBoxTimKiemTheo.TabIndex = 1;
+            // 
+            // txtboxTimKiem
+            // 
+            this.txtboxTimKiem.Location = new System.Drawing.Point(3, 12);
+            this.txtboxTimKiem.Name = "txtboxTimKiem";
+            this.txtboxTimKiem.Size = new System.Drawing.Size(152, 20);
+            this.txtboxTimKiem.TabIndex = 0;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(589, 15);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(62, 23);
+            this.btnTimKiem.TabIndex = 4;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Location = new System.Drawing.Point(743, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(199, 35);
+            this.panel1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(166, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(26, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(62, 9);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(32, 16);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Bạn";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 16);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Chào, ";
             // 
             // pnlTimKiem
             // 
@@ -739,7 +828,10 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dòng Sản Phẩm";
+<<<<<<< HEAD
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+=======
+>>>>>>> 8032bb75c7ee292f7c5b20f7035630b24be35652
             // 
             // groupBox3
             // 
@@ -976,7 +1068,11 @@
             this.tabNhanVien.Location = new System.Drawing.Point(4, 22);
             this.tabNhanVien.Name = "tabNhanVien";
             this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
+<<<<<<< HEAD
             this.tabNhanVien.Size = new System.Drawing.Size(925, 454);
+=======
+            this.tabNhanVien.Size = new System.Drawing.Size(881, 454);
+>>>>>>> 8032bb75c7ee292f7c5b20f7035630b24be35652
             this.tabNhanVien.TabIndex = 4;
             this.tabNhanVien.Text = "Nhân Viên";
             this.tabNhanVien.UseVisualStyleBackColor = true;
@@ -1402,6 +1498,7 @@
             this.tabThongKe.Text = "Thống Kê";
             this.tabThongKe.UseVisualStyleBackColor = true;
             // 
+<<<<<<< HEAD
             // txtCH
             // 
             this.txtCH.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1419,6 +1516,8 @@
             this.label20.TabIndex = 14;
             this.label20.Text = "Cửa Hàng :";
             // 
+=======
+>>>>>>> 8032bb75c7ee292f7c5b20f7035630b24be35652
             // frmMainServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1451,11 +1550,14 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dongSanPhamBindingSource)).EndInit();
+<<<<<<< HEAD
             this.tabNhanVien.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+=======
+>>>>>>> 8032bb75c7ee292f7c5b20f7035630b24be35652
             this.tabCuaHang.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

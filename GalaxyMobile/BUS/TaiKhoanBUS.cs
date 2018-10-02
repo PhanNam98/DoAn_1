@@ -18,5 +18,9 @@ namespace BUS
         {
             return db.kttk(name, pass);
         }
+        public static int MaTruyCap(string name, string pass)
+        {
+            return db.matruycap(name, pass);
+        }
     }
 }
