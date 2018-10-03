@@ -15,13 +15,10 @@
         <EntityTypeShape EntityType="GalaxyMobileModel.LoaiTaiKhoan" Width="1.5" PointX="10.5" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="GalaxyMobileModel.MauSP" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="GalaxyMobileModel.SanPham" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="GalaxyMobileModel.TaiKhoan" Width="1.5" PointX="12.75" PointY="7.625" IsExpanded="true" />
-        <AssociationConnector Association="GalaxyMobileModel.FK_TaiKhoan_CuaHang" ManuallyRouted="false" />
         <AssociationConnector Association="GalaxyMobileModel.FK_DongSanPham_HSX" ManuallyRouted="false" />
         <AssociationConnector Association="GalaxyMobileModel.FK_DongSanPham_LoaiSP" ManuallyRouted="false" />
         <AssociationConnector Association="GalaxyMobileModel.FK_SanPham_DongSanPham" ManuallyRouted="false" />
         <AssociationConnector Association="GalaxyMobileModel.FK_HoaDon_KhachHang" ManuallyRouted="false" />
-        <AssociationConnector Association="GalaxyMobileModel.FK_TaiKhoan_LoaiTaiKhoan" ManuallyRouted="false" />
         <EntityTypeShape EntityType="GalaxyMobileModel.sysdiagram" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="GalaxyMobileModel.ChiTietHoaDon" Width="1.5" PointX="13.125" PointY="4.5" />
         <EntityTypeShape EntityType="GalaxyMobileModel.KhoHang" Width="1.5" PointX="10.125" PointY="4.375" />
@@ -35,6 +32,9 @@
         <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietSP_MauSP" />
         <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietSP_SanPham" />
         <AssociationConnector Association="GalaxyMobileModel.FK_KhoHang_ChiTietSP" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.TaiKhoan" Width="1.5" PointX="12.75" PointY="9.5" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_TaiKhoan_CuaHang" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_TaiKhoan_LoaiTaiKhoan" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

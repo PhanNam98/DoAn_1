@@ -106,16 +106,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TaiKhoans">
-      <EntityTypeMapping TypeName="GalaxyMobileModel.TaiKhoan">
-        <MappingFragment StoreEntitySet="TaiKhoan">
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
-          <ScalarProperty Name="MaLoaiTK" ColumnName="MaLoaiTK" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="GalaxyMobileModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -175,10 +165,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="GetAllNV" FunctionName="GalaxyMobileModel.Store.GetAllNV" />
-    <FunctionImportMapping FunctionImportName="GetNV2" FunctionName="GalaxyMobileModel.Store.GetNV2" />
-    <FunctionImportMapping FunctionImportName="delNV" FunctionName="GalaxyMobileModel.Store.delNV" />
-    <FunctionImportMapping FunctionImportName="spThemNV" FunctionName="GalaxyMobileModel.Store.spThemNV" />
-    <FunctionImportMapping FunctionImportName="updateNV" FunctionName="GalaxyMobileModel.Store.updateNV" />
+    <EntitySetMapping Name="TaiKhoans">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.TaiKhoan">
+        <MappingFragment StoreEntitySet="TaiKhoan">
+          <ScalarProperty Name="MaLoaiTK" ColumnName="MaLoaiTK" />
+          <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

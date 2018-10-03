@@ -37,12 +37,12 @@ namespace Model
         public virtual DbSet<LoaiTaiKhoan> LoaiTaiKhoans { get; set; }
         public virtual DbSet<MauSP> MauSPs { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
-        public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
         public virtual DbSet<KhoHang> KhoHangs { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<ChiTietSP> ChiTietSPs { get; set; }
+        public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
     
         public virtual ObjectResult<CuaHang> USP_GetAllCuaHang()
         {

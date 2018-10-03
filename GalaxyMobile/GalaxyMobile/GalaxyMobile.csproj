@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmChiTietTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietTaiKhoan.Designer.cs">
+      <DependentUpon>frmChiTietTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChiTietSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmChiTietTaiKhoan.resx">
+      <DependentUpon>frmChiTietTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietSanPham.resx">
       <DependentUpon>frmChiTietSanPham.cs</DependentUpon>
     </EmbeddedResource>

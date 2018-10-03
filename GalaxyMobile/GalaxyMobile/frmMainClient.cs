@@ -21,5 +21,22 @@ namespace GalaxyMobile
         }
         private TaiKhoan User;
         private int MaTruyCap;
+
+        private void frmMainClient_Load(object sender, EventArgs e)
+        {
+
+        }
+        #region HoaDon
+
+        #endregion
+        #region Kho Hang
+        #endregion
+
+        #region San Pham
+        #endregion
+
+        #region Nha san xuat
+
+        #endregion
     }
 }

@@ -160,11 +160,11 @@
             <PropertyRef Name="UserName" />
           </Key>
           <Property Name="UserName" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Password" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="MaCuaHang" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="MaLoaiTK" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
-        <Association Name="FK_ChiTietHoaDon_ChiTietSP1">
+        <Association Name="FK_ChiTietHoaDon_ChiTietSP">
           <End Role="ChiTietSP" Type="Self.ChiTietSP" Multiplicity="1" />
           <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
           <ReferentialConstraint>
@@ -250,18 +250,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_KhoHang_ChiTietSP">
-          <End Role="ChiTietSP" Type="Self.ChiTietSP" Multiplicity="1" />
-          <End Role="KhoHang" Type="Self.KhoHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ChiTietSP">
-              <PropertyRef Name="MaKieu" />
-            </Principal>
-            <Dependent Role="KhoHang">
-              <PropertyRef Name="MaKieu" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_KhoHang_CuaHang">
           <End Role="CuaHang" Type="Self.CuaHang" Multiplicity="1" />
           <End Role="KhoHang" Type="Self.KhoHang" Multiplicity="*" />
@@ -334,31 +322,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="delNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="manv" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="GetAllNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="GetNV2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="spThemNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="manv" Type="varchar" Mode="In" />
-          <Parameter Name="macuahang" Type="varchar" Mode="In" />
-          <Parameter Name="maloainv" Type="varchar" Mode="In" />
-          <Parameter Name="tennv" Type="nvarchar" Mode="In" />
-          <Parameter Name="gioitinh" Type="nvarchar" Mode="In" />
-          <Parameter Name="diachi" Type="nvarchar" Mode="In" />
-          <Parameter Name="sdt" Type="varchar" Mode="In" />
-          <Parameter Name="luong" Type="decimal" Mode="In" />
-        </Function>
-        <Function Name="updateNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="manv" Type="varchar" Mode="In" />
-          <Parameter Name="macuahang" Type="varchar" Mode="In" />
-          <Parameter Name="maloainv" Type="varchar" Mode="In" />
-          <Parameter Name="tennv" Type="nvarchar" Mode="In" />
-          <Parameter Name="gioitinh" Type="nvarchar" Mode="In" />
-          <Parameter Name="diachi" Type="nvarchar" Mode="In" />
-          <Parameter Name="sdt" Type="varchar" Mode="In" />
-          <Parameter Name="luong" Type="decimal" Mode="In" />
-        </Function>
         <Function Name="USP_GetAllCuaHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="USP_GetAllKhoHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="GalaxyMobileModelStoreContainer">
@@ -378,7 +341,7 @@
           <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_ChiTietHoaDon_ChiTietSP1" Association="Self.FK_ChiTietHoaDon_ChiTietSP1">
+          <AssociationSet Name="FK_ChiTietHoaDon_ChiTietSP" Association="Self.FK_ChiTietHoaDon_ChiTietSP">
             <End Role="ChiTietSP" EntitySet="ChiTietSP" />
             <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDon" />
           </AssociationSet>
@@ -405,10 +368,6 @@
           <AssociationSet Name="FK_HoaDon_KhachHang" Association="Self.FK_HoaDon_KhachHang">
             <End Role="KhachHang" EntitySet="KhachHang" />
             <End Role="HoaDon" EntitySet="HoaDon" />
-          </AssociationSet>
-          <AssociationSet Name="FK_KhoHang_ChiTietSP" Association="Self.FK_KhoHang_ChiTietSP">
-            <End Role="ChiTietSP" EntitySet="ChiTietSP" />
-            <End Role="KhoHang" EntitySet="KhoHang" />
           </AssociationSet>
           <AssociationSet Name="FK_KhoHang_CuaHang" Association="Self.FK_KhoHang_CuaHang">
             <End Role="CuaHang" EntitySet="CuaHang" />
@@ -446,9 +405,9 @@
           <Property Name="MaCuaHang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TenCuaHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="TaiKhoans" Relationship="Self.FK_TaiKhoan_CuaHang" FromRole="CuaHang" ToRole="TaiKhoan" />
           <NavigationProperty Name="KhoHangs" Relationship="GalaxyMobileModel.FK_KhoHang_CuaHang" FromRole="CuaHang" ToRole="KhoHang" />
           <NavigationProperty Name="NhanViens" Relationship="GalaxyMobileModel.FK_NhanVien_CuaHang" FromRole="CuaHang" ToRole="NhanVien" />
+          <NavigationProperty Name="TaiKhoans" Relationship="GalaxyMobileModel.FK_TaiKhoan_CuaHang" FromRole="CuaHang" ToRole="TaiKhoan" />
         </EntityType>
         <EntityType Name="DongSanPham">
           <Key>
@@ -517,7 +476,7 @@
           </Key>
           <Property Name="MaLoaiTK" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TenLoaiTK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="TaiKhoans" Relationship="Self.FK_TaiKhoan_LoaiTaiKhoan" FromRole="LoaiTaiKhoan" ToRole="TaiKhoan" />
+          <NavigationProperty Name="TaiKhoans" Relationship="GalaxyMobileModel.FK_TaiKhoan_LoaiTaiKhoan" FromRole="LoaiTaiKhoan" ToRole="TaiKhoan" />
         </EntityType>
         <EntityType Name="MauSP">
           <Key>
@@ -551,29 +510,6 @@
           <NavigationProperty Name="DongSanPham" Relationship="Self.FK_SanPham_DongSanPham" FromRole="SanPham" ToRole="DongSanPham" />
           <NavigationProperty Name="ChiTietSPs" Relationship="GalaxyMobileModel.FK_ChiTietSP_SanPham" FromRole="SanPham" ToRole="ChiTietSP" />
         </EntityType>
-        <EntityType Name="TaiKhoan">
-          <Key>
-            <PropertyRef Name="UserName" />
-          </Key>
-          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="MaCuaHang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MaLoaiTK" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="CuaHang" Relationship="Self.FK_TaiKhoan_CuaHang" FromRole="TaiKhoan" ToRole="CuaHang" />
-          <NavigationProperty Name="LoaiTaiKhoan" Relationship="Self.FK_TaiKhoan_LoaiTaiKhoan" FromRole="TaiKhoan" ToRole="LoaiTaiKhoan" />
-        </EntityType>
-        <Association Name="FK_TaiKhoan_CuaHang">
-          <End Role="CuaHang" Type="Self.CuaHang" Multiplicity="1" />
-          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CuaHang">
-              <PropertyRef Name="MaCuaHang" />
-            </Principal>
-            <Dependent Role="TaiKhoan">
-              <PropertyRef Name="MaCuaHang" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_DongSanPham_HSX">
           <End Role="HSX" Type="Self.HSX" Multiplicity="1" />
           <End Role="DongSanPham" Type="Self.DongSanPham" Multiplicity="*" />
@@ -622,18 +558,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TaiKhoan_LoaiTaiKhoan">
-          <End Role="LoaiTaiKhoan" Type="Self.LoaiTaiKhoan" Multiplicity="1" />
-          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LoaiTaiKhoan">
-              <PropertyRef Name="MaLoaiTK" />
-            </Principal>
-            <Dependent Role="TaiKhoan">
-              <PropertyRef Name="MaLoaiTK" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="GalaxyMobileEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CuaHangs" EntityType="Self.CuaHang" />
           <EntitySet Name="DongSanPhams" EntityType="Self.DongSanPham" />
@@ -645,11 +569,6 @@
           <EntitySet Name="LoaiTaiKhoans" EntityType="Self.LoaiTaiKhoan" />
           <EntitySet Name="MauSPs" EntityType="Self.MauSP" />
           <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
-          <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
-          <AssociationSet Name="FK_TaiKhoan_CuaHang" Association="Self.FK_TaiKhoan_CuaHang">
-            <End Role="CuaHang" EntitySet="CuaHangs" />
-            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
-          </AssociationSet>
           <AssociationSet Name="FK_DongSanPham_HSX" Association="Self.FK_DongSanPham_HSX">
             <End Role="HSX" EntitySet="HSXes" />
             <End Role="DongSanPham" EntitySet="DongSanPhams" />
@@ -665,10 +584,6 @@
           <AssociationSet Name="FK_HoaDon_KhachHang" Association="Self.FK_HoaDon_KhachHang">
             <End Role="KhachHang" EntitySet="KhachHangs" />
             <End Role="HoaDon" EntitySet="HoaDons" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TaiKhoan_LoaiTaiKhoan" Association="Self.FK_TaiKhoan_LoaiTaiKhoan">
-            <End Role="LoaiTaiKhoan" EntitySet="LoaiTaiKhoans" />
-            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
           </AssociationSet>
           <EntitySet Name="sysdiagrams" EntityType="GalaxyMobileModel.sysdiagram" />
           <EntitySet Name="ChiTietHoaDons" EntityType="GalaxyMobileModel.ChiTietHoaDon" />
@@ -734,6 +649,15 @@
             <Parameter Name="sdt" Mode="In" Type="String" />
             <Parameter Name="luong" Mode="In" Type="Decimal" />
           </FunctionImport>
+          <EntitySet Name="TaiKhoans" EntityType="GalaxyMobileModel.TaiKhoan" />
+          <AssociationSet Name="FK_TaiKhoan_CuaHang" Association="GalaxyMobileModel.FK_TaiKhoan_CuaHang">
+            <End Role="CuaHang" EntitySet="CuaHangs" />
+            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaiKhoan_LoaiTaiKhoan" Association="GalaxyMobileModel.FK_TaiKhoan_LoaiTaiKhoan">
+            <End Role="LoaiTaiKhoan" EntitySet="LoaiTaiKhoans" />
+            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="sysdiagram">
           <Key>
@@ -957,6 +881,41 @@
           <Property Type="String" Name="SDT" Nullable="true" MaxLength="13" />
           <Property Type="Decimal" Name="Luong" Nullable="true" Precision="18" Scale="0" />
         </ComplexType>
+        <EntityType Name="TaiKhoan">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaCuaHang" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MaLoaiTK" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CuaHang" Relationship="GalaxyMobileModel.FK_TaiKhoan_CuaHang" FromRole="TaiKhoan" ToRole="CuaHang" />
+          <NavigationProperty Name="LoaiTaiKhoan" Relationship="GalaxyMobileModel.FK_TaiKhoan_LoaiTaiKhoan" FromRole="TaiKhoan" ToRole="LoaiTaiKhoan" />
+        </EntityType>
+        <Association Name="FK_TaiKhoan_CuaHang">
+          <End Type="GalaxyMobileModel.CuaHang" Role="CuaHang" Multiplicity="1" />
+          <End Type="GalaxyMobileModel.TaiKhoan" Role="TaiKhoan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CuaHang">
+              <PropertyRef Name="MaCuaHang" />
+            </Principal>
+            <Dependent Role="TaiKhoan">
+              <PropertyRef Name="MaCuaHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaiKhoan_LoaiTaiKhoan">
+          <End Type="GalaxyMobileModel.LoaiTaiKhoan" Role="LoaiTaiKhoan" Multiplicity="1" />
+          <End Type="GalaxyMobileModel.TaiKhoan" Role="TaiKhoan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiTaiKhoan">
+              <PropertyRef Name="MaLoaiTK" />
+            </Principal>
+            <Dependent Role="TaiKhoan">
+              <PropertyRef Name="MaLoaiTK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1068,16 +1027,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TaiKhoans">
-            <EntityTypeMapping TypeName="GalaxyMobileModel.TaiKhoan">
-              <MappingFragment StoreEntitySet="TaiKhoan">
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
-                <ScalarProperty Name="MaLoaiTK" ColumnName="MaLoaiTK" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="GalaxyMobileModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -1137,12 +1086,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="GetAllNV" FunctionName="GalaxyMobileModel.Store.GetAllNV" />
-          <FunctionImportMapping FunctionImportName="GetNV2" FunctionName="GalaxyMobileModel.Store.GetNV2" />
-          <FunctionImportMapping FunctionImportName="delNV" FunctionName="GalaxyMobileModel.Store.delNV" />
-          <FunctionImportMapping FunctionImportName="spThemNV" FunctionName="GalaxyMobileModel.Store.spThemNV" />
-          <FunctionImportMapping FunctionImportName="updateNV" FunctionName="GalaxyMobileModel.Store.updateNV" />
-        </EntityContainerMapping>
+          <EntitySetMapping Name="TaiKhoans">
+            <EntityTypeMapping TypeName="GalaxyMobileModel.TaiKhoan">
+              <MappingFragment StoreEntitySet="TaiKhoan">
+                <ScalarProperty Name="MaLoaiTK" ColumnName="MaLoaiTK" />
+                <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

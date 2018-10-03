@@ -60,6 +60,26 @@
             this.btnLoadSP = new System.Windows.Forms.Button();
             this.btnChiTietSP = new System.Windows.Forms.Button();
             this.dgvSP = new System.Windows.Forms.DataGridView();
+            this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtboxTenDongSP = new System.Windows.Forms.TextBox();
+            this.txtboxMaDongSP = new System.Windows.Forms.TextBox();
+            this.cmBoxLoaiSP = new System.Windows.Forms.ComboBox();
+            this.cmBoxHSX = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnLoadDSP = new System.Windows.Forms.Button();
+            this.dgvDongSP = new System.Windows.Forms.DataGridView();
+            this.dongSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
             this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maDSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,30 +97,10 @@
             this.trongLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thongTinKhacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nămSXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtboxTenDongSP = new System.Windows.Forms.TextBox();
-            this.txtboxMaDongSP = new System.Windows.Forms.TextBox();
-            this.cmBoxLoaiSP = new System.Windows.Forms.ComboBox();
-            this.cmBoxHSX = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnLoadDSP = new System.Windows.Forms.Button();
-            this.dgvDongSP = new System.Windows.Forms.DataGridView();
             this.maDSPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenDongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maHSXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maLSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dongSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
             this.pnlClinet.SuspendLayout();
             this.pnlTimKiem.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -368,7 +368,7 @@
             // 
             // ngayLapHDDataGridViewTextBoxColumn
             // 
-            ngayLapHDDataGridViewTextBoxColumn.DataPropertyName = "NgayLapHD";
+            this.ngayLapHDDataGridViewTextBoxColumn.DataPropertyName = "NgayLapHD";
             this.ngayLapHDDataGridViewTextBoxColumn.HeaderText = "Ngày Lập";
             this.ngayLapHDDataGridViewTextBoxColumn.Name = "ngayLapHDDataGridViewTextBoxColumn";
             this.ngayLapHDDataGridViewTextBoxColumn.ReadOnly = true;
@@ -443,125 +443,6 @@
             this.dgvSP.ReadOnly = true;
             this.dgvSP.Size = new System.Drawing.Size(863, 355);
             this.dgvSP.TabIndex = 3;
-            // 
-            // maSPDataGridViewTextBoxColumn
-            // 
-            this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
-            this.maSPDataGridViewTextBoxColumn.HeaderText = "MaSP";
-            this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
-            this.maSPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // maDSPDataGridViewTextBoxColumn
-            // 
-            this.maDSPDataGridViewTextBoxColumn.DataPropertyName = "MaDSP";
-            this.maDSPDataGridViewTextBoxColumn.HeaderText = "MaDSP";
-            this.maDSPDataGridViewTextBoxColumn.Name = "maDSPDataGridViewTextBoxColumn";
-            this.maDSPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenSPDataGridViewTextBoxColumn
-            // 
-            this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
-            this.tenSPDataGridViewTextBoxColumn.HeaderText = "TenSP";
-            this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
-            this.tenSPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cPUDataGridViewTextBoxColumn
-            // 
-            this.cPUDataGridViewTextBoxColumn.DataPropertyName = "CPU";
-            this.cPUDataGridViewTextBoxColumn.HeaderText = "CPU";
-            this.cPUDataGridViewTextBoxColumn.Name = "cPUDataGridViewTextBoxColumn";
-            this.cPUDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ramDataGridViewTextBoxColumn
-            // 
-            this.ramDataGridViewTextBoxColumn.DataPropertyName = "Ram";
-            this.ramDataGridViewTextBoxColumn.HeaderText = "Ram";
-            this.ramDataGridViewTextBoxColumn.Name = "ramDataGridViewTextBoxColumn";
-            this.ramDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // boNhoTrongDataGridViewTextBoxColumn
-            // 
-            this.boNhoTrongDataGridViewTextBoxColumn.DataPropertyName = "BoNhoTrong";
-            this.boNhoTrongDataGridViewTextBoxColumn.HeaderText = "BoNhoTrong";
-            this.boNhoTrongDataGridViewTextBoxColumn.Name = "boNhoTrongDataGridViewTextBoxColumn";
-            this.boNhoTrongDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // boNhoNgoaiDataGridViewTextBoxColumn
-            // 
-            this.boNhoNgoaiDataGridViewTextBoxColumn.DataPropertyName = "BoNhoNgoai";
-            this.boNhoNgoaiDataGridViewTextBoxColumn.HeaderText = "BoNhoNgoai";
-            this.boNhoNgoaiDataGridViewTextBoxColumn.Name = "boNhoNgoaiDataGridViewTextBoxColumn";
-            this.boNhoNgoaiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // simDataGridViewTextBoxColumn
-            // 
-            this.simDataGridViewTextBoxColumn.DataPropertyName = "Sim";
-            this.simDataGridViewTextBoxColumn.HeaderText = "Sim";
-            this.simDataGridViewTextBoxColumn.Name = "simDataGridViewTextBoxColumn";
-            this.simDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // manHinhDataGridViewTextBoxColumn
-            // 
-            this.manHinhDataGridViewTextBoxColumn.DataPropertyName = "ManHinh";
-            this.manHinhDataGridViewTextBoxColumn.HeaderText = "ManHinh";
-            this.manHinhDataGridViewTextBoxColumn.Name = "manHinhDataGridViewTextBoxColumn";
-            this.manHinhDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dungLuongPinDataGridViewTextBoxColumn
-            // 
-            this.dungLuongPinDataGridViewTextBoxColumn.DataPropertyName = "DungLuongPin";
-            this.dungLuongPinDataGridViewTextBoxColumn.HeaderText = "DungLuongPin";
-            this.dungLuongPinDataGridViewTextBoxColumn.Name = "dungLuongPinDataGridViewTextBoxColumn";
-            this.dungLuongPinDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cameraDataGridViewTextBoxColumn
-            // 
-            this.cameraDataGridViewTextBoxColumn.DataPropertyName = "Camera";
-            this.cameraDataGridViewTextBoxColumn.HeaderText = "Camera";
-            this.cameraDataGridViewTextBoxColumn.Name = "cameraDataGridViewTextBoxColumn";
-            this.cameraDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cardManHinhDataGridViewTextBoxColumn
-            // 
-            this.cardManHinhDataGridViewTextBoxColumn.DataPropertyName = "CardManHinh";
-            this.cardManHinhDataGridViewTextBoxColumn.HeaderText = "CardManHinh";
-            this.cardManHinhDataGridViewTextBoxColumn.Name = "cardManHinhDataGridViewTextBoxColumn";
-            this.cardManHinhDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oSDataGridViewTextBoxColumn
-            // 
-            this.oSDataGridViewTextBoxColumn.DataPropertyName = "OS";
-            this.oSDataGridViewTextBoxColumn.HeaderText = "OS";
-            this.oSDataGridViewTextBoxColumn.Name = "oSDataGridViewTextBoxColumn";
-            this.oSDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // portDataGridViewTextBoxColumn
-            // 
-            this.portDataGridViewTextBoxColumn.DataPropertyName = "Port";
-            this.portDataGridViewTextBoxColumn.HeaderText = "Port";
-            this.portDataGridViewTextBoxColumn.Name = "portDataGridViewTextBoxColumn";
-            this.portDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // trongLuongDataGridViewTextBoxColumn
-            // 
-            this.trongLuongDataGridViewTextBoxColumn.DataPropertyName = "TrongLuong";
-            this.trongLuongDataGridViewTextBoxColumn.HeaderText = "TrongLuong";
-            this.trongLuongDataGridViewTextBoxColumn.Name = "trongLuongDataGridViewTextBoxColumn";
-            this.trongLuongDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // thongTinKhacDataGridViewTextBoxColumn
-            // 
-            this.thongTinKhacDataGridViewTextBoxColumn.DataPropertyName = "ThongTinKhac";
-            this.thongTinKhacDataGridViewTextBoxColumn.HeaderText = "ThongTinKhac";
-            this.thongTinKhacDataGridViewTextBoxColumn.Name = "thongTinKhacDataGridViewTextBoxColumn";
-            this.thongTinKhacDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nămSXDataGridViewTextBoxColumn
-            // 
-            this.nămSXDataGridViewTextBoxColumn.DataPropertyName = "NămSX";
-            this.nămSXDataGridViewTextBoxColumn.HeaderText = "NămSX";
-            this.nămSXDataGridViewTextBoxColumn.Name = "nămSXDataGridViewTextBoxColumn";
-            this.nămSXDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sanPhamBindingSource
             // 
@@ -732,34 +613,6 @@
             this.dgvDongSP.Size = new System.Drawing.Size(465, 328);
             this.dgvDongSP.TabIndex = 0;
             // 
-            // maDSPDataGridViewTextBoxColumn1
-            // 
-            this.maDSPDataGridViewTextBoxColumn1.DataPropertyName = "MaDSP";
-            this.maDSPDataGridViewTextBoxColumn1.HeaderText = "MaDSP";
-            this.maDSPDataGridViewTextBoxColumn1.Name = "maDSPDataGridViewTextBoxColumn1";
-            this.maDSPDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // tenDongDataGridViewTextBoxColumn
-            // 
-            this.tenDongDataGridViewTextBoxColumn.DataPropertyName = "TenDong";
-            this.tenDongDataGridViewTextBoxColumn.HeaderText = "TenDong";
-            this.tenDongDataGridViewTextBoxColumn.Name = "tenDongDataGridViewTextBoxColumn";
-            this.tenDongDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // maHSXDataGridViewTextBoxColumn
-            // 
-            this.maHSXDataGridViewTextBoxColumn.DataPropertyName = "MaHSX";
-            this.maHSXDataGridViewTextBoxColumn.HeaderText = "MaHSX";
-            this.maHSXDataGridViewTextBoxColumn.Name = "maHSXDataGridViewTextBoxColumn";
-            this.maHSXDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // maLSPDataGridViewTextBoxColumn
-            // 
-            this.maLSPDataGridViewTextBoxColumn.DataPropertyName = "MaLSP";
-            this.maLSPDataGridViewTextBoxColumn.HeaderText = "MaLSP";
-            this.maLSPDataGridViewTextBoxColumn.Name = "maLSPDataGridViewTextBoxColumn";
-            this.maLSPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // dongSanPhamBindingSource
             // 
             this.dongSanPhamBindingSource.DataSource = typeof(Model.DongSanPham);
@@ -814,6 +667,153 @@
             this.tabPage8.Text = "Khách Hàng";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // maSPDataGridViewTextBoxColumn
+            // 
+            this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
+            this.maSPDataGridViewTextBoxColumn.HeaderText = "Mã Sản Phẩm";
+            this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
+            this.maSPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maDSPDataGridViewTextBoxColumn
+            // 
+            this.maDSPDataGridViewTextBoxColumn.DataPropertyName = "MaDSP";
+            this.maDSPDataGridViewTextBoxColumn.HeaderText = "Mã Dòng Sản Phẩm";
+            this.maDSPDataGridViewTextBoxColumn.Name = "maDSPDataGridViewTextBoxColumn";
+            this.maDSPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenSPDataGridViewTextBoxColumn
+            // 
+            this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
+            this.tenSPDataGridViewTextBoxColumn.HeaderText = "Tên Sản Phẩm";
+            this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
+            this.tenSPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cPUDataGridViewTextBoxColumn
+            // 
+            this.cPUDataGridViewTextBoxColumn.DataPropertyName = "CPU";
+            this.cPUDataGridViewTextBoxColumn.HeaderText = "CPU";
+            this.cPUDataGridViewTextBoxColumn.Name = "cPUDataGridViewTextBoxColumn";
+            this.cPUDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ramDataGridViewTextBoxColumn
+            // 
+            this.ramDataGridViewTextBoxColumn.DataPropertyName = "Ram";
+            this.ramDataGridViewTextBoxColumn.HeaderText = "Ram";
+            this.ramDataGridViewTextBoxColumn.Name = "ramDataGridViewTextBoxColumn";
+            this.ramDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // boNhoTrongDataGridViewTextBoxColumn
+            // 
+            this.boNhoTrongDataGridViewTextBoxColumn.DataPropertyName = "BoNhoTrong";
+            this.boNhoTrongDataGridViewTextBoxColumn.HeaderText = "Bộ Nhớ Trong";
+            this.boNhoTrongDataGridViewTextBoxColumn.Name = "boNhoTrongDataGridViewTextBoxColumn";
+            this.boNhoTrongDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // boNhoNgoaiDataGridViewTextBoxColumn
+            // 
+            this.boNhoNgoaiDataGridViewTextBoxColumn.DataPropertyName = "BoNhoNgoai";
+            this.boNhoNgoaiDataGridViewTextBoxColumn.HeaderText = "Bộ Nhớ Ngoài";
+            this.boNhoNgoaiDataGridViewTextBoxColumn.Name = "boNhoNgoaiDataGridViewTextBoxColumn";
+            this.boNhoNgoaiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // simDataGridViewTextBoxColumn
+            // 
+            this.simDataGridViewTextBoxColumn.DataPropertyName = "Sim";
+            this.simDataGridViewTextBoxColumn.HeaderText = "Sim";
+            this.simDataGridViewTextBoxColumn.Name = "simDataGridViewTextBoxColumn";
+            this.simDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // manHinhDataGridViewTextBoxColumn
+            // 
+            this.manHinhDataGridViewTextBoxColumn.DataPropertyName = "ManHinh";
+            this.manHinhDataGridViewTextBoxColumn.HeaderText = "Màn Hình";
+            this.manHinhDataGridViewTextBoxColumn.Name = "manHinhDataGridViewTextBoxColumn";
+            this.manHinhDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dungLuongPinDataGridViewTextBoxColumn
+            // 
+            this.dungLuongPinDataGridViewTextBoxColumn.DataPropertyName = "DungLuongPin";
+            this.dungLuongPinDataGridViewTextBoxColumn.HeaderText = "Dung Lượng Pin";
+            this.dungLuongPinDataGridViewTextBoxColumn.Name = "dungLuongPinDataGridViewTextBoxColumn";
+            this.dungLuongPinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cameraDataGridViewTextBoxColumn
+            // 
+            this.cameraDataGridViewTextBoxColumn.DataPropertyName = "Camera";
+            this.cameraDataGridViewTextBoxColumn.HeaderText = "Camera";
+            this.cameraDataGridViewTextBoxColumn.Name = "cameraDataGridViewTextBoxColumn";
+            this.cameraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cardManHinhDataGridViewTextBoxColumn
+            // 
+            this.cardManHinhDataGridViewTextBoxColumn.DataPropertyName = "CardManHinh";
+            this.cardManHinhDataGridViewTextBoxColumn.HeaderText = "GPU";
+            this.cardManHinhDataGridViewTextBoxColumn.Name = "cardManHinhDataGridViewTextBoxColumn";
+            this.cardManHinhDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oSDataGridViewTextBoxColumn
+            // 
+            this.oSDataGridViewTextBoxColumn.DataPropertyName = "OS";
+            this.oSDataGridViewTextBoxColumn.HeaderText = "OS";
+            this.oSDataGridViewTextBoxColumn.Name = "oSDataGridViewTextBoxColumn";
+            this.oSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // portDataGridViewTextBoxColumn
+            // 
+            this.portDataGridViewTextBoxColumn.DataPropertyName = "Port";
+            this.portDataGridViewTextBoxColumn.HeaderText = "Cổng Kết Nối";
+            this.portDataGridViewTextBoxColumn.Name = "portDataGridViewTextBoxColumn";
+            this.portDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // trongLuongDataGridViewTextBoxColumn
+            // 
+            this.trongLuongDataGridViewTextBoxColumn.DataPropertyName = "TrongLuong";
+            this.trongLuongDataGridViewTextBoxColumn.HeaderText = "Trọng Lượng";
+            this.trongLuongDataGridViewTextBoxColumn.Name = "trongLuongDataGridViewTextBoxColumn";
+            this.trongLuongDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // thongTinKhacDataGridViewTextBoxColumn
+            // 
+            this.thongTinKhacDataGridViewTextBoxColumn.DataPropertyName = "ThongTinKhac";
+            this.thongTinKhacDataGridViewTextBoxColumn.HeaderText = "Thông Tin Khác";
+            this.thongTinKhacDataGridViewTextBoxColumn.Name = "thongTinKhacDataGridViewTextBoxColumn";
+            this.thongTinKhacDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nămSXDataGridViewTextBoxColumn
+            // 
+            this.nămSXDataGridViewTextBoxColumn.DataPropertyName = "NămSX";
+            this.nămSXDataGridViewTextBoxColumn.HeaderText = "Năm Sản Xuất";
+            this.nămSXDataGridViewTextBoxColumn.Name = "nămSXDataGridViewTextBoxColumn";
+            this.nămSXDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maDSPDataGridViewTextBoxColumn1
+            // 
+            this.maDSPDataGridViewTextBoxColumn1.DataPropertyName = "MaDSP";
+            this.maDSPDataGridViewTextBoxColumn1.HeaderText = "Mã Dòng Sản Phẩm";
+            this.maDSPDataGridViewTextBoxColumn1.Name = "maDSPDataGridViewTextBoxColumn1";
+            this.maDSPDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // tenDongDataGridViewTextBoxColumn
+            // 
+            this.tenDongDataGridViewTextBoxColumn.DataPropertyName = "TenDong";
+            this.tenDongDataGridViewTextBoxColumn.HeaderText = "Tên Dòng Sản Phẩm";
+            this.tenDongDataGridViewTextBoxColumn.Name = "tenDongDataGridViewTextBoxColumn";
+            this.tenDongDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maHSXDataGridViewTextBoxColumn
+            // 
+            this.maHSXDataGridViewTextBoxColumn.DataPropertyName = "MaHSX";
+            this.maHSXDataGridViewTextBoxColumn.HeaderText = "Mã Nhà Sản Xuất";
+            this.maHSXDataGridViewTextBoxColumn.Name = "maHSXDataGridViewTextBoxColumn";
+            this.maHSXDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maLSPDataGridViewTextBoxColumn
+            // 
+            this.maLSPDataGridViewTextBoxColumn.DataPropertyName = "MaLSP";
+            this.maLSPDataGridViewTextBoxColumn.HeaderText = "Mã Loại Sản Phẩm";
+            this.maLSPDataGridViewTextBoxColumn.Name = "maLSPDataGridViewTextBoxColumn";
+            this.maLSPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // frmMainClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -821,7 +821,9 @@
             this.ClientSize = new System.Drawing.Size(945, 525);
             this.Controls.Add(this.pnlClinet);
             this.Name = "frmMainClient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMainClient";
+            this.Load += new System.EventHandler(this.frmMainClient_Load);
             this.pnlClinet.ResumeLayout(false);
             this.pnlTimKiem.ResumeLayout(false);
             this.pnlTimKiem.PerformLayout();

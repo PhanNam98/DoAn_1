@@ -49,6 +49,7 @@
     <Compile Include="CuaHangDAO.cs" />
     <Compile Include="DongSanPhamDAO.cs" />
     <Compile Include="KhoHangDAO.cs" />
+    <Compile Include="LoaiTaiKhoanDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanPhamDAO.cs" />

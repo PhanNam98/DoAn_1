@@ -17,9 +17,9 @@ namespace Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CuaHang()
         {
-            this.TaiKhoans = new HashSet<TaiKhoan>();
             this.KhoHangs = new HashSet<KhoHang>();
             this.NhanViens = new HashSet<NhanVien>();
+            this.TaiKhoans = new HashSet<TaiKhoan>();
         }
     
         public string MaCuaHang { get; set; }
@@ -27,10 +27,10 @@ namespace Model
         public string DiaChi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TaiKhoan> TaiKhoans { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KhoHang> KhoHangs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NhanVien> NhanViens { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TaiKhoan> TaiKhoans { get; set; }
     }
 }

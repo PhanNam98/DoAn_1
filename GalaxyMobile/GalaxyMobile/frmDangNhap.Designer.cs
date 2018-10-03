@@ -42,7 +42,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Ravie", 26.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Green;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label1.Location = new System.Drawing.Point(87, 128);
@@ -60,7 +60,7 @@
             this.btnDangNhap.Location = new System.Drawing.Point(76, 408);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(186, 44);
-            this.btnDangNhap.TabIndex = 9;
+            this.btnDangNhap.TabIndex = 8;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseVisualStyleBackColor = false;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
@@ -103,7 +103,7 @@
             this.txtPass.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(297, 40);
-            this.txtPass.TabIndex = 11;
+            this.txtPass.TabIndex = 7;
             this.txtPass.text = "User Name";
             // 
             // bunifuDragControl1
@@ -115,6 +115,7 @@
             // 
             // frmDangNhap
             // 
+            this.AcceptButton = this.btnDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));

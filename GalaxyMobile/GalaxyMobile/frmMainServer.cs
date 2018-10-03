@@ -32,6 +32,16 @@ namespace GalaxyMobile
             LoadKhoHang();
             PhanQuyen();
         }
+
+
+        #region Event
+        private void btnChiTietTaiKhoan_Click(object sender, EventArgs e)
+        {
+            frmChiTietTaiKhoan frm = new frmChiTietTaiKhoan(User);
+            frm.ShowDialog();
+            //Reload User 
+        }
+        #endregion
         #region Kho Hang
         public void LoadKhoHang()
         {
@@ -50,8 +60,17 @@ namespace GalaxyMobile
                 tabControlMainServer.Controls.Remove(tabTaiKhoan);
                 tabControlMainServer.Controls.Remove(tabNhanVien);
             }
+            if(MaTruyCap==2)
+            {
+                tabControlMainServer.Controls.Remove(tabKhoHang);
+                tabControlMainServer.Controls.Remove(tabDongSanPham);
+                tabControlMainServer.Controls.Remove(tabSanPham);
+                tabControlMainServer.Controls.Remove(tabNSX);
+            }
             label12.Text = User.UserName;
+             
         }
+        
         private void dgvKhoHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -190,13 +209,7 @@ namespace GalaxyMobile
         }
 
 
-
-
-
-
-
-
-
+        
         #endregion
 
         private void pnlMainServer_Paint(object sender, PaintEventArgs e)
@@ -218,5 +231,7 @@ namespace GalaxyMobile
         {
 
         }
+
+       
     }
 }
