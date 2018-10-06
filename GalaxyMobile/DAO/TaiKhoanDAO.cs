@@ -41,5 +41,14 @@ namespace DAO
             }
              
         }
+        public void ThayDoiMK(TaiKhoan obj)
+        {
+            using (GalaxyMobileEntities dbs = new GalaxyMobileEntities())
+            {
+                dbs.TaiKhoans.Attach(obj);
+                dbs.Entry(obj).State = System.Data.Entity.EntityState.Modified;
+                dbs.SaveChanges();
+            }
+        }
     }
 }

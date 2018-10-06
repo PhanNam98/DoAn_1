@@ -27,21 +27,53 @@ namespace GalaxyMobile
 
         private TaiKhoan User;
         private int MaTruyCap;
+        private CuaHang CH;
         private void frmMainServer_Load(object sender, EventArgs e)
         {
             LoadKhoHang();
             PhanQuyen();
+            CH = CuaHangBUS.GetThongTinCuaHang(User.MaCuaHang);
+            this.Text = CH.TenCuaHang;
         }
+        #region method
+        public void PhanQuyen()
+        {
+            if (MaTruyCap == 1)
+            {
+                tabControlMainServer.Controls.Remove(tabNhanVien);
+                tabControlMainServer.Controls.Remove(tabTaiKhoan);
+            }
+            if (MaTruyCap == 2)
+            {
+                tabControlMainServer.Controls.Remove(tabKhoHang);
+                tabControlMainServer.Controls.Remove(tabDongSanPham);
+                tabControlMainServer.Controls.Remove(tabSanPham);
+                tabControlMainServer.Controls.Remove(tabNSX);
+            }
+            label12.Text = User.UserName;
+            loadCmboxDongSanPham();
+        }
+        public void loadCmboxDongSanPham()
+        {
+            cmBoxLoaiSP.DataSource = LoaiSPBUS.GetAllLoaiSP();
+            cmBoxLoaiSP.DisplayMember = "TenLSP";
+            cmBoxLoaiSP.ValueMember = "MaLSP";
 
+            cmBoxHSX.DataSource = HSXBUS.GetAllHSX();
+            cmBoxHSX.DisplayMember = "TenHSX";
+            cmBoxHSX.ValueMember = "MaHSX";
+        }
+        #endregion
 
         #region Event
         private void btnChiTietTaiKhoan_Click(object sender, EventArgs e)
         {
             frmChiTietTaiKhoan frm = new frmChiTietTaiKhoan(User);
             frm.ShowDialog();
-            //Reload User 
         }
+      
         #endregion
+
         #region Kho Hang
         public void LoadKhoHang()
         {
@@ -52,24 +84,7 @@ namespace GalaxyMobile
             cmBoxKhoHang.ValueMember = "MaCuaHang";
 
         }
-        public void PhanQuyen()
-        {
-            if(MaTruyCap==1)
-            {
-                tabControlMainServer.Controls.Remove(tabNhanVien);
-                tabControlMainServer.Controls.Remove(tabTaiKhoan);
-                tabControlMainServer.Controls.Remove(tabNhanVien);
-            }
-            if(MaTruyCap==2)
-            {
-                tabControlMainServer.Controls.Remove(tabKhoHang);
-                tabControlMainServer.Controls.Remove(tabDongSanPham);
-                tabControlMainServer.Controls.Remove(tabSanPham);
-                tabControlMainServer.Controls.Remove(tabNSX);
-            }
-            label12.Text = User.UserName;
-             
-        }
+        
         
         private void dgvKhoHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -110,9 +125,7 @@ namespace GalaxyMobile
             catch { }
         }
         #endregion
-
-
-
+        
 
         #region San Pham
         private void btnLoadSP_Click(object sender, EventArgs e)
@@ -207,9 +220,21 @@ namespace GalaxyMobile
         {
             dongSanPhamBindingSource.DataSource = DongSanPhamBUS.GetAllDongSP();
         }
+        private void dgvDongSP_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int r = dgvDongSP.CurrentCell.RowIndex;
+                string id = dgvDongSP.Rows[r].Cells[0].Value.ToString();
+                txtboxMaDongSP.Text = id;
+                txtboxTenDongSP.Text = dgvDongSP.Rows[r].Cells[1].Value.ToString();
+                cmBoxHSX.SelectedValue = dgvDongSP.Rows[r].Cells[2].Value.ToString();
+                cmBoxLoaiSP.SelectedValue = dgvDongSP.Rows[r].Cells[3].Value.ToString();
+            }
+            catch { }
+        }
 
 
-        
         #endregion
 
         private void pnlMainServer_Paint(object sender, PaintEventArgs e)

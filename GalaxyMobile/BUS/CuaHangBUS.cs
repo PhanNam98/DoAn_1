@@ -22,5 +22,9 @@ namespace BUS
         {
             return db.GetMaKieuByMaCH(id, makieu);
         }
+        public static CuaHang GetThongTinCuaHang(string mach)
+        {
+            return db.GetThongTinCuaHang(mach);
+        }
     }
 }
