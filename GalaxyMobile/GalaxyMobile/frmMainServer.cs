@@ -20,10 +20,10 @@ namespace GalaxyMobile
             User = username;
             MaTruyCap = matruycap;
         }
-        //public frmMainServer()
-        //{
-        //    InitializeComponent();
-        //}
+        public frmMainServer()
+        {
+            InitializeComponent();
+        }
 
         private TaiKhoan User;
         private int MaTruyCap;
@@ -184,14 +184,17 @@ namespace GalaxyMobile
         private void btnLuu_Click(object sender, EventArgs e)
         {
             decimal tien = Convert.ToDecimal(txtLuong.Text);
-            NhanVienBUS.InsertNV(txtMaNV.Text, txtCH.Text, txtLoai.Text, txtTenNV.Text, txtSex.Text, txtDiaChi.Text, txtSDT.Text, tien);
+            NhanVienBUS.InsertNV(txtMaNV.Text, cbCuaHang.SelectedValue.ToString(), cbLNV.SelectedValue.ToString(), txtTenNV.Text, cbSex.SelectedValue.ToString(), txtDiaChi.Text, txtSDT.Text, tien);
             LoadNV();
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
 
         }
+        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
 
         #endregion
 
