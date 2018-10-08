@@ -118,14 +118,14 @@
             this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnXoa = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
-            this.txtCH = new System.Windows.Forms.TextBox();
+            this.cbSex = new System.Windows.Forms.ComboBox();
+            this.cbCuaHang = new System.Windows.Forms.ComboBox();
+            this.cbLNV = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.txtSex = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.txtLoai = new System.Windows.Forms.TextBox();
             this.txtLuong = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtTenNV = new System.Windows.Forms.TextBox();
@@ -957,10 +957,17 @@
             // 
             // tabNSX
             // 
+
             this.tabNSX.Location = new System.Drawing.Point(4, 24);
             this.tabNSX.Name = "tabNSX";
             this.tabNSX.Padding = new System.Windows.Forms.Padding(3);
             this.tabNSX.Size = new System.Drawing.Size(925, 452);
+
+            this.tabNSX.Location = new System.Drawing.Point(4, 22);
+            this.tabNSX.Name = "tabNSX";
+            this.tabNSX.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNSX.Size = new System.Drawing.Size(925, 454);
+
             this.tabNSX.TabIndex = 3;
             this.tabNSX.Text = "Nhà Sản Xuất";
             this.tabNSX.UseVisualStyleBackColor = true;
@@ -975,10 +982,17 @@
             this.tabNhanVien.Controls.Add(this.btnHuy);
             this.tabNhanVien.Controls.Add(this.btnLuu);
             this.tabNhanVien.Controls.Add(this.btnThem);
+
             this.tabNhanVien.Location = new System.Drawing.Point(4, 24);
             this.tabNhanVien.Name = "tabNhanVien";
             this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
             this.tabNhanVien.Size = new System.Drawing.Size(925, 452);
+
+            this.tabNhanVien.Location = new System.Drawing.Point(4, 22);
+            this.tabNhanVien.Name = "tabNhanVien";
+            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNhanVien.Size = new System.Drawing.Size(925, 454);
+
             this.tabNhanVien.TabIndex = 4;
             this.tabNhanVien.Text = "Nhân Viên";
             this.tabNhanVien.UseVisualStyleBackColor = true;
@@ -1001,6 +1015,59 @@
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.Size = new System.Drawing.Size(863, 247);
             this.dgvNhanVien.TabIndex = 61;
+            this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
+            // 
+            // maNVDataGridViewTextBoxColumn
+            // 
+            this.maNVDataGridViewTextBoxColumn.DataPropertyName = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.HeaderText = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
+            // 
+            // maCuaHangDataGridViewTextBoxColumn1
+            // 
+            this.maCuaHangDataGridViewTextBoxColumn1.DataPropertyName = "MaCuaHang";
+            this.maCuaHangDataGridViewTextBoxColumn1.HeaderText = "MaCuaHang";
+            this.maCuaHangDataGridViewTextBoxColumn1.Name = "maCuaHangDataGridViewTextBoxColumn1";
+            // 
+            // maLoaiNVDataGridViewTextBoxColumn
+            // 
+            this.maLoaiNVDataGridViewTextBoxColumn.DataPropertyName = "MaLoaiNV";
+            this.maLoaiNVDataGridViewTextBoxColumn.HeaderText = "MaLoaiNV";
+            this.maLoaiNVDataGridViewTextBoxColumn.Name = "maLoaiNVDataGridViewTextBoxColumn";
+            // 
+            // tenNVDataGridViewTextBoxColumn
+            // 
+            this.tenNVDataGridViewTextBoxColumn.DataPropertyName = "TenNV";
+            this.tenNVDataGridViewTextBoxColumn.HeaderText = "TenNV";
+            this.tenNVDataGridViewTextBoxColumn.Name = "tenNVDataGridViewTextBoxColumn";
+            // 
+            // gioiTinhDataGridViewTextBoxColumn
+            // 
+            this.gioiTinhDataGridViewTextBoxColumn.DataPropertyName = "GioiTinh";
+            this.gioiTinhDataGridViewTextBoxColumn.HeaderText = "GioiTinh";
+            this.gioiTinhDataGridViewTextBoxColumn.Name = "gioiTinhDataGridViewTextBoxColumn";
+            // 
+            // diaChiDataGridViewTextBoxColumn
+            // 
+            this.diaChiDataGridViewTextBoxColumn.DataPropertyName = "DiaChi";
+            this.diaChiDataGridViewTextBoxColumn.HeaderText = "DiaChi";
+            this.diaChiDataGridViewTextBoxColumn.Name = "diaChiDataGridViewTextBoxColumn";
+            // 
+            // sDTDataGridViewTextBoxColumn
+            // 
+            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
+            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
+            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
+            // 
+            // luongDataGridViewTextBoxColumn
+            // 
+            this.luongDataGridViewTextBoxColumn.DataPropertyName = "Luong";
+            this.luongDataGridViewTextBoxColumn.HeaderText = "Luong";
+            this.luongDataGridViewTextBoxColumn.Name = "luongDataGridViewTextBoxColumn";
+            // 
+            // nhanVienBindingSource
+            // 
+            this.nhanVienBindingSource.DataSource = typeof(Model.NhanVien);
             // 
             // maNVDataGridViewTextBoxColumn
             // 
@@ -1068,14 +1135,14 @@
             // 
             // panel
             // 
-            this.panel.Controls.Add(this.txtCH);
+            this.panel.Controls.Add(this.cbSex);
+            this.panel.Controls.Add(this.cbCuaHang);
+            this.panel.Controls.Add(this.cbLNV);
             this.panel.Controls.Add(this.label20);
-            this.panel.Controls.Add(this.txtSex);
             this.panel.Controls.Add(this.label13);
             this.panel.Controls.Add(this.label14);
             this.panel.Controls.Add(this.label15);
             this.panel.Controls.Add(this.txtDiaChi);
-            this.panel.Controls.Add(this.txtLoai);
             this.panel.Controls.Add(this.txtLuong);
             this.panel.Controls.Add(this.label16);
             this.panel.Controls.Add(this.txtTenNV);
@@ -1089,13 +1156,29 @@
             this.panel.Size = new System.Drawing.Size(863, 146);
             this.panel.TabIndex = 59;
             // 
-            // txtCH
+            // cbSex
             // 
-            this.txtCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCH.Location = new System.Drawing.Point(144, 112);
-            this.txtCH.Name = "txtCH";
-            this.txtCH.Size = new System.Drawing.Size(111, 26);
-            this.txtCH.TabIndex = 15;
+            this.cbSex.FormattingEnabled = true;
+            this.cbSex.Location = new System.Drawing.Point(144, 83);
+            this.cbSex.Name = "cbSex";
+            this.cbSex.Size = new System.Drawing.Size(111, 21);
+            this.cbSex.TabIndex = 18;
+            // 
+            // cbCuaHang
+            // 
+            this.cbCuaHang.FormattingEnabled = true;
+            this.cbCuaHang.Location = new System.Drawing.Point(144, 117);
+            this.cbCuaHang.Name = "cbCuaHang";
+            this.cbCuaHang.Size = new System.Drawing.Size(111, 21);
+            this.cbCuaHang.TabIndex = 17;
+            // 
+            // cbLNV
+            // 
+            this.cbLNV.FormattingEnabled = true;
+            this.cbLNV.Location = new System.Drawing.Point(380, 49);
+            this.cbLNV.Name = "cbLNV";
+            this.cbLNV.Size = new System.Drawing.Size(213, 21);
+            this.cbLNV.TabIndex = 16;
             // 
             // label20
             // 
@@ -1105,14 +1188,6 @@
             this.label20.Size = new System.Drawing.Size(123, 23);
             this.label20.TabIndex = 14;
             this.label20.Text = "Cửa Hàng :";
-            // 
-            // txtSex
-            // 
-            this.txtSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSex.Location = new System.Drawing.Point(144, 81);
-            this.txtSex.Name = "txtSex";
-            this.txtSex.Size = new System.Drawing.Size(111, 26);
-            this.txtSex.TabIndex = 13;
             // 
             // label13
             // 
@@ -1149,14 +1224,6 @@
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(450, 26);
             this.txtDiaChi.TabIndex = 8;
-            // 
-            // txtLoai
-            // 
-            this.txtLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoai.Location = new System.Drawing.Point(380, 49);
-            this.txtLoai.Name = "txtLoai";
-            this.txtLoai.Size = new System.Drawing.Size(213, 26);
-            this.txtLoai.TabIndex = 7;
             // 
             // txtLuong
             // 
@@ -1562,12 +1629,10 @@
         private System.Windows.Forms.BindingSource nhanVienBindingSource;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.TextBox txtSex;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtDiaChi;
-        private System.Windows.Forms.TextBox txtLoai;
         private System.Windows.Forms.TextBox txtLuong;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtTenNV;
@@ -1589,7 +1654,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn diaChiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn luongDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox txtCH;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox cbSex;
+        private System.Windows.Forms.ComboBox cbCuaHang;
+        private System.Windows.Forms.ComboBox cbLNV;
     }
 }
