@@ -75,6 +75,9 @@
     <Compile Include="GetAllNV_Result2.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="GetLNV_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="GetNV2_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

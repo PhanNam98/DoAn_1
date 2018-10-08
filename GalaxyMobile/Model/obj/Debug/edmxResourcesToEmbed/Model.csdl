@@ -227,10 +227,16 @@
       <End Role="KhoHang" EntitySet="KhoHangs" />
     </AssociationSet>
     <FunctionImport Name="GetAllNV" EntitySet="NhanViens" ReturnType="Collection(GalaxyMobileModel.NhanVien)" />
-    <FunctionImport Name="GetNV2" EntitySet="NhanViens" ReturnType="Collection(GalaxyMobileModel.NhanVien)" />
-    <FunctionImport Name="delNV">
-      <Parameter Name="manv" Mode="In" Type="String" />
-    </FunctionImport>
+    <EntitySet Name="TaiKhoans" EntityType="GalaxyMobileModel.TaiKhoan" />
+    <AssociationSet Name="FK_TaiKhoan_CuaHang" Association="GalaxyMobileModel.FK_TaiKhoan_CuaHang">
+      <End Role="CuaHang" EntitySet="CuaHangs" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaiKhoan_LoaiTaiKhoan" Association="GalaxyMobileModel.FK_TaiKhoan_LoaiTaiKhoan">
+      <End Role="LoaiTaiKhoan" EntitySet="LoaiTaiKhoans" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+    </AssociationSet>
+    <FunctionImport Name="GetLNV" EntitySet="LoaiNVs" ReturnType="Collection(GalaxyMobileModel.LoaiNV)" />
     <FunctionImport Name="spThemNV">
       <Parameter Name="manv" Mode="In" Type="String" />
       <Parameter Name="macuahang" Mode="In" Type="String" />
@@ -251,15 +257,9 @@
       <Parameter Name="sdt" Mode="In" Type="String" />
       <Parameter Name="luong" Mode="In" Type="Decimal" />
     </FunctionImport>
-    <EntitySet Name="TaiKhoans" EntityType="GalaxyMobileModel.TaiKhoan" />
-    <AssociationSet Name="FK_TaiKhoan_CuaHang" Association="GalaxyMobileModel.FK_TaiKhoan_CuaHang">
-      <End Role="CuaHang" EntitySet="CuaHangs" />
-      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TaiKhoan_LoaiTaiKhoan" Association="GalaxyMobileModel.FK_TaiKhoan_LoaiTaiKhoan">
-      <End Role="LoaiTaiKhoan" EntitySet="LoaiTaiKhoans" />
-      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
-    </AssociationSet>
+    <FunctionImport Name="delNV">
+      <Parameter Name="manv" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="sysdiagram">
     <Key>
@@ -488,7 +488,7 @@
       <PropertyRef Name="UserName" />
     </Key>
     <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="MaCuaHang" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="MaLoaiTK" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="CuaHang" Relationship="GalaxyMobileModel.FK_TaiKhoan_CuaHang" FromRole="TaiKhoan" ToRole="CuaHang" />
@@ -518,4 +518,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="GetLNV_Result">
+    <Property Type="String" Name="MaLoaiNV" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="TenLoaiNV" Nullable="true" MaxLength="20" />
+  </ComplexType>
 </Schema>

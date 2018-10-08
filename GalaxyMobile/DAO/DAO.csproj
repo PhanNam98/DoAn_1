@@ -50,6 +50,7 @@
     <Compile Include="DongSanPhamDAO.cs" />
     <Compile Include="HoaDonDAO.cs" />
     <Compile Include="KhoHangDAO.cs" />
+    <Compile Include="LoaiNvDAO.cs" />
     <Compile Include="LoaiSPDAO.cs" />
     <Compile Include="LoaiTaiKhoanDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />

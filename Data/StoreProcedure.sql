@@ -1,6 +1,6 @@
 use GalaxyMobile
 go
-CREATE PROCEDURE GetLNV
+ALTER PROCEDURE GetLNV
 AS
 BEGIN
 	select *
@@ -47,5 +47,5 @@ UPDATE NhanVien
 SET MaCuaHang=@macuahang,MaLoaiNV=@maloainv,TenNV=@tennv,GioiTinh=@gioitinh,DiaChi=@diachi,SDT=@sdt,Luong=@luong
 WHERE MaNV=@manv
 END
-
-	
+go
+----------Loai NV------------

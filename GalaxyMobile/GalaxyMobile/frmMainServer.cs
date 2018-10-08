@@ -158,14 +158,33 @@ namespace GalaxyMobile
         #endregion
 
         #region NhanVien
-
+        bool Them = false;
         public void LoadNV()
         {
             nhanVienBindingSource.DataSource = NhanVienBUS.GetNV();
+            dgvNhanVien_CellClick(null, null);
+            // Xóa trống các đối tượng trong Panel 
+            txtMaNV.ResetText();
+            txtTenNV.ResetText();
+            txtSDT.ResetText();
+            cboLoaiNV.ResetText();
+            cboSex.ResetText();
+            txtDiaChi.ResetText();
+            txtLuong.ResetText();
+            cboCH.ResetText();
+            // Không cho thao tác trên các nút Lưu / Hủy 
+            btnLuu.Enabled = false;
+            btnHuy.Enabled = false;
+            panel.Enabled = false;
+            // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
+            btnThem.Enabled = true;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
         }
         private void btnReload_Click(object sender, EventArgs e)
         {
             LoadNV();
+            dgvNhanVien_CellClick(null, null);
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -188,24 +207,127 @@ namespace GalaxyMobile
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            // Kích hoạt biến Sửa
+            Them = false;
+            dgvNhanVien_CellClick(null, null);
+            //dgvKH_CellClick(null, null);
+            // Cho phép thao tác trên Panel 
+            panel.Enabled = true;
+            // Cho thao tác trên các nút Lưu / Hủy / Panel 
+            btnLuu.Enabled = true;
+            btnHuy.Enabled = true;
+            // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
+            btnThem.Enabled = false;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            // Đưa con trỏ đến TextField txtTenNV         
+            txtMaNV.Enabled = false;
+            txtTenNV.Focus();
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            Them = true;
+            txtMaNV.Enabled = true;
+            // Xóa trống các đối tượng trong Panel 
+            txtMaNV.ResetText();
+            txtTenNV.ResetText();
+            txtSDT.ResetText();
+            cboLoaiNV.ResetText();
+            cboSex.ResetText();
+            txtDiaChi.ResetText();
+            txtLuong.ResetText();
+            cboCH.ResetText();
+            // Cho thao tác trên các nút Lưu / Hủy / Panel 
+            btnLuu.Enabled = true;
+            btnHuy.Enabled = true;
+            panel.Enabled = true;
+            // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
+            btnThem.Enabled = false;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            txtMaNV.Focus();
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            decimal tien = Convert.ToDecimal(txtLuong.Text);
-            NhanVienBUS.InsertNV(txtMaNV.Text, txtCH.Text, txtLoai.Text, txtTenNV.Text, txtSex.Text, txtDiaChi.Text, txtSDT.Text, tien);
-            LoadNV();
+            if (Them)
+            {
+                if (NhanVienBUS.KtMaNV(txtMaNV.Text) > 0)
+                {
+                    MessageBox.Show("Mã nhân viên tồn tai. Nhập Mã nhân viên khác !");
+                    txtMaNV.ResetText();
+                    txtTenNV.ResetText();
+                    txtSDT.ResetText();
+                    cboLoaiNV.ResetText();
+                    cboSex.ResetText();
+                    txtDiaChi.ResetText();
+                    txtLuong.ResetText();
+                    cboCH.ResetText();
+                    txtMaNV.Focus();
+                }
+                else
+                {
+                    decimal tien = Convert.ToDecimal(txtLuong.Text);
+                    NhanVienBUS.InsertNV(txtMaNV.Text, cboCH.SelectedValue.ToString(), cboLoaiNV.SelectedValue.ToString(), txtTenNV.Text, cboSex.Text, txtDiaChi.Text, txtSDT.Text, tien);
+                    LoadNV();
+                    // Thông báo 
+                    MessageBox.Show("Đã thêm xong!");
+                }
+            }
+            else
+            {
+                int r = dgvNhanVien.CurrentCell.RowIndex;
+                // MaNV hiện hành 
+                decimal tien = Convert.ToDecimal(txtLuong.Text);
+                string strMaNV = dgvNhanVien.Rows[r].Cells[0].Value.ToString();
+                NhanVienBUS.UpdateNV(strMaNV, cboCH.SelectedValue.ToString(), cboLoaiNV.SelectedValue.ToString(), txtTenNV.Text, cboSex.Text, txtDiaChi.Text, txtSDT.Text, tien);
+                LoadNV();
+                // Thông báo 
+                MessageBox.Show("Đã sửa xong!");
+            }
+
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
 
+            // Xóa trống các đối tượng trong Panel 
+            txtMaNV.ResetText();
+            txtTenNV.ResetText();
+            txtSDT.ResetText();
+            cboLoaiNV.ResetText();
+            cboSex.ResetText();
+            txtDiaChi.ResetText();
+            txtLuong.ResetText();
+            cboCH.ResetText();
+            // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
+            btnThem.Enabled = true;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            // Không cho thao tác trên các nút Lưu / Hủy / Panel 
+            btnLuu.Enabled = false;
+            btnHuy.Enabled = false;
+            panel.Enabled = false;
         }
 
-
+        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cboCH.DataSource = CuaHangBUS.GetAllCuaHang();
+            cboCH.DisplayMember = "TenCuaHang";
+            cboCH.ValueMember = "MaCuaHang";
+            cboLoaiNV.DataSource = LoaiNvBUS.GetLNV();
+            cboLoaiNV.DisplayMember = "TenLoaiNV";
+            cboLoaiNV.ValueMember = "MaLoaiNV";
+            
+            // Lấy thứ tự record hiện hành 
+            int r = dgvNhanVien.CurrentCell.RowIndex;
+            txtMaNV.Text = dgvNhanVien.Rows[r].Cells[0].Value.ToString();
+            cboCH.SelectedValue= dgvNhanVien.Rows[r].Cells[1].Value.ToString();
+            cboLoaiNV.SelectedValue= dgvNhanVien.Rows[r].Cells[2].Value.ToString();
+            txtTenNV.Text= dgvNhanVien.Rows[r].Cells[3].Value.ToString();
+            cboSex.Text= dgvNhanVien.Rows[r].Cells[4].Value.ToString();
+            txtDiaChi.Text= dgvNhanVien.Rows[r].Cells[5].Value.ToString();
+            txtSDT.Text= dgvNhanVien.Rows[r].Cells[6].Value.ToString();
+            txtLuong.Text= dgvNhanVien.Rows[r].Cells[7].Value.ToString();
+        }
         #endregion
 
 
