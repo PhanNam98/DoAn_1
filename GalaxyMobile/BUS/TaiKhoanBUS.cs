@@ -22,5 +22,9 @@ namespace BUS
         {
             return db.matruycap(name, pass);
         }
+        public static void ThayDoiMK(TaiKhoan User)
+        {
+            db.ThayDoiMK(User);
+        }
     }
 }

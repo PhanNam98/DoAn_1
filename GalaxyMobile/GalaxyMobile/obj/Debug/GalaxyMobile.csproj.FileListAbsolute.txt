@@ -26,35 +26,32 @@ D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobi
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.pdb
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csprojResolveAssemblyReference.cache
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmChiTietTaiKhoan.resources
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csprojResolveAssemblyReference.cache
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmChiTietTaiKhoan.resources
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmChiTietSanPham.resources
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmDangNhap.resources
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmMainClient.resources
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmMainServer.resources
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmPhanChiaSP.resources
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmThemKieuSP.resources
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmThemMau.resources
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.NhanVIen.resources
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.LoaiNV.resources
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.Properties.Resources.resources
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csproj.GenerateResource.cache
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csproj.CoreCompileInputs.cache
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.exe
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.pdb
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\GalaxyMobile.exe.config
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\GalaxyMobile.exe
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\GalaxyMobile.pdb
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\Bunifu_UI_v1.5.3.dll
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\BUS.dll
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\DAO.dll
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\EntityFramework.dll
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\EntityFramework.SqlServer.dll
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\Model.dll
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\BUS.pdb
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\DAO.pdb
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\Model.pdb
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\Model.dll.config
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\EntityFramework.xml
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\EntityFramework.SqlServer.xml
-D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csproj.CopyComplete
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\GalaxyMobile.exe.config
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.exe
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\GalaxyMobile.exe
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\GalaxyMobile.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\BUS.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\DAO.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\EntityFramework.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\EntityFramework.SqlServer.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\Model.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\BUS.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\DAO.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\Model.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\EntityFramework.xml
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\EntityFramework.SqlServer.xml
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csprojResolveAssemblyReference.cache
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.ChiTietHoaDon.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmChiTietTaiKhoan.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmChiTietSanPham.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmDangNhap.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmMainClient.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmMainServer.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmPhanChiaSP.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmThemKieuSP.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmThemMau.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.NhanVIen.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.LoaiNV.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.Properties.Resources.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csproj.GenerateResource.Cache

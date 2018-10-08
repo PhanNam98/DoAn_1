@@ -38,10 +38,12 @@ namespace GalaxyMobile
             {
                 groupBox2.Visible = false;
                 groupBox3.Visible = true;
+                groupBox1.Visible = false;
+                AcceptButton = btnCheckLaiMK;
             }
             else
             {
-                MessageBox.Show("Mật Khẩu Không đúng!"+ User.Password, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Mật Khẩu Không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -49,10 +51,20 @@ namespace GalaxyMobile
         {
             if(txtboxMkMoi.Text ==  txtBoxReMkMoi.Text)
             {
-                if(txtboxMkMoi.Text != User.Password)
+                if(txtboxMkMoi.Text != User.Password.Trim(' '))
                 {
                     groupBox1.Visible = true;
                     groupBox3.Visible = false;
+                    AcceptButton = btnLuuMkMoi;
+                    TaiKhoan user = User;
+                    try
+                    {
+                        user.Password = txtboxMkMoi.Text;
+                        TaiKhoanBUS.ThayDoiMK(User);
+                        User = user;
+                        MessageBox.Show("Đã Thay Đổi Mật Khẩu Thành Công", "Hoàn tất", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch { MessageBox.Show("Không Thể Thay Đổi Mật Khẩu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
                     LoadChiTietTaiKhoan();
                 }
                 else
@@ -69,10 +81,6 @@ namespace GalaxyMobile
         private void frmChiTietTaiKhoan_Load(object sender, EventArgs e)
         {
             LoadChiTietTaiKhoan();
-        }
-        void LoadChiTietTaiKhoan()
-        {
-            txtboxTenTK.Text = User.UserName;
             cmBoxCuaHang.DataSource = CuaHangBUS.GetAllCuaHang();
             cmBoxCuaHang.DisplayMember = "TenCuaHang";
             cmBoxCuaHang.ValueMember = "MaCuaHang";
@@ -81,6 +89,12 @@ namespace GalaxyMobile
             cmBoxLoaiTK.DisplayMember = "TenLoaiTK";
             cmBoxLoaiTK.ValueMember = "MaLoaiTK";
             cmBoxLoaiTK.SelectedValue = User.MaLoaiTK;
+        }
+        void LoadChiTietTaiKhoan()
+        {
+
+            txtboxTenTK.Text = User.UserName;
+            
         }
     }
 }

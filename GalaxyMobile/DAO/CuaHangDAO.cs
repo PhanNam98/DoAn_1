@@ -22,5 +22,12 @@ namespace DAO
                 return db.KhoHangs.Where(p => p.MaCuaHang == id && p.MaKieu==makieu ).SingleOrDefault();
             }
         }
+        public CuaHang GetThongTinCuaHang(string mach)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                return db.CuaHangs.Where(p => p.MaCuaHang == mach).SingleOrDefault();
+            }
+        }
     }
 }

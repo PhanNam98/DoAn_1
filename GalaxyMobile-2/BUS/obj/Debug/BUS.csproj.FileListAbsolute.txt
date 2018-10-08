@@ -1,0 +1,61 @@
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\BUS\bin\Debug\BUS.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\BUS\bin\Debug\BUS.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\BUS\bin\Debug\DAO.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\BUS\bin\Debug\Model.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\BUS\bin\Debug\EntityFramework.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\BUS\bin\Debug\DAO.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\BUS\bin\Debug\Model.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\BUS\bin\Debug\EntityFramework.xml
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\BUS\obj\Debug\BUS.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\BUS\obj\Debug\BUS.pdb
+D:\DoAn1\DoAn1\GalaxyMobile\BUS\bin\Debug\BUS.dll
+D:\DoAn1\DoAn1\GalaxyMobile\BUS\bin\Debug\BUS.pdb
+D:\DoAn1\DoAn1\GalaxyMobile\BUS\bin\Debug\DAO.dll
+D:\DoAn1\DoAn1\GalaxyMobile\BUS\bin\Debug\Model.dll
+D:\DoAn1\DoAn1\GalaxyMobile\BUS\bin\Debug\EntityFramework.dll
+D:\DoAn1\DoAn1\GalaxyMobile\BUS\bin\Debug\DAO.pdb
+D:\DoAn1\DoAn1\GalaxyMobile\BUS\bin\Debug\Model.pdb
+D:\DoAn1\DoAn1\GalaxyMobile\BUS\bin\Debug\Model.dll.config
+D:\DoAn1\DoAn1\GalaxyMobile\BUS\bin\Debug\EntityFramework.xml
+D:\DoAn1\DoAn1\GalaxyMobile\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\DoAn1\DoAn1\GalaxyMobile\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\DoAn1\DoAn1\GalaxyMobile\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\DoAn1\DoAn1\GalaxyMobile\BUS\obj\Debug\BUS.dll
+D:\DoAn1\DoAn1\GalaxyMobile\BUS\obj\Debug\BUS.pdb
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\BUS\bin\Debug\BUS.dll
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\BUS\bin\Debug\BUS.pdb
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\BUS\bin\Debug\DAO.dll
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\BUS\bin\Debug\Model.dll
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\BUS\bin\Debug\EntityFramework.dll
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\BUS\bin\Debug\DAO.pdb
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\BUS\bin\Debug\Model.pdb
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\BUS\bin\Debug\Model.dll.config
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\BUS\bin\Debug\EntityFramework.xml
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\BUS\obj\Debug\BUS.dll
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\BUS\obj\Debug\BUS.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Debug\BUS.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Debug\BUS.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Debug\DAO.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Debug\Model.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Debug\EntityFramework.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Debug\DAO.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Debug\Model.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Debug\EntityFramework.xml
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\obj\Debug\BUS.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\obj\Debug\BUS.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\BUS\bin\Debug\BUS.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\BUS\bin\Debug\BUS.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\BUS\bin\Debug\DAO.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\BUS\bin\Debug\Model.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\BUS\bin\Debug\EntityFramework.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\BUS\bin\Debug\DAO.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\BUS\bin\Debug\Model.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\BUS\bin\Debug\EntityFramework.xml
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\BUS\obj\Debug\BUS.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\BUS\obj\Debug\BUS.pdb

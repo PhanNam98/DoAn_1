@@ -26,9 +26,5 @@ namespace BUS
         {
             db.ThemNV(manv, mach, maloai, tennv, sex, diachi, sdt, luong);
         }
-        public static void UpdateNV(string manv, string mach, string maloai, string tennv, string sex, string diachi, string sdt, decimal luong)
-        {
-            db.ThemNV(manv, mach, maloai, tennv, sex, diachi, sdt, luong);
-        }
     }
 }

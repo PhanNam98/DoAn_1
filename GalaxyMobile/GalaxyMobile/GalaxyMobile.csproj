@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietHoaDon.Designer.cs">
+      <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChiTietTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChiTietHoaDon.resx">
+      <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietTaiKhoan.resx">
       <DependentUpon>frmChiTietTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +174,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Model.ChiTietHoaDon.datasource" />
     <None Include="Properties\DataSources\Model.ChiTietSP.datasource" />
     <None Include="Properties\DataSources\Model.CuaHang.datasource" />
     <None Include="Properties\DataSources\Model.DongSanPham.datasource" />

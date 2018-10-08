@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GalaxyMobileModelStoreContainer" CdmEntityContainer="GalaxyMobileEntities">
+    <EntitySetMapping Name="CuaHangs">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.CuaHang">
+        <MappingFragment StoreEntitySet="CuaHang">
+          <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
+          <ScalarProperty Name="TenCuaHang" ColumnName="TenCuaHang" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DongSanPhams">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.DongSanPham">
+        <MappingFragment StoreEntitySet="DongSanPham">
+          <ScalarProperty Name="MaDSP" ColumnName="MaDSP" />
+          <ScalarProperty Name="TenDong" ColumnName="TenDong" />
+          <ScalarProperty Name="MaHSX" ColumnName="MaHSX" />
+          <ScalarProperty Name="MaLSP" ColumnName="MaLSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDons">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.HoaDon">
+        <MappingFragment StoreEntitySet="HoaDon">
+          <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+          <ScalarProperty Name="HTGiaoHang" ColumnName="HTGiaoHang" />
+          <ScalarProperty Name="NgayLapHD" ColumnName="NgayLapHD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HSXes">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.HSX">
+        <MappingFragment StoreEntitySet="HSX">
+          <ScalarProperty Name="MaHSX" ColumnName="MaHSX" />
+          <ScalarProperty Name="TenHSX" ColumnName="TenHSX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiNVs">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.LoaiNV">
+        <MappingFragment StoreEntitySet="LoaiNV">
+          <ScalarProperty Name="MaLoaiNV" ColumnName="MaLoaiNV" />
+          <ScalarProperty Name="TenLoaiNV" ColumnName="TenLoaiNV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiSPs">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.LoaiSP">
+        <MappingFragment StoreEntitySet="LoaiSP">
+          <ScalarProperty Name="MaLSP" ColumnName="MaLSP" />
+          <ScalarProperty Name="TenLSP" ColumnName="TenLSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiTaiKhoans">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.LoaiTaiKhoan">
+        <MappingFragment StoreEntitySet="LoaiTaiKhoan">
+          <ScalarProperty Name="MaLoaiTK" ColumnName="MaLoaiTK" />
+          <ScalarProperty Name="TenLoaiTK" ColumnName="TenLoaiTK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MauSPs">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.MauSP">
+        <MappingFragment StoreEntitySet="MauSP">
+          <ScalarProperty Name="MaMau" ColumnName="MaMau" />
+          <ScalarProperty Name="Mau" ColumnName="Mau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhams">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.SanPham">
+        <MappingFragment StoreEntitySet="SanPham">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="CPU" ColumnName="CPU" />
+          <ScalarProperty Name="Ram" ColumnName="Ram" />
+          <ScalarProperty Name="BoNhoTrong" ColumnName="BoNhoTrong" />
+          <ScalarProperty Name="BoNhoNgoai" ColumnName="BoNhoNgoai" />
+          <ScalarProperty Name="Sim" ColumnName="Sim" />
+          <ScalarProperty Name="ManHinh" ColumnName="ManHinh" />
+          <ScalarProperty Name="DungLuongPin" ColumnName="DungLuongPin" />
+          <ScalarProperty Name="Camera" ColumnName="Camera" />
+          <ScalarProperty Name="CardManHinh" ColumnName="CardManHinh" />
+          <ScalarProperty Name="OS" ColumnName="OS" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="TrongLuong" ColumnName="TrongLuong" />
+          <ScalarProperty Name="ThongTinKhac" ColumnName="ThongTinKhac" />
+          <ScalarProperty Name="MaDSP" ColumnName="MaDSP" />
+          <ScalarProperty Name="NămSX" ColumnName="NămSX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietHoaDons">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.ChiTietHoaDon">
+        <MappingFragment StoreEntitySet="ChiTietHoaDon">
+          <ScalarProperty Name="GiaSP" ColumnName="GiaSP" />
+          <ScalarProperty Name="SoluongSP" ColumnName="SoluongSP" />
+          <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
+          <ScalarProperty Name="MaKieu" ColumnName="MaKieu" />
+          <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhoHangs">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.KhoHang">
+        <MappingFragment StoreEntitySet="KhoHang">
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
+          <ScalarProperty Name="MaKieu" ColumnName="MaKieu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.NhanVien">
+        <MappingFragment StoreEntitySet="NhanVien">
+          <ScalarProperty Name="Luong" ColumnName="Luong" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="MaLoaiNV" ColumnName="MaLoaiNV" />
+          <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_GetAllCuaHang" FunctionName="GalaxyMobileModel.Store.USP_GetAllCuaHang" />
+    <FunctionImportMapping FunctionImportName="USP_GetAllKhoHang" FunctionName="GalaxyMobileModel.Store.USP_GetAllKhoHang" />
+    <EntitySetMapping Name="ChiTietSPs">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.ChiTietSP">
+        <MappingFragment StoreEntitySet="ChiTietSP">
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+          <ScalarProperty Name="SoluongSP" ColumnName="SoluongSP" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="MaMau" ColumnName="MaMau" />
+          <ScalarProperty Name="MaKieu" ColumnName="MaKieu" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaiKhoans">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.TaiKhoan">
+        <MappingFragment StoreEntitySet="TaiKhoan">
+          <ScalarProperty Name="MaLoaiTK" ColumnName="MaLoaiTK" />
+          <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

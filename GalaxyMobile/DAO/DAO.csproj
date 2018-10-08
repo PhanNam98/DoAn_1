@@ -48,9 +48,12 @@
   <ItemGroup>
     <Compile Include="CuaHangDAO.cs" />
     <Compile Include="DongSanPhamDAO.cs" />
+    <Compile Include="HoaDonDAO.cs" />
     <Compile Include="KhoHangDAO.cs" />
+    <Compile Include="LoaiSPDAO.cs" />
     <Compile Include="LoaiTaiKhoanDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />
+    <Compile Include="HSXDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanPhamDAO.cs" />
     <Compile Include="TaiKhoanDAO.cs" />

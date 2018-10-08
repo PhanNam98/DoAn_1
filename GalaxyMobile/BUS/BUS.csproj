@@ -42,7 +42,10 @@
   <ItemGroup>
     <Compile Include="CuaHangBUS.cs" />
     <Compile Include="DongSanPhamBUS.cs" />
+    <Compile Include="HoaDonBUS.cs" />
+    <Compile Include="HSXBUS.cs" />
     <Compile Include="KhoHangBUS.cs" />
+    <Compile Include="LoaiSPBUS.cs" />
     <Compile Include="LoaiTaiKhoanBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

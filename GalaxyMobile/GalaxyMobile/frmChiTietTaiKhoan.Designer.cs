@@ -37,10 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.linklbTroLai = new System.Windows.Forms.LinkLabel();
-            this.btnCheckLaiMK = new System.Windows.Forms.Button();
-            this.txtboxReMk = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnLuuMkMoi = new System.Windows.Forms.Button();
             this.txtBoxReMkMoi = new System.Windows.Forms.TextBox();
@@ -48,6 +44,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.linklbTroLai = new System.Windows.Forms.LinkLabel();
+            this.btnCheckLaiMK = new System.Windows.Forms.Button();
+            this.txtboxReMk = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -98,12 +98,13 @@
             // 
             // txtboxTenTK
             // 
+            this.txtboxTenTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxTenTK.Location = new System.Drawing.Point(157, 46);
             this.txtboxTenTK.Name = "txtboxTenTK";
             this.txtboxTenTK.ReadOnly = true;
-            this.txtboxTenTK.Size = new System.Drawing.Size(134, 20);
+            this.txtboxTenTK.Size = new System.Drawing.Size(134, 22);
             this.txtboxTenTK.TabIndex = 1;
-            this.txtboxTenTK.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtboxTenTK.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -137,7 +138,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.linklbTroLai);
             this.groupBox2.Controls.Add(this.btnCheckLaiMK);
             this.groupBox2.Controls.Add(this.txtboxReMk);
@@ -150,44 +150,6 @@
             this.groupBox2.Text = "Nhập Lại Mật Khẩu";
             this.groupBox2.Visible = false;
             // 
-            // linklbTroLai
-            // 
-            this.linklbTroLai.AutoSize = true;
-            this.linklbTroLai.Location = new System.Drawing.Point(6, 206);
-            this.linklbTroLai.Name = "linklbTroLai";
-            this.linklbTroLai.Size = new System.Drawing.Size(68, 13);
-            this.linklbTroLai.TabIndex = 3;
-            this.linklbTroLai.TabStop = true;
-            this.linklbTroLai.Text = "Quay Trở Lại";
-            this.linklbTroLai.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklbTroLai_LinkClicked);
-            // 
-            // btnCheckLaiMK
-            // 
-            this.btnCheckLaiMK.Location = new System.Drawing.Point(118, 147);
-            this.btnCheckLaiMK.Name = "btnCheckLaiMK";
-            this.btnCheckLaiMK.Size = new System.Drawing.Size(75, 23);
-            this.btnCheckLaiMK.TabIndex = 2;
-            this.btnCheckLaiMK.Text = "Tiếp Tục";
-            this.btnCheckLaiMK.UseVisualStyleBackColor = true;
-            this.btnCheckLaiMK.Click += new System.EventHandler(this.btnCheckLaiMK_Click);
-            // 
-            // txtboxReMk
-            // 
-            this.txtboxReMk.Location = new System.Drawing.Point(79, 100);
-            this.txtboxReMk.Name = "txtboxReMk";
-            this.txtboxReMk.Size = new System.Drawing.Size(157, 20);
-            this.txtboxReMk.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(56, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(206, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Mời Bạn Nhập Lại Mật Khẩu";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnLuuMkMoi);
@@ -196,7 +158,7 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Location = new System.Drawing.Point(43, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(308, 222);
             this.groupBox3.TabIndex = 3;
@@ -220,6 +182,7 @@
             this.txtBoxReMkMoi.Name = "txtBoxReMkMoi";
             this.txtBoxReMkMoi.Size = new System.Drawing.Size(126, 20);
             this.txtBoxReMkMoi.TabIndex = 2;
+            this.txtBoxReMkMoi.UseSystemPasswordChar = true;
             // 
             // txtboxMkMoi
             // 
@@ -227,6 +190,7 @@
             this.txtboxMkMoi.Name = "txtboxMkMoi";
             this.txtboxMkMoi.Size = new System.Drawing.Size(126, 20);
             this.txtboxMkMoi.TabIndex = 2;
+            this.txtboxMkMoi.UseSystemPasswordChar = true;
             // 
             // label7
             // 
@@ -256,11 +220,51 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Mời Bạn Nhập Mật Khẩu Mới";
             // 
+            // linklbTroLai
+            // 
+            this.linklbTroLai.AutoSize = true;
+            this.linklbTroLai.Location = new System.Drawing.Point(6, 206);
+            this.linklbTroLai.Name = "linklbTroLai";
+            this.linklbTroLai.Size = new System.Drawing.Size(68, 13);
+            this.linklbTroLai.TabIndex = 3;
+            this.linklbTroLai.TabStop = true;
+            this.linklbTroLai.Text = "Quay Trở Lại";
+            this.linklbTroLai.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklbTroLai_LinkClicked);
+            // 
+            // btnCheckLaiMK
+            // 
+            this.btnCheckLaiMK.Location = new System.Drawing.Point(118, 147);
+            this.btnCheckLaiMK.Name = "btnCheckLaiMK";
+            this.btnCheckLaiMK.Size = new System.Drawing.Size(75, 23);
+            this.btnCheckLaiMK.TabIndex = 2;
+            this.btnCheckLaiMK.Text = "Tiếp Tục";
+            this.btnCheckLaiMK.UseVisualStyleBackColor = true;
+            this.btnCheckLaiMK.Click += new System.EventHandler(this.btnCheckLaiMK_Click);
+            // 
+            // txtboxReMk
+            // 
+            this.txtboxReMk.Location = new System.Drawing.Point(79, 100);
+            this.txtboxReMk.Name = "txtboxReMk";
+            this.txtboxReMk.Size = new System.Drawing.Size(157, 20);
+            this.txtboxReMk.TabIndex = 1;
+            this.txtboxReMk.UseSystemPasswordChar = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(56, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(206, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Mời Bạn Nhập Lại Mật Khẩu";
+            // 
             // frmChiTietTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 263);
+            this.ClientSize = new System.Drawing.Size(404, 263);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
