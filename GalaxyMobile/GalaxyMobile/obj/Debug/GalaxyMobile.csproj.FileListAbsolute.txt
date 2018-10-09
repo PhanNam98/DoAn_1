@@ -88,3 +88,4 @@ D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csproj.Core
 D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csproj.CopyComplete
 D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.exe
 D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.pdb
+D:\DoAn1ver2\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.LNhanVIen.resources

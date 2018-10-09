@@ -90,6 +90,10 @@
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.btnXoa = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
+            this.btnLNV = new System.Windows.Forms.Button();
+            this.cboSex = new System.Windows.Forms.ComboBox();
+            this.cboLoaiNV = new System.Windows.Forms.ComboBox();
+            this.cboCH = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -122,9 +126,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabThongKe = new System.Windows.Forms.TabPage();
-            this.cboCH = new System.Windows.Forms.ComboBox();
-            this.cboLoaiNV = new System.Windows.Forms.ComboBox();
-            this.cboSex = new System.Windows.Forms.ComboBox();
             this.maKieuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maCuaHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -779,6 +780,7 @@
             this.btnLuuChangeDSP.TabIndex = 1;
             this.btnLuuChangeDSP.Text = "Lưu";
             this.btnLuuChangeDSP.UseVisualStyleBackColor = true;
+            this.btnLuuChangeDSP.Click += new System.EventHandler(this.btnLuuChangeDSP_Click);
             // 
             // btnLoadDSP
             // 
@@ -906,6 +908,7 @@
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.btnLNV);
             this.panel.Controls.Add(this.cboSex);
             this.panel.Controls.Add(this.cboLoaiNV);
             this.panel.Controls.Add(this.cboCH);
@@ -922,10 +925,49 @@
             this.panel.Controls.Add(this.txtSDT);
             this.panel.Controls.Add(this.label18);
             this.panel.Controls.Add(this.label19);
-            this.panel.Location = new System.Drawing.Point(9, 8);
+            this.panel.Location = new System.Drawing.Point(9, 9);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(863, 146);
             this.panel.TabIndex = 59;
+            this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
+            // 
+            // btnLNV
+            // 
+            this.btnLNV.Location = new System.Drawing.Point(599, 51);
+            this.btnLNV.Name = "btnLNV";
+            this.btnLNV.Size = new System.Drawing.Size(41, 20);
+            this.btnLNV.TabIndex = 19;
+            this.btnLNV.Text = "....";
+            this.btnLNV.UseVisualStyleBackColor = true;
+            this.btnLNV.Click += new System.EventHandler(this.btnLNV_Click);
+            // 
+            // cboSex
+            // 
+            this.cboSex.FormattingEnabled = true;
+            this.cboSex.Items.AddRange(new object[] {
+            "Nam ",
+            "Nữ",
+            "Khác"});
+            this.cboSex.Location = new System.Drawing.Point(144, 81);
+            this.cboSex.Name = "cboSex";
+            this.cboSex.Size = new System.Drawing.Size(111, 21);
+            this.cboSex.TabIndex = 18;
+            // 
+            // cboLoaiNV
+            // 
+            this.cboLoaiNV.FormattingEnabled = true;
+            this.cboLoaiNV.Location = new System.Drawing.Point(380, 51);
+            this.cboLoaiNV.Name = "cboLoaiNV";
+            this.cboLoaiNV.Size = new System.Drawing.Size(213, 21);
+            this.cboLoaiNV.TabIndex = 17;
+            // 
+            // cboCH
+            // 
+            this.cboCH.FormattingEnabled = true;
+            this.cboCH.Location = new System.Drawing.Point(140, 117);
+            this.cboCH.Name = "cboCH";
+            this.cboCH.Size = new System.Drawing.Size(115, 21);
+            this.cboCH.TabIndex = 16;
             // 
             // label20
             // 
@@ -1234,34 +1276,6 @@
             this.tabThongKe.TabIndex = 7;
             this.tabThongKe.Text = "Thống Kê";
             this.tabThongKe.UseVisualStyleBackColor = true;
-            // 
-            // cboCH
-            // 
-            this.cboCH.FormattingEnabled = true;
-            this.cboCH.Location = new System.Drawing.Point(140, 117);
-            this.cboCH.Name = "cboCH";
-            this.cboCH.Size = new System.Drawing.Size(115, 21);
-            this.cboCH.TabIndex = 16;
-            // 
-            // cboLoaiNV
-            // 
-            this.cboLoaiNV.FormattingEnabled = true;
-            this.cboLoaiNV.Location = new System.Drawing.Point(380, 51);
-            this.cboLoaiNV.Name = "cboLoaiNV";
-            this.cboLoaiNV.Size = new System.Drawing.Size(213, 21);
-            this.cboLoaiNV.TabIndex = 17;
-            // 
-            // cboSex
-            // 
-            this.cboSex.FormattingEnabled = true;
-            this.cboSex.Items.AddRange(new object[] {
-            "Nam ",
-            "Nữ",
-            "Khác"});
-            this.cboSex.Location = new System.Drawing.Point(144, 81);
-            this.cboSex.Name = "cboSex";
-            this.cboSex.Size = new System.Drawing.Size(111, 21);
-            this.cboSex.TabIndex = 18;
             // 
             // maKieuDataGridViewTextBoxColumn
             // 
@@ -1668,5 +1682,6 @@
         private System.Windows.Forms.ComboBox cboSex;
         private System.Windows.Forms.ComboBox cboLoaiNV;
         private System.Windows.Forms.ComboBox cboCH;
+        private System.Windows.Forms.Button btnLNV;
     }
 }

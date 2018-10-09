@@ -260,6 +260,33 @@
     <FunctionImport Name="delNV">
       <Parameter Name="manv" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="spDelLNV">
+      <Parameter Name="maloai" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spInsertLNV">
+      <Parameter Name="maloai" Mode="In" Type="String" />
+      <Parameter Name="tenloai" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spUpdateLNV">
+      <Parameter Name="maloai" Mode="In" Type="String" />
+      <Parameter Name="tenloai" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spDelKH">
+      <Parameter Name="ma" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spInsertKH">
+      <Parameter Name="ma" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="diachi" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spUpdateKH">
+      <Parameter Name="ma" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="diachi" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spGetKH" EntitySet="KhachHangs" ReturnType="Collection(GalaxyMobileModel.KhachHang)" />
   </EntityContainer>
   <EntityType Name="sysdiagram">
     <Key>
@@ -521,5 +548,11 @@
   <ComplexType Name="GetLNV_Result">
     <Property Type="String" Name="MaLoaiNV" Nullable="false" MaxLength="15" />
     <Property Type="String" Name="TenLoaiNV" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="spGetKH_Result">
+    <Property Type="String" Name="MaKH" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TenKH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="SDT" Nullable="true" MaxLength="13" />
   </ComplexType>
 </Schema>

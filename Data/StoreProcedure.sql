@@ -1,12 +1,6 @@
 use GalaxyMobile
 go
-ALTER PROCEDURE GetLNV
-AS
-BEGIN
-	select *
-	from LoaiNV
-END
-GO
+
 ALTER PROCEDURE delNV
 	@manv varchar(10)
 AS
@@ -49,3 +43,76 @@ WHERE MaNV=@manv
 END
 go
 ----------Loai NV------------
+alter procedure spUpdateLNV
+	@maloai varchar(15),
+	@tenloai nvarchar(20)
+as
+begin 
+update LoaiNV
+set TenLoaiNV=@tenloai
+where MaLoaiNV=@maloai
+end
+go
+alter procedure spDelLNV
+	@maloai varchar(15)
+as
+begin 
+delete from LoaiNV
+where MaLoaiNV=@maloai
+end
+go
+create procedure spInsertLNV
+	@maloai varchar(15),
+	@tenloai nvarchar(20)
+as
+begin
+insert into LoaiNV(MaLoaiNV,TenLoaiNV)
+values ( @maloai,@tenloai)
+end
+go
+ALTER PROCEDURE GetLNV
+AS
+BEGIN
+	select *
+	from LoaiNV
+END
+GO
+------------Khach Hang-----------------
+alter procedure spInsertKH
+	@ma varchar(10),
+	@ten nvarchar(50),
+	@diachi nvarchar(100),
+	@sdt varchar(13)
+as
+begin
+insert into KhachHang(MaKH,TenKH,DiaChi,SDT)
+values (@ma,@ten,@diachi,@sdt)
+end
+go
+alter procedure spUpdateKH
+	@ma varchar(10),
+	@ten nvarchar(50),
+	@diachi nvarchar(100),
+	@sdt varchar(13)
+as
+begin 
+update KhachHang
+set TenKH=@ten,DiaChi=@diachi,SDT=@sdt
+where MaKH=@ma
+end
+go
+alter procedure spDelKH
+	@ma varchar(10)
+as
+begin 
+delete from KhachHang
+where MaKH=@ma 
+end
+go
+alter procedure spGetKH
+as
+begin 
+	select *
+	from KhachHang
+end
+go

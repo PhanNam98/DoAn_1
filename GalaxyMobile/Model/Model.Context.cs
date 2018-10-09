@@ -166,5 +166,101 @@ namespace Model
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("delNV", manvParameter);
         }
+    
+        public virtual int spDelLNV(string maloai)
+        {
+            var maloaiParameter = maloai != null ?
+                new ObjectParameter("maloai", maloai) :
+                new ObjectParameter("maloai", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDelLNV", maloaiParameter);
+        }
+    
+        public virtual int spInsertLNV(string maloai, string tenloai)
+        {
+            var maloaiParameter = maloai != null ?
+                new ObjectParameter("maloai", maloai) :
+                new ObjectParameter("maloai", typeof(string));
+    
+            var tenloaiParameter = tenloai != null ?
+                new ObjectParameter("tenloai", tenloai) :
+                new ObjectParameter("tenloai", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertLNV", maloaiParameter, tenloaiParameter);
+        }
+    
+        public virtual int spUpdateLNV(string maloai, string tenloai)
+        {
+            var maloaiParameter = maloai != null ?
+                new ObjectParameter("maloai", maloai) :
+                new ObjectParameter("maloai", typeof(string));
+    
+            var tenloaiParameter = tenloai != null ?
+                new ObjectParameter("tenloai", tenloai) :
+                new ObjectParameter("tenloai", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdateLNV", maloaiParameter, tenloaiParameter);
+        }
+    
+        public virtual int spDelKH(string ma)
+        {
+            var maParameter = ma != null ?
+                new ObjectParameter("ma", ma) :
+                new ObjectParameter("ma", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDelKH", maParameter);
+        }
+    
+        public virtual int spInsertKH(string ma, string ten, string diachi, string sdt)
+        {
+            var maParameter = ma != null ?
+                new ObjectParameter("ma", ma) :
+                new ObjectParameter("ma", typeof(string));
+    
+            var tenParameter = ten != null ?
+                new ObjectParameter("ten", ten) :
+                new ObjectParameter("ten", typeof(string));
+    
+            var diachiParameter = diachi != null ?
+                new ObjectParameter("diachi", diachi) :
+                new ObjectParameter("diachi", typeof(string));
+    
+            var sdtParameter = sdt != null ?
+                new ObjectParameter("sdt", sdt) :
+                new ObjectParameter("sdt", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertKH", maParameter, tenParameter, diachiParameter, sdtParameter);
+        }
+    
+        public virtual int spUpdateKH(string ma, string ten, string diachi, string sdt)
+        {
+            var maParameter = ma != null ?
+                new ObjectParameter("ma", ma) :
+                new ObjectParameter("ma", typeof(string));
+    
+            var tenParameter = ten != null ?
+                new ObjectParameter("ten", ten) :
+                new ObjectParameter("ten", typeof(string));
+    
+            var diachiParameter = diachi != null ?
+                new ObjectParameter("diachi", diachi) :
+                new ObjectParameter("diachi", typeof(string));
+    
+            var sdtParameter = sdt != null ?
+                new ObjectParameter("sdt", sdt) :
+                new ObjectParameter("sdt", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdateKH", maParameter, tenParameter, diachiParameter, sdtParameter);
+        }
+    
+        public virtual ObjectResult<KhachHang> spGetKH()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KhachHang>("spGetKH");
+        }
+    
+        public virtual ObjectResult<KhachHang> spGetKH(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KhachHang>("spGetKH", mergeOption);
+        }
     }
 }
