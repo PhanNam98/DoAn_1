@@ -55,3 +55,6 @@ D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\G
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.LoaiNV.resources
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.Properties.Resources.resources
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csproj.GenerateResource.Cache
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile-2\GalaxyMobile\bin\Debug\GalaxyMobile.exe.config
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile-2\GalaxyMobile\obj\Debug\GalaxyMobile.exe
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile-2\GalaxyMobile\obj\Debug\GalaxyMobile.pdb
