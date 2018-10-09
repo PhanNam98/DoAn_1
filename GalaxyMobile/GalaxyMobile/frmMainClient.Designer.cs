@@ -101,6 +101,13 @@
             this.tabThongKe = new System.Windows.Forms.TabPage();
             this.tabCuaHang = new System.Windows.Forms.TabPage();
             this.tabKhachHang = new System.Windows.Forms.TabPage();
+            this.dgvKH = new System.Windows.Forms.DataGridView();
+            this.maKHDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diaChiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.galaxyMobileDataSet1 = new GalaxyMobile.GalaxyMobileDataSet1();
             this.btnXoa = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -116,14 +123,7 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.dgvKH = new System.Windows.Forms.DataGridView();
-            this.galaxyMobileDataSet1 = new GalaxyMobile.GalaxyMobileDataSet1();
-            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.khachHangTableAdapter = new GalaxyMobile.GalaxyMobileDataSet1TableAdapters.KhachHangTableAdapter();
-            this.maKHDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diaChiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlClinet.SuspendLayout();
             this.pnlTimKiem.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -141,10 +141,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dongSanPhamBindingSource)).BeginInit();
             this.tabKhachHang.SuspendLayout();
-            this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.galaxyMobileDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.galaxyMobileDataSet1)).BeginInit();
+            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlClinet
@@ -860,6 +860,63 @@
             this.tabKhachHang.Text = "Khách Hàng";
             this.tabKhachHang.UseVisualStyleBackColor = true;
             // 
+            // dgvKH
+            // 
+            this.dgvKH.AllowUserToAddRows = false;
+            this.dgvKH.AllowUserToDeleteRows = false;
+            this.dgvKH.AutoGenerateColumns = false;
+            this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maKHDataGridViewTextBoxColumn1,
+            this.tenKHDataGridViewTextBoxColumn,
+            this.diaChiDataGridViewTextBoxColumn,
+            this.sDTDataGridViewTextBoxColumn});
+            this.dgvKH.DataSource = this.khachHangBindingSource;
+            this.dgvKH.Location = new System.Drawing.Point(12, 99);
+            this.dgvKH.Name = "dgvKH";
+            this.dgvKH.ReadOnly = true;
+            this.dgvKH.Size = new System.Drawing.Size(861, 303);
+            this.dgvKH.TabIndex = 69;
+            this.dgvKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKH_CellClick);
+            // 
+            // maKHDataGridViewTextBoxColumn1
+            // 
+            this.maKHDataGridViewTextBoxColumn1.DataPropertyName = "MaKH";
+            this.maKHDataGridViewTextBoxColumn1.HeaderText = "MaKH";
+            this.maKHDataGridViewTextBoxColumn1.Name = "maKHDataGridViewTextBoxColumn1";
+            this.maKHDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // tenKHDataGridViewTextBoxColumn
+            // 
+            this.tenKHDataGridViewTextBoxColumn.DataPropertyName = "TenKH";
+            this.tenKHDataGridViewTextBoxColumn.HeaderText = "TenKH";
+            this.tenKHDataGridViewTextBoxColumn.Name = "tenKHDataGridViewTextBoxColumn";
+            this.tenKHDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // diaChiDataGridViewTextBoxColumn
+            // 
+            this.diaChiDataGridViewTextBoxColumn.DataPropertyName = "DiaChi";
+            this.diaChiDataGridViewTextBoxColumn.HeaderText = "DiaChi";
+            this.diaChiDataGridViewTextBoxColumn.Name = "diaChiDataGridViewTextBoxColumn";
+            this.diaChiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sDTDataGridViewTextBoxColumn
+            // 
+            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
+            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
+            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
+            this.sDTDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // khachHangBindingSource
+            // 
+            this.khachHangBindingSource.DataMember = "KhachHang";
+            this.khachHangBindingSource.DataSource = this.galaxyMobileDataSet1;
+            // 
+            // galaxyMobileDataSet1
+            // 
+            this.galaxyMobileDataSet1.DataSetName = "GalaxyMobileDataSet1";
+            this.galaxyMobileDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1016,59 +1073,9 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // dgvKH
-            // 
-            this.dgvKH.AutoGenerateColumns = false;
-            this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maKHDataGridViewTextBoxColumn1,
-            this.tenKHDataGridViewTextBoxColumn,
-            this.diaChiDataGridViewTextBoxColumn,
-            this.sDTDataGridViewTextBoxColumn});
-            this.dgvKH.DataSource = this.khachHangBindingSource;
-            this.dgvKH.Location = new System.Drawing.Point(12, 99);
-            this.dgvKH.Name = "dgvKH";
-            this.dgvKH.Size = new System.Drawing.Size(861, 303);
-            this.dgvKH.TabIndex = 69;
-            this.dgvKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKH_CellClick);
-            // 
-            // galaxyMobileDataSet1
-            // 
-            this.galaxyMobileDataSet1.DataSetName = "GalaxyMobileDataSet1";
-            this.galaxyMobileDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // khachHangBindingSource
-            // 
-            this.khachHangBindingSource.DataMember = "KhachHang";
-            this.khachHangBindingSource.DataSource = this.galaxyMobileDataSet1;
-            // 
             // khachHangTableAdapter
             // 
             this.khachHangTableAdapter.ClearBeforeFill = true;
-            // 
-            // maKHDataGridViewTextBoxColumn1
-            // 
-            this.maKHDataGridViewTextBoxColumn1.DataPropertyName = "MaKH";
-            this.maKHDataGridViewTextBoxColumn1.HeaderText = "MaKH";
-            this.maKHDataGridViewTextBoxColumn1.Name = "maKHDataGridViewTextBoxColumn1";
-            // 
-            // tenKHDataGridViewTextBoxColumn
-            // 
-            this.tenKHDataGridViewTextBoxColumn.DataPropertyName = "TenKH";
-            this.tenKHDataGridViewTextBoxColumn.HeaderText = "TenKH";
-            this.tenKHDataGridViewTextBoxColumn.Name = "tenKHDataGridViewTextBoxColumn";
-            // 
-            // diaChiDataGridViewTextBoxColumn
-            // 
-            this.diaChiDataGridViewTextBoxColumn.DataPropertyName = "DiaChi";
-            this.diaChiDataGridViewTextBoxColumn.HeaderText = "DiaChi";
-            this.diaChiDataGridViewTextBoxColumn.Name = "diaChiDataGridViewTextBoxColumn";
-            // 
-            // sDTDataGridViewTextBoxColumn
-            // 
-            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
-            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
-            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
             // 
             // frmMainClient
             // 
@@ -1100,11 +1107,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dongSanPhamBindingSource)).EndInit();
             this.tabKhachHang.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.galaxyMobileDataSet1)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.galaxyMobileDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
