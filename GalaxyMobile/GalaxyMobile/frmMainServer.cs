@@ -176,6 +176,7 @@ namespace GalaxyMobile
             btnLuu.Enabled = false;
             btnHuy.Enabled = false;
             panel.Enabled = false;
+            btnLNV.Enabled = true;
             // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
             btnThem.Enabled = true;
             btnSua.Enabled = true;
@@ -354,6 +355,14 @@ namespace GalaxyMobile
         #endregion
 
 
+        #region LoaiNhanVIen
+        private void btnLNV_Click(object sender, EventArgs e)
+        {
+            Form frm = new LNhanVIen();
+            frm.ShowDialog();
+        }
+        #endregion
+
 
         #region Dong San Pham
         private void btnLoadDSP_Click(object sender, EventArgs e)
@@ -402,6 +411,14 @@ namespace GalaxyMobile
 
         }
 
-       
+        private void btnLuuChangeDSP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

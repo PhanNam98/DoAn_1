@@ -127,6 +127,9 @@
     <Compile Include="SanPham.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="spGetKH_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

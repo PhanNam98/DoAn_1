@@ -117,6 +117,22 @@
     <Compile Include="frmThemMau.Designer.cs">
       <DependentUpon>frmThemMau.cs</DependentUpon>
     </Compile>
+    <Compile Include="GalaxyMobileDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GalaxyMobileDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyMobileDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GalaxyMobileDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LNhanVIen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LNhanVIen.Designer.cs">
+      <DependentUpon>LNhanVIen.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVIen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +175,9 @@
     <EmbeddedResource Include="frmThemMau.resx">
       <DependentUpon>frmThemMau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LNhanVIen.resx">
+      <DependentUpon>LNhanVIen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVIen.resx">
       <DependentUpon>NhanVIen.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +193,29 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="App1.config" />
+    <None Include="GalaxyMobileDataSet.xsc">
+      <DependentUpon>GalaxyMobileDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GalaxyMobileDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GalaxyMobileDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GalaxyMobileDataSet.xss">
+      <DependentUpon>GalaxyMobileDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GalaxyMobileDataSet1.xsc">
+      <DependentUpon>GalaxyMobileDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GalaxyMobileDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GalaxyMobileDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GalaxyMobileDataSet1.xss">
+      <DependentUpon>GalaxyMobileDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\Model.ChiTietHoaDon.datasource" />
     <None Include="Properties\DataSources\Model.ChiTietSP.datasource" />
     <None Include="Properties\DataSources\Model.CuaHang.datasource" />

@@ -333,6 +333,23 @@
     <Parameter Name="manv" Type="varchar" Mode="In" />
   </Function>
   <Function Name="GetLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spDelKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ma" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spDelLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maloai" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spGetKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spInsertKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ma" Type="varchar" Mode="In" />
+    <Parameter Name="ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spInsertLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maloai" Type="varchar" Mode="In" />
+    <Parameter Name="tenloai" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="spThemNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="manv" Type="varchar" Mode="In" />
     <Parameter Name="macuahang" Type="varchar" Mode="In" />
@@ -342,6 +359,16 @@
     <Parameter Name="diachi" Type="nvarchar" Mode="In" />
     <Parameter Name="sdt" Type="varchar" Mode="In" />
     <Parameter Name="luong" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="spUpdateKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ma" Type="varchar" Mode="In" />
+    <Parameter Name="ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spUpdateLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maloai" Type="varchar" Mode="In" />
+    <Parameter Name="tenloai" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="updateNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="manv" Type="varchar" Mode="In" />

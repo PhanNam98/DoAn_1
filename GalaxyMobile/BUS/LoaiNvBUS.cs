@@ -18,5 +18,21 @@ namespace BUS
         {
             return db.GetallLNV();
         }
+        public static void ThemLNV(string ma, string ten)
+        {
+            db.ThemLNV(ma, ten);
+        }
+        public static void SuaLNV(string ma, string ten)
+        {
+            db.SuaLNV(ma, ten);
+        }
+        public static void XoaLNV(string ma)
+        {
+            db.XoaLNV(ma);
+        }
+        public static int KtMaLNV(string ma)
+        {
+            return db.ktLNV(ma);
+        }
     }
 }

@@ -179,5 +179,12 @@
     <FunctionImportMapping FunctionImportName="spThemNV" FunctionName="GalaxyMobileModel.Store.spThemNV" />
     <FunctionImportMapping FunctionImportName="updateNV" FunctionName="GalaxyMobileModel.Store.updateNV" />
     <FunctionImportMapping FunctionImportName="delNV" FunctionName="GalaxyMobileModel.Store.delNV" />
+    <FunctionImportMapping FunctionImportName="spDelLNV" FunctionName="GalaxyMobileModel.Store.spDelLNV" />
+    <FunctionImportMapping FunctionImportName="spInsertLNV" FunctionName="GalaxyMobileModel.Store.spInsertLNV" />
+    <FunctionImportMapping FunctionImportName="spUpdateLNV" FunctionName="GalaxyMobileModel.Store.spUpdateLNV" />
+    <FunctionImportMapping FunctionImportName="spDelKH" FunctionName="GalaxyMobileModel.Store.spDelKH" />
+    <FunctionImportMapping FunctionImportName="spInsertKH" FunctionName="GalaxyMobileModel.Store.spInsertKH" />
+    <FunctionImportMapping FunctionImportName="spUpdateKH" FunctionName="GalaxyMobileModel.Store.spUpdateKH" />
+    <FunctionImportMapping FunctionImportName="spGetKH" FunctionName="GalaxyMobileModel.Store.spGetKH" />
   </EntityContainerMapping>
 </Mapping>

@@ -338,6 +338,23 @@
           <Parameter Name="manv" Type="varchar" Mode="In" />
         </Function>
         <Function Name="GetLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spDelKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ma" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spDelLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="maloai" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spGetKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spInsertKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ma" Type="varchar" Mode="In" />
+          <Parameter Name="ten" Type="nvarchar" Mode="In" />
+          <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+          <Parameter Name="sdt" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spInsertLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="maloai" Type="varchar" Mode="In" />
+          <Parameter Name="tenloai" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="spThemNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="manv" Type="varchar" Mode="In" />
           <Parameter Name="macuahang" Type="varchar" Mode="In" />
@@ -347,6 +364,16 @@
           <Parameter Name="diachi" Type="nvarchar" Mode="In" />
           <Parameter Name="sdt" Type="varchar" Mode="In" />
           <Parameter Name="luong" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="spUpdateKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ma" Type="varchar" Mode="In" />
+          <Parameter Name="ten" Type="nvarchar" Mode="In" />
+          <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+          <Parameter Name="sdt" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spUpdateLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="maloai" Type="varchar" Mode="In" />
+          <Parameter Name="tenloai" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="updateNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="manv" Type="varchar" Mode="In" />
@@ -696,8 +723,35 @@
             <Parameter Name="luong" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="delNV">
-            <Parameter Name="manv" Mode="In" Type="String" />
+          <Parameter Name="manv" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="spDelLNV">
+          <Parameter Name="maloai" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertLNV">
+            <Parameter Name="maloai" Mode="In" Type="String" />
+            <Parameter Name="tenloai" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUpdateLNV">
+            <Parameter Name="maloai" Mode="In" Type="String" />
+            <Parameter Name="tenloai" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spDelKH">
+            <Parameter Name="ma" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertKH">
+            <Parameter Name="ma" Mode="In" Type="String" />
+            <Parameter Name="ten" Mode="In" Type="String" />
+            <Parameter Name="diachi" Mode="In" Type="String" />
+            <Parameter Name="sdt" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUpdateKH">
+            <Parameter Name="ma" Mode="In" Type="String" />
+            <Parameter Name="ten" Mode="In" Type="String" />
+            <Parameter Name="diachi" Mode="In" Type="String" />
+            <Parameter Name="sdt" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetKH" EntitySet="KhachHangs" ReturnType="Collection(GalaxyMobileModel.KhachHang)" />
           </EntityContainer>
         <EntityType Name="sysdiagram">
           <Key>
@@ -960,6 +1014,12 @@
           <Property Type="String" Name="MaLoaiNV" Nullable="false" MaxLength="15" />
           <Property Type="String" Name="TenLoaiNV" Nullable="true" MaxLength="20" />
         </ComplexType>
+        <ComplexType Name="spGetKH_Result">
+          <Property Type="String" Name="MaKH" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="TenKH" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="SDT" Nullable="true" MaxLength="13" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1144,6 +1204,13 @@
           <FunctionImportMapping FunctionImportName="spThemNV" FunctionName="GalaxyMobileModel.Store.spThemNV" />
           <FunctionImportMapping FunctionImportName="updateNV" FunctionName="GalaxyMobileModel.Store.updateNV" />
           <FunctionImportMapping FunctionImportName="delNV" FunctionName="GalaxyMobileModel.Store.delNV" />
+          <FunctionImportMapping FunctionImportName="spDelLNV" FunctionName="GalaxyMobileModel.Store.spDelLNV" />
+          <FunctionImportMapping FunctionImportName="spInsertLNV" FunctionName="GalaxyMobileModel.Store.spInsertLNV" />
+          <FunctionImportMapping FunctionImportName="spUpdateLNV" FunctionName="GalaxyMobileModel.Store.spUpdateLNV" />
+          <FunctionImportMapping FunctionImportName="spDelKH" FunctionName="GalaxyMobileModel.Store.spDelKH" />
+          <FunctionImportMapping FunctionImportName="spInsertKH" FunctionName="GalaxyMobileModel.Store.spInsertKH" />
+          <FunctionImportMapping FunctionImportName="spUpdateKH" FunctionName="GalaxyMobileModel.Store.spUpdateKH" />
+          <FunctionImportMapping FunctionImportName="spGetKH" FunctionName="GalaxyMobileModel.Store.spGetKH" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
