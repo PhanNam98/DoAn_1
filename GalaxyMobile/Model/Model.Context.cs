@@ -74,23 +74,14 @@ namespace Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<NhanVien>("GetAllNV", mergeOption);
         }
     
-        public virtual ObjectResult<NhanVien> GetNV2()
+        public virtual ObjectResult<LoaiNV> GetLNV()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<NhanVien>("GetNV2");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoaiNV>("GetLNV");
         }
     
-        public virtual ObjectResult<NhanVien> GetNV2(MergeOption mergeOption)
+        public virtual ObjectResult<LoaiNV> GetLNV(MergeOption mergeOption)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<NhanVien>("GetNV2", mergeOption);
-        }
-    
-        public virtual int delNV(string manv)
-        {
-            var manvParameter = manv != null ?
-                new ObjectParameter("manv", manv) :
-                new ObjectParameter("manv", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("delNV", manvParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoaiNV>("GetLNV", mergeOption);
         }
     
         public virtual int spThemNV(string manv, string macuahang, string maloainv, string tennv, string gioitinh, string diachi, string sdt, Nullable<decimal> luong)
@@ -165,6 +156,15 @@ namespace Model
                 new ObjectParameter("luong", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updateNV", manvParameter, macuahangParameter, maloainvParameter, tennvParameter, gioitinhParameter, diachiParameter, sdtParameter, luongParameter);
+        }
+    
+        public virtual int delNV(string manv)
+        {
+            var manvParameter = manv != null ?
+                new ObjectParameter("manv", manv) :
+                new ObjectParameter("manv", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("delNV", manvParameter);
         }
     }
 }
