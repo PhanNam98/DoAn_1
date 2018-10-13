@@ -586,7 +586,7 @@ namespace GalaxyMobile
 
         }
 
-<<<<<<< HEAD
+
         private void cboCH_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -596,8 +596,7 @@ namespace GalaxyMobile
         {
 
         }
-=======
+
        
->>>>>>> b48a0079a7cefcab7e1e57e152b8ac30af7a02bc
     }
 }
