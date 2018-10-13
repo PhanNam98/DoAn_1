@@ -397,5 +397,15 @@ namespace GalaxyMobile
         {
 
         }
+
+        private void cboCH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboSex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
