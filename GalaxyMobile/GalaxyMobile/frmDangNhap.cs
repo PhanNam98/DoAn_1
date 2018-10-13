@@ -35,24 +35,20 @@ namespace GalaxyMobile
             if ( TaiKhoanBUS.kttk(txtUser._TextBox.Text, txtPass._TextBox.Text) != null)
             {
                 //   call(GetAccount(DBTaiKhoan.kttk(txtUser.Text, txtPass.Text)).tenDN);
+                this.Hide();
                 int ma = TaiKhoanBUS.MaTruyCap(txtUser._TextBox.Text, txtPass._TextBox.Text);
                 Form frm;
                 if (ma == 0 || ma == 1 || ma == 2)
                 {
-                    
                     frm = new frmMainServer(TaiKhoanBUS.kttk(txtUser._TextBox.Text, txtPass._TextBox.Text), ma);
-                    this.Hide();
                     frm.ShowDialog();
-                    
                 }
                 else
                 {
                     frm = new frmMainClient(TaiKhoanBUS.kttk(txtUser._TextBox.Text, txtPass._TextBox.Text), ma);
-                    this.Hide();
                     frm.ShowDialog();
-                    
                 }
-                this.Close();
+                this.Show();
             }
            
             else

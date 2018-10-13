@@ -49,6 +49,7 @@ namespace GalaxyMobile
                 tabControlMainServer.Controls.Remove(tabDongSanPham);
                 tabControlMainServer.Controls.Remove(tabSanPham);
                 tabControlMainServer.Controls.Remove(tabNSX);
+                tabControlMainServer.Controls.Remove(tabNhapHang);
             }
             label12.Text = User.UserName;
             loadCmboxDongSanPham();
@@ -142,10 +143,47 @@ namespace GalaxyMobile
             {
                 int r = dgvSP.CurrentCell.RowIndex;
                 string id = dgvSP.Rows[r].Cells[0].Value.ToString();
-                frmChiTietSanPham ctsp = new frmChiTietSanPham(id,null);
+                frmChiTietSanPham ctsp = new frmChiTietSanPham(id,MaTruyCap,null,false);
                 ctsp.ShowDialog();
             }
             catch { }
+        }
+        private void btnChinhSuaSP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int r = dgvSP.CurrentCell.RowIndex;
+                string id = dgvSP.Rows[r].Cells[0].Value.ToString();
+                frmChiTietSanPham ctsp = new frmChiTietSanPham(id,MaTruyCap,null,true);
+                ctsp.ShowDialog();
+            }
+            catch { }
+            LoadSp();
+        }
+        private void btnThemSP_Click(object sender, EventArgs e)
+        {
+           
+                frmChiTietSanPham ctsp = new frmChiTietSanPham(null,MaTruyCap, null,false);
+                ctsp.ShowDialog();
+                LoadSp();
+           
+        }
+        private void btXoaSP_Click(object sender, EventArgs e)
+        {
+            if (sanPhamBindingSource.Current == null)
+                return;
+            if (MessageBox.Show("Bạn có chắc muốn xóa dòng này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+
+                try
+                {
+                    SanPhamBUS.XoaSP(sanPhamBindingSource.Current as SanPham);
+                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch { MessageBox.Show("Lỗi! Không thể thực hiện thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+
+            LoadSp();
         }
         private void dgvSP_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -153,7 +191,14 @@ namespace GalaxyMobile
         }
         private void dgvSP_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            try
+            {
+                int r = dgvSP.CurrentCell.RowIndex;
+                string id = dgvSP.Rows[r].Cells[0].Value.ToString();
+                frmChiTietSanPham ctsp = new frmChiTietSanPham(id,MaTruyCap,null,false);
+                ctsp.ShowDialog();
+            }
+            catch { }
         }
         #endregion
 
@@ -387,10 +432,133 @@ namespace GalaxyMobile
             }
             catch { }
         }
+        private void btnThemDSP_Click(object sender, EventArgs e)
+        {
+            btnThemDSP.Visible = false;
+            btnXoaDSP.Visible = false;
+            btnChinhSuaDSP.Visible = false;
+            btnLuuChangeDSP.Visible = true;
+            btnHuyChangeDSP.Visible = true;
+            lbTitle.Visible = true;
+            lbTitle.Text = "Thêm Dòng Sản Phẩm";
+            txtboxMaDongSP.Text = "";
+            txtboxTenDongSP.Text = "";
+            //cmBoxHSX.DataSource =HSXBUS.GetAllHSX();
+            //cmBoxHSX.DisplayMember = "TenHSX";
+            //cmBoxHSX.ValueMember = "MaHSX";
+            //cmBoxLoaiSP.DataSource =LoaiSPBUS.GetAllLoaiSP();
+            //cmBoxLoaiSP.DisplayMember = "TenLSP";
+            //cmBoxLoaiSP.ValueMember = "MaLSP";
+        }
+        private void btnChinhSuaDSP_Click(object sender, EventArgs e)
+        {
+            btnThemDSP.Visible = false;
+            btnXoaDSP.Visible = false;
+            btnChinhSuaDSP.Visible = false;
+            btnLuuChangeDSP.Visible = true;
+            btnHuyChangeDSP.Visible = true;
+            txtboxMaDongSP.ReadOnly = true;
+            lbTitle.Visible = true;
+            lbTitle.Text = "Chỉnh Sửa Dòng Sản Phẩm";
+           
+            try
+            {
+                int r = dgvDongSP.CurrentCell.RowIndex;
+                string id = dgvDongSP.Rows[r].Cells[0].Value.ToString();
+                txtboxMaDongSP.Text = id;
+                txtboxTenDongSP.Text = dgvDongSP.Rows[r].Cells[1].Value.ToString();
+                cmBoxHSX.SelectedValue = dgvDongSP.Rows[r].Cells[2].Value.ToString();
+                cmBoxLoaiSP.SelectedValue = dgvDongSP.Rows[r].Cells[3].Value.ToString();
+            }
+            catch { }
+            
+            
+        }
+        private void btnXoaDSP_Click(object sender, EventArgs e)
+        {
+            if (dongSanPhamBindingSource.Current == null)
+                return;
+            if (MessageBox.Show("Bạn có chắc muốn xóa dòng này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+
+                try
+                {
+                    DongSanPhamBUS.XoaDongSP(dongSanPhamBindingSource.Current as DongSanPham);
+                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch { MessageBox.Show("Lỗi! Không thể thực hiện thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+            LoadDongSP();
+        }
+        private void btnLuuChangeDSP_Click(object sender, EventArgs e)
+        {
+            if (txtboxMaDongSP.Text == "" || txtboxTenDongSP.Text == "")
+            {
+                MessageBox.Show("Lỗi! Xin Nhập Đầy Đủ thông Tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (lbTitle.Text == "Thêm Dòng Sản Phẩm")
+            {
+                try
+                {
+                    DongSanPham dsp = new DongSanPham();
+                    dsp.MaDSP = txtboxMaDongSP.Text;
+                    dsp.MaHSX = cmBoxHSX.SelectedValue.ToString();
+                    dsp.TenDong = txtboxTenDongSP.Text;
+                    dsp.MaLSP = cmBoxLoaiSP.SelectedValue.ToString();
+                    //kiểm tra hợp lệ
+                    DongSanPhamBUS.ThemDongSP(dsp);
+                    MessageBox.Show("Thêm Thành Công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch { MessageBox.Show("Lỗi! Không thể thực hiện thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+            else
+            {
+                try
+                {
+                    DongSanPham dsp = new DongSanPham();
+                    dsp.MaDSP = txtboxMaDongSP.Text;
+                    dsp.MaHSX = cmBoxHSX.SelectedValue.ToString();
+                    dsp.TenDong = txtboxTenDongSP.Text;
+                    dsp.MaLSP = cmBoxLoaiSP.SelectedValue.ToString();
+                    DongSanPhamBUS.ChinhSuaDongSP(dsp);
+                    MessageBox.Show("Chỉnh Sửa Thành Công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch { MessageBox.Show("Lỗi! Không thể thực hiện thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+            btnThemDSP.Visible = true;
+            btnXoaDSP.Visible = true;
+            btnChinhSuaDSP.Visible = true;
+            btnLuuChangeDSP.Visible = false;
+            btnHuyChangeDSP.Visible = false;
+            txtboxMaDongSP.ReadOnly = false;
+            LoadDongSP();
+        }
+        private void btnHuyChangeDSP_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn Có Chắc Muốn Hủy Thao Tác Này Không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                MessageBox.Show("Đã Hủy Thay Đổi!","Thông Báo");
+                btnThemDSP.Visible = true;
+                btnXoaDSP.Visible = true;
+                btnChinhSuaDSP.Visible = true;
+                btnLuuChangeDSP.Visible = false;
+                btnHuyChangeDSP.Visible = false;
+            }
+           
+        }
+        #endregion
+
+
+
+        #region Hhap Hang
+
+
+
+
 
 
         #endregion
-
         private void pnlMainServer_Paint(object sender, PaintEventArgs e)
         {
 
@@ -411,14 +579,13 @@ namespace GalaxyMobile
 
         }
 
-        private void btnLuuChangeDSP_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void panel_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+       
     }
 }

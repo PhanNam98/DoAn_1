@@ -18,5 +18,17 @@ namespace BUS
         {
             return db.GetAllDongSP();
         }
+        public static void XoaDongSP(DongSanPham obj)
+        {
+            db.XoaDSP(obj);
+        }
+        public static void ThemDongSP(DongSanPham obj)
+        {
+            db.ThemDSP(obj);
+        }
+        public static void ChinhSuaDongSP(DongSanPham obj)
+        {
+            db.ChinhSuaDSP(obj);
+        }
     }
 }

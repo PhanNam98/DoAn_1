@@ -18,5 +18,25 @@ namespace BUS
         {
             return db.GetAllSanPham();
         }
+        public static SanPham GetSanPhamByID(string id)
+        {
+            return db.GetSanPhamByID(id);
+        }
+        public static List<SanPham> GetSanPhamByMaDSP(string id)
+        {
+            return db.GetSPByMaDSP(id);
+        }
+        public static void ThemSP(SanPham obj)
+        {
+            db.ThemSP(obj);
+        }
+        public static void XoaSP(SanPham obj)
+        {
+            db.XoaSP(obj);
+        }
+        public static void ChinhSuaSP(SanPham obj)
+        {
+            db.ChinhSuaSP(obj);
+        }
     }
 }
