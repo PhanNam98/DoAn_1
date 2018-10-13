@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="GalaxyMobileModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChiTietHDNhapHang">
+    <Key>
+      <PropertyRef Name="MaHoaDonNH" />
+      <PropertyRef Name="MaKieu" />
+    </Key>
+    <Property Name="MaHoaDonNH" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaKieu" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SoLuongNhap" Type="int" Nullable="false" />
+    <Property Name="GiaNSX" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
   <EntityType Name="ChiTietHoaDon">
     <Key>
       <PropertyRef Name="MaHoaDon" />
@@ -39,6 +49,17 @@
     <Property Name="MaHSX" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="MaLSP" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
+  <EntityType Name="GiaoHang">
+    <Key>
+      <PropertyRef Name="MaHoaDon" />
+      <PropertyRef Name="MaCuaHang" />
+    </Key>
+    <Property Name="MaHoaDon" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="MaCuaHang" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaNVGH" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="NgayGiaoHang" Type="date" Nullable="false" />
+    <Property Name="TinhTrangGH" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
   <EntityType Name="HoaDon">
     <Key>
       <PropertyRef Name="MaHoaDon" />
@@ -51,6 +72,14 @@
     <Property Name="TinhTrang" Type="int" Nullable="false" />
     <Property Name="HTGiaoHang" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="NgayLapHD" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HoaDonNhapHang">
+    <Key>
+      <PropertyRef Name="MaHoaDonNH" />
+    </Key>
+    <Property Name="MaHoaDonNH" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaNV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="NgayNhapHang" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="HSX">
     <Key>
@@ -155,11 +184,35 @@
       <PropertyRef Name="UserName" />
     </Key>
     <Property Name="UserName" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="Password" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="MaCuaHang" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="MaLoaiTK" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
-  <Association Name="FK_ChiTietHoaDon_ChiTietSP1">
+  <Association Name="FK_ChiTietHDNhapHang_ChiTietSP">
+    <End Role="ChiTietSP" Type="Self.ChiTietSP" Multiplicity="1" />
+    <End Role="ChiTietHDNhapHang" Type="Self.ChiTietHDNhapHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChiTietSP">
+        <PropertyRef Name="MaKieu" />
+      </Principal>
+      <Dependent Role="ChiTietHDNhapHang">
+        <PropertyRef Name="MaKieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietHDNhapHang_HoaDonNhapHang">
+    <End Role="HoaDonNhapHang" Type="Self.HoaDonNhapHang" Multiplicity="1" />
+    <End Role="ChiTietHDNhapHang" Type="Self.ChiTietHDNhapHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDonNhapHang">
+        <PropertyRef Name="MaHoaDonNH" />
+      </Principal>
+      <Dependent Role="ChiTietHDNhapHang">
+        <PropertyRef Name="MaHoaDonNH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietHoaDon_ChiTietSP">
     <End Role="ChiTietSP" Type="Self.ChiTietSP" Multiplicity="1" />
     <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
     <ReferentialConstraint>
@@ -233,6 +286,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_GiaoHang_HoaDon">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
+    <End Role="GiaoHang" Type="Self.GiaoHang" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="MaHoaDon" />
+        <PropertyRef Name="MaCuaHang" />
+      </Principal>
+      <Dependent Role="GiaoHang">
+        <PropertyRef Name="MaHoaDon" />
+        <PropertyRef Name="MaCuaHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_HoaDon_KhachHang">
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
     <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
@@ -242,18 +309,6 @@
       </Principal>
       <Dependent Role="HoaDon">
         <PropertyRef Name="MaKH" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_KhoHang_ChiTietSP">
-    <End Role="ChiTietSP" Type="Self.ChiTietSP" Multiplicity="1" />
-    <End Role="KhoHang" Type="Self.KhoHang" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ChiTietSP">
-        <PropertyRef Name="MaKieu" />
-      </Principal>
-      <Dependent Role="KhoHang">
-        <PropertyRef Name="MaKieu" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -336,19 +391,12 @@
   <Function Name="spDelKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ma" Type="varchar" Mode="In" />
   </Function>
-  <Function Name="spDelLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="maloai" Type="varchar" Mode="In" />
-  </Function>
   <Function Name="spGetKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="spInsertKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ma" Type="varchar" Mode="In" />
     <Parameter Name="ten" Type="nvarchar" Mode="In" />
     <Parameter Name="diachi" Type="nvarchar" Mode="In" />
     <Parameter Name="sdt" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="spInsertLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="maloai" Type="varchar" Mode="In" />
-    <Parameter Name="tenloai" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="spThemNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="manv" Type="varchar" Mode="In" />
@@ -366,10 +414,6 @@
     <Parameter Name="diachi" Type="nvarchar" Mode="In" />
     <Parameter Name="sdt" Type="varchar" Mode="In" />
   </Function>
-  <Function Name="spUpdateLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="maloai" Type="varchar" Mode="In" />
-    <Parameter Name="tenloai" Type="nvarchar" Mode="In" />
-  </Function>
   <Function Name="updateNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="manv" Type="varchar" Mode="In" />
     <Parameter Name="macuahang" Type="varchar" Mode="In" />
@@ -383,11 +427,14 @@
   <Function Name="USP_GetAllCuaHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="USP_GetAllKhoHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="GalaxyMobileModelStoreContainer">
+    <EntitySet Name="ChiTietHDNhapHang" EntityType="Self.ChiTietHDNhapHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChiTietHoaDon" EntityType="Self.ChiTietHoaDon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChiTietSP" EntityType="Self.ChiTietSP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CuaHang" EntityType="Self.CuaHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DongSanPham" EntityType="Self.DongSanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GiaoHang" EntityType="Self.GiaoHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDonNhapHang" EntityType="Self.HoaDonNhapHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HSX" EntityType="Self.HSX" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KhoHang" EntityType="Self.KhoHang" Schema="dbo" store:Type="Tables" />
@@ -399,7 +446,15 @@
     <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_ChiTietHoaDon_ChiTietSP1" Association="Self.FK_ChiTietHoaDon_ChiTietSP1">
+    <AssociationSet Name="FK_ChiTietHDNhapHang_ChiTietSP" Association="Self.FK_ChiTietHDNhapHang_ChiTietSP">
+      <End Role="ChiTietSP" EntitySet="ChiTietSP" />
+      <End Role="ChiTietHDNhapHang" EntitySet="ChiTietHDNhapHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietHDNhapHang_HoaDonNhapHang" Association="Self.FK_ChiTietHDNhapHang_HoaDonNhapHang">
+      <End Role="HoaDonNhapHang" EntitySet="HoaDonNhapHang" />
+      <End Role="ChiTietHDNhapHang" EntitySet="ChiTietHDNhapHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietHoaDon_ChiTietSP" Association="Self.FK_ChiTietHoaDon_ChiTietSP">
       <End Role="ChiTietSP" EntitySet="ChiTietSP" />
       <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDon" />
     </AssociationSet>
@@ -423,13 +478,13 @@
       <End Role="LoaiSP" EntitySet="LoaiSP" />
       <End Role="DongSanPham" EntitySet="DongSanPham" />
     </AssociationSet>
+    <AssociationSet Name="FK_GiaoHang_HoaDon" Association="Self.FK_GiaoHang_HoaDon">
+      <End Role="HoaDon" EntitySet="HoaDon" />
+      <End Role="GiaoHang" EntitySet="GiaoHang" />
+    </AssociationSet>
     <AssociationSet Name="FK_HoaDon_KhachHang" Association="Self.FK_HoaDon_KhachHang">
       <End Role="KhachHang" EntitySet="KhachHang" />
       <End Role="HoaDon" EntitySet="HoaDon" />
-    </AssociationSet>
-    <AssociationSet Name="FK_KhoHang_ChiTietSP" Association="Self.FK_KhoHang_ChiTietSP">
-      <End Role="ChiTietSP" EntitySet="ChiTietSP" />
-      <End Role="KhoHang" EntitySet="KhoHang" />
     </AssociationSet>
     <AssociationSet Name="FK_KhoHang_CuaHang" Association="Self.FK_KhoHang_CuaHang">
       <End Role="CuaHang" EntitySet="CuaHang" />

@@ -19,6 +19,7 @@ namespace Model
         {
             this.ChiTietHoaDons = new HashSet<ChiTietHoaDon>();
             this.KhoHangs = new HashSet<KhoHang>();
+            this.ChiTietHDNhapHangs = new HashSet<ChiTietHDNhapHang>();
         }
     
         public string MaSP { get; set; }
@@ -34,5 +35,7 @@ namespace Model
         public virtual SanPham SanPham { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KhoHang> KhoHangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ChiTietHDNhapHang> ChiTietHDNhapHangs { get; set; }
     }
 }

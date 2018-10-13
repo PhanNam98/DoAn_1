@@ -27,7 +27,7 @@ namespace GalaxyMobile
         private void frmMainClient_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'galaxyMobileDataSet1.KhachHang' table. You can move, or remove it, as needed.
-            this.khachHangTableAdapter.Fill(this.galaxyMobileDataSet1.KhachHang);
+            //this.khachHangTableAdapter.Fill(this.galaxyMobileDataSet1.KhachHang);
             PhanQuyen();
             CH = CuaHangBUS.GetThongTinCuaHang(User.MaCuaHang);
             this.Text = CH.TenCuaHang;
@@ -99,7 +99,7 @@ namespace GalaxyMobile
         bool Them = false;
         public void LoadKH()
         {
-            khachHangBindingSource.DataSource = NhanVienBUS.GetNV();
+            khachHangBindingSource.DataSource = KHBUS.GetKH();
             dgvKH_CellClick(null, null);
             // Xóa trống các đối tượng trong Panel 
             txtMaKH.ResetText();

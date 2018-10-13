@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHDNhapHang.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietHoaDon.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -81,7 +84,13 @@
     <Compile Include="GetNV2_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="GiaoHang.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="HoaDon.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonNhapHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="HSX.cs">

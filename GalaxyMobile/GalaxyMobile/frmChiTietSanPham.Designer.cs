@@ -36,6 +36,7 @@
             this.btnLuuThayDoi = new System.Windows.Forms.Button();
             this.btnThemSP = new System.Windows.Forms.Button();
             this.groupBoxThongTin = new System.Windows.Forms.GroupBox();
+            this.cmBoxSP = new System.Windows.Forms.ComboBox();
             this.txtNamSX = new System.Windows.Forms.TextBox();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.txtboxMaSP = new System.Windows.Forms.TextBox();
@@ -70,6 +71,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabThongTinKieuSP = new System.Windows.Forms.TabPage();
+            this.btnKhoaTruyxuat = new System.Windows.Forms.Button();
+            this.cmboxCuaHang = new System.Windows.Forms.ComboBox();
             this.picBoxKieuSP = new System.Windows.Forms.PictureBox();
             this.dgvCTSP = new System.Windows.Forms.DataGridView();
             this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,8 +103,6 @@
             this.lbMau = new System.Windows.Forms.Label();
             this.lbMaSP = new System.Windows.Forms.Label();
             this.lbMaKieu = new System.Windows.Forms.Label();
-            this.cmboxCuaHang = new System.Windows.Forms.ComboBox();
-            this.btnKhoaTruyxuat = new System.Windows.Forms.Button();
             this.pnlfrmChiSP.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabCauHinhSP.SuspendLayout();
@@ -160,16 +161,17 @@
             // 
             // btnLuuThayDoi
             // 
-            this.btnLuuThayDoi.Location = new System.Drawing.Point(192, 311);
+            this.btnLuuThayDoi.Location = new System.Drawing.Point(176, 334);
             this.btnLuuThayDoi.Name = "btnLuuThayDoi";
             this.btnLuuThayDoi.Size = new System.Drawing.Size(75, 35);
             this.btnLuuThayDoi.TabIndex = 2;
             this.btnLuuThayDoi.Text = "Lưu";
             this.btnLuuThayDoi.UseVisualStyleBackColor = true;
+            this.btnLuuThayDoi.Click += new System.EventHandler(this.btnLuuThayDoi_Click);
             // 
             // btnThemSP
             // 
-            this.btnThemSP.Location = new System.Drawing.Point(93, 311);
+            this.btnThemSP.Location = new System.Drawing.Point(95, 331);
             this.btnThemSP.Name = "btnThemSP";
             this.btnThemSP.Size = new System.Drawing.Size(75, 35);
             this.btnThemSP.TabIndex = 2;
@@ -178,6 +180,7 @@
             // 
             // groupBoxThongTin
             // 
+            this.groupBoxThongTin.Controls.Add(this.cmBoxSP);
             this.groupBoxThongTin.Controls.Add(this.txtNamSX);
             this.groupBoxThongTin.Controls.Add(this.txtTenSP);
             this.groupBoxThongTin.Controls.Add(this.txtboxMaSP);
@@ -188,15 +191,25 @@
             this.groupBoxThongTin.Controls.Add(this.label1);
             this.groupBoxThongTin.Location = new System.Drawing.Point(19, 19);
             this.groupBoxThongTin.Name = "groupBoxThongTin";
-            this.groupBoxThongTin.Size = new System.Drawing.Size(248, 275);
+            this.groupBoxThongTin.Size = new System.Drawing.Size(248, 306);
             this.groupBoxThongTin.TabIndex = 1;
             this.groupBoxThongTin.TabStop = false;
             this.groupBoxThongTin.Text = "Thông Tin:";
             // 
+            // cmBoxSP
+            // 
+            this.cmBoxSP.FormattingEnabled = true;
+            this.cmBoxSP.Location = new System.Drawing.Point(45, 131);
+            this.cmBoxSP.Name = "cmBoxSP";
+            this.cmBoxSP.Size = new System.Drawing.Size(154, 21);
+            this.cmBoxSP.TabIndex = 5;
+            this.cmBoxSP.SelectedIndexChanged += new System.EventHandler(this.cmBoxSP_SelectedIndexChanged);
+            // 
             // txtNamSX
             // 
-            this.txtNamSX.Location = new System.Drawing.Point(99, 242);
+            this.txtNamSX.Location = new System.Drawing.Point(99, 245);
             this.txtNamSX.Name = "txtNamSX";
+            this.txtNamSX.ReadOnly = true;
             this.txtNamSX.Size = new System.Drawing.Size(100, 20);
             this.txtNamSX.TabIndex = 4;
             // 
@@ -204,6 +217,7 @@
             // 
             this.txtTenSP.Location = new System.Drawing.Point(45, 197);
             this.txtTenSP.Name = "txtTenSP";
+            this.txtTenSP.ReadOnly = true;
             this.txtTenSP.Size = new System.Drawing.Size(154, 20);
             this.txtTenSP.TabIndex = 3;
             // 
@@ -216,11 +230,13 @@
             // 
             // cmBoxDongSP
             // 
+            this.cmBoxDongSP.Enabled = false;
             this.cmBoxDongSP.FormattingEnabled = true;
             this.cmBoxDongSP.Location = new System.Drawing.Point(45, 70);
             this.cmBoxDongSP.Name = "cmBoxDongSP";
             this.cmBoxDongSP.Size = new System.Drawing.Size(154, 21);
             this.cmBoxDongSP.TabIndex = 1;
+            this.cmBoxDongSP.SelectedIndexChanged += new System.EventHandler(this.cmBoxDongSP_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -234,7 +250,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 245);
+            this.label3.Location = new System.Drawing.Point(14, 248);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 0;
@@ -295,6 +311,7 @@
             // 
             this.txtboxPin.Location = new System.Drawing.Point(302, 274);
             this.txtboxPin.Name = "txtboxPin";
+            this.txtboxPin.ReadOnly = true;
             this.txtboxPin.Size = new System.Drawing.Size(89, 20);
             this.txtboxPin.TabIndex = 8;
             // 
@@ -302,6 +319,7 @@
             // 
             this.txtBoxTrongLuong.Location = new System.Drawing.Point(291, 231);
             this.txtBoxTrongLuong.Name = "txtBoxTrongLuong";
+            this.txtBoxTrongLuong.ReadOnly = true;
             this.txtBoxTrongLuong.Size = new System.Drawing.Size(100, 20);
             this.txtBoxTrongLuong.TabIndex = 8;
             // 
@@ -309,6 +327,7 @@
             // 
             this.txtboxSim.Location = new System.Drawing.Point(278, 197);
             this.txtboxSim.Name = "txtboxSim";
+            this.txtboxSim.ReadOnly = true;
             this.txtboxSim.Size = new System.Drawing.Size(113, 20);
             this.txtboxSim.TabIndex = 8;
             // 
@@ -316,6 +335,7 @@
             // 
             this.txtboxManHinh.Location = new System.Drawing.Point(216, 164);
             this.txtboxManHinh.Name = "txtboxManHinh";
+            this.txtboxManHinh.ReadOnly = true;
             this.txtboxManHinh.Size = new System.Drawing.Size(175, 20);
             this.txtboxManHinh.TabIndex = 8;
             // 
@@ -323,6 +343,7 @@
             // 
             this.txtPort.Location = new System.Drawing.Point(216, 97);
             this.txtPort.Name = "txtPort";
+            this.txtPort.ReadOnly = true;
             this.txtPort.Size = new System.Drawing.Size(175, 20);
             this.txtPort.TabIndex = 8;
             // 
@@ -330,6 +351,7 @@
             // 
             this.txtCamera.Location = new System.Drawing.Point(217, 42);
             this.txtCamera.Name = "txtCamera";
+            this.txtCamera.ReadOnly = true;
             this.txtCamera.Size = new System.Drawing.Size(174, 20);
             this.txtCamera.TabIndex = 8;
             // 
@@ -337,6 +359,7 @@
             // 
             this.txtboxBNngoai.Location = new System.Drawing.Point(100, 272);
             this.txtboxBNngoai.Name = "txtboxBNngoai";
+            this.txtboxBNngoai.ReadOnly = true;
             this.txtboxBNngoai.Size = new System.Drawing.Size(102, 20);
             this.txtboxBNngoai.TabIndex = 7;
             // 
@@ -344,6 +367,7 @@
             // 
             this.txtboxBNtrong.Location = new System.Drawing.Point(100, 228);
             this.txtboxBNtrong.Name = "txtboxBNtrong";
+            this.txtboxBNtrong.ReadOnly = true;
             this.txtboxBNtrong.Size = new System.Drawing.Size(102, 20);
             this.txtboxBNtrong.TabIndex = 7;
             // 
@@ -351,6 +375,7 @@
             // 
             this.txtboxOS.Location = new System.Drawing.Point(100, 182);
             this.txtboxOS.Name = "txtboxOS";
+            this.txtboxOS.ReadOnly = true;
             this.txtboxOS.Size = new System.Drawing.Size(102, 20);
             this.txtboxOS.TabIndex = 7;
             // 
@@ -358,6 +383,7 @@
             // 
             this.txtboxRam.Location = new System.Drawing.Point(100, 136);
             this.txtboxRam.Name = "txtboxRam";
+            this.txtboxRam.ReadOnly = true;
             this.txtboxRam.Size = new System.Drawing.Size(102, 20);
             this.txtboxRam.TabIndex = 7;
             // 
@@ -365,6 +391,7 @@
             // 
             this.txtboxGPU.Location = new System.Drawing.Point(24, 97);
             this.txtboxGPU.Name = "txtboxGPU";
+            this.txtboxGPU.ReadOnly = true;
             this.txtboxGPU.Size = new System.Drawing.Size(178, 20);
             this.txtboxGPU.TabIndex = 7;
             // 
@@ -372,6 +399,7 @@
             // 
             this.txtboxCPU.Location = new System.Drawing.Point(24, 42);
             this.txtboxCPU.Name = "txtboxCPU";
+            this.txtboxCPU.ReadOnly = true;
             this.txtboxCPU.Size = new System.Drawing.Size(178, 20);
             this.txtboxCPU.TabIndex = 7;
             // 
@@ -498,6 +526,23 @@
             this.tabThongTinKieuSP.TabIndex = 1;
             this.tabThongTinKieuSP.Text = "Màu sắc và số lượng";
             this.tabThongTinKieuSP.UseVisualStyleBackColor = true;
+            // 
+            // btnKhoaTruyxuat
+            // 
+            this.btnKhoaTruyxuat.Location = new System.Drawing.Point(491, 6);
+            this.btnKhoaTruyxuat.Name = "btnKhoaTruyxuat";
+            this.btnKhoaTruyxuat.Size = new System.Drawing.Size(75, 23);
+            this.btnKhoaTruyxuat.TabIndex = 5;
+            this.btnKhoaTruyxuat.Text = "Khoá";
+            this.btnKhoaTruyxuat.UseVisualStyleBackColor = true;
+            // 
+            // cmboxCuaHang
+            // 
+            this.cmboxCuaHang.FormattingEnabled = true;
+            this.cmboxCuaHang.Location = new System.Drawing.Point(567, 6);
+            this.cmboxCuaHang.Name = "cmboxCuaHang";
+            this.cmboxCuaHang.Size = new System.Drawing.Size(121, 21);
+            this.cmboxCuaHang.TabIndex = 4;
             // 
             // picBoxKieuSP
             // 
@@ -765,23 +810,6 @@
             this.lbMaKieu.TabIndex = 0;
             this.lbMaKieu.Text = "Mã Kiểu:";
             // 
-            // cmboxCuaHang
-            // 
-            this.cmboxCuaHang.FormattingEnabled = true;
-            this.cmboxCuaHang.Location = new System.Drawing.Point(567, 6);
-            this.cmboxCuaHang.Name = "cmboxCuaHang";
-            this.cmboxCuaHang.Size = new System.Drawing.Size(121, 21);
-            this.cmboxCuaHang.TabIndex = 4;
-            // 
-            // btnKhoaTruyxuat
-            // 
-            this.btnKhoaTruyxuat.Location = new System.Drawing.Point(491, 6);
-            this.btnKhoaTruyxuat.Name = "btnKhoaTruyxuat";
-            this.btnKhoaTruyxuat.Size = new System.Drawing.Size(75, 23);
-            this.btnKhoaTruyxuat.TabIndex = 5;
-            this.btnKhoaTruyxuat.Text = "Khoá";
-            this.btnKhoaTruyxuat.UseVisualStyleBackColor = true;
-            // 
             // frmChiTietSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -887,5 +915,6 @@
         private System.Windows.Forms.BindingSource chiTietSPBindingSource;
         private System.Windows.Forms.Button btnKhoaTruyxuat;
         private System.Windows.Forms.ComboBox cmboxCuaHang;
+        private System.Windows.Forms.ComboBox cmBoxSP;
     }
 }

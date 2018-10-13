@@ -12,25 +12,19 @@ namespace Model
     using System;
     using System.Collections.Generic;
     
-    public partial class HoaDon
+    public partial class HoaDonNhapHang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public HoaDon()
+        public HoaDonNhapHang()
         {
-            this.ChiTietHoaDons = new HashSet<ChiTietHoaDon>();
+            this.ChiTietHDNhapHangs = new HashSet<ChiTietHDNhapHang>();
         }
     
-        public string MaHoaDon { get; set; }
-        public string MaKH { get; set; }
+        public string MaHoaDonNH { get; set; }
         public string MaNV { get; set; }
-        public string MaCuaHang { get; set; }
-        public int TinhTrang { get; set; }
-        public string HTGiaoHang { get; set; }
-        public System.DateTime NgayLapHD { get; set; }
+        public System.DateTime NgayNhapHang { get; set; }
     
-        public virtual KhachHang KhachHang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
-        public virtual GiaoHang GiaoHang { get; set; }
+        public virtual ICollection<ChiTietHDNhapHang> ChiTietHDNhapHangs { get; set; }
     }
 }

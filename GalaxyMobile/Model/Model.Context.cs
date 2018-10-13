@@ -43,6 +43,9 @@ namespace Model
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<ChiTietSP> ChiTietSPs { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
+        public virtual DbSet<ChiTietHDNhapHang> ChiTietHDNhapHangs { get; set; }
+        public virtual DbSet<GiaoHang> GiaoHangs { get; set; }
+        public virtual DbSet<HoaDonNhapHang> HoaDonNhapHangs { get; set; }
     
         public virtual ObjectResult<CuaHang> USP_GetAllCuaHang()
         {
