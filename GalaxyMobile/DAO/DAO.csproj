@@ -49,7 +49,9 @@
     <Compile Include="ChiTietSPDAO.cs" />
     <Compile Include="CuaHangDAO.cs" />
     <Compile Include="DongSanPhamDAO.cs" />
+    <Compile Include="ChiTietHoaDonNhapDAO.cs" />
     <Compile Include="HoaDonDAO.cs" />
+    <Compile Include="HoaDonNhapDAO.cs" />
     <Compile Include="KHDAO.cs" />
     <Compile Include="KhoHangDAO.cs" />
     <Compile Include="LoaiNvDAO.cs" />

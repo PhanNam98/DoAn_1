@@ -225,6 +225,7 @@
     <None Include="GalaxyMobileDataSet1.xss">
       <DependentUpon>GalaxyMobileDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\Model.ChiTietHDNhapHang.datasource" />
     <None Include="Properties\DataSources\Model.ChiTietHoaDon.datasource" />
     <None Include="Properties\DataSources\Model.ChiTietSP.datasource" />
     <None Include="Properties\DataSources\Model.CuaHang.datasource" />
