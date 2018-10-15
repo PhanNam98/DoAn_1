@@ -597,6 +597,9 @@ namespace GalaxyMobile
 
         }
 
-       
+        private void frmMainServer_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
