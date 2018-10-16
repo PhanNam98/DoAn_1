@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95605F76-97ED-485D-9852-5133CC99ED99}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GalaxyMobile</RootNamespace>
+    <AssemblyName>GalaxyMobile</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\LẬP TRÌNH WINDOW\PhoneShop\PhoneShop\bin\Debug\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin">
+      <HintPath>..\..\..\..\..\UI\InnerVisual-Material Framework\InnerVisual-Material Framework\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\..\..\..\C#\AnimeManagerment\AnimeManagerment\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChiTietHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietHoaDon.Designer.cs">
+      <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChiTietHoaDonNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietHoaDonNhapHang.Designer.cs">
+      <DependentUpon>frmChiTietHoaDonNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChiTietTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietTaiKhoan.Designer.cs">
+      <DependentUpon>frmChiTietTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChiTietSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietSanPham.Designer.cs">
+      <DependentUpon>frmChiTietSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainClient.Designer.cs">
+      <DependentUpon>frmMainClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainServer.Designer.cs">
+      <DependentUpon>frmMainServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhanChiaSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhanChiaSP.Designer.cs">
+      <DependentUpon>frmPhanChiaSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemKieuSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemKieuSP.Designer.cs">
+      <DependentUpon>frmThemKieuSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemMau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemMau.Designer.cs">
+      <DependentUpon>frmThemMau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyMobileDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GalaxyMobileDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GalaxyMobileDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GalaxyMobileDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LNhanVIen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LNhanVIen.Designer.cs">
+      <DependentUpon>LNhanVIen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVIen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVIen.Designer.cs">
+      <DependentUpon>NhanVIen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\LoaiNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\LoaiNV.Designer.cs">
+      <DependentUpon>LoaiNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChiTietHoaDon.resx">
+      <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChiTietHoaDonNhapHang.resx">
+      <DependentUpon>frmChiTietHoaDonNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChiTietTaiKhoan.resx">
+      <DependentUpon>frmChiTietTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChiTietSanPham.resx">
+      <DependentUpon>frmChiTietSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainClient.resx">
+      <DependentUpon>frmMainClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainServer.resx">
+      <DependentUpon>frmMainServer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhanChiaSP.resx">
+      <DependentUpon>frmPhanChiaSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemKieuSP.resx">
+      <DependentUpon>frmThemKieuSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemMau.resx">
+      <DependentUpon>frmThemMau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LNhanVIen.resx">
+      <DependentUpon>LNhanVIen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVIen.resx">
+      <DependentUpon>NhanVIen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\LoaiNV.resx">
+      <DependentUpon>LoaiNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="App1.config" />
+    <None Include="GalaxyMobileDataSet.xsc">
+      <DependentUpon>GalaxyMobileDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GalaxyMobileDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GalaxyMobileDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GalaxyMobileDataSet.xss">
+      <DependentUpon>GalaxyMobileDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GalaxyMobileDataSet1.xsc">
+      <DependentUpon>GalaxyMobileDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GalaxyMobileDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GalaxyMobileDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GalaxyMobileDataSet1.xss">
+      <DependentUpon>GalaxyMobileDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\Model.ChiTietHDNhapHang.datasource" />
+    <None Include="Properties\DataSources\Model.ChiTietHoaDon.datasource" />
+    <None Include="Properties\DataSources\Model.ChiTietSP.datasource" />
+    <None Include="Properties\DataSources\Model.CuaHang.datasource" />
+    <None Include="Properties\DataSources\Model.DongSanPham.datasource" />
+    <None Include="Properties\DataSources\Model.HoaDon.datasource" />
+    <None Include="Properties\DataSources\Model.HoaDonNhapHang.datasource" />
+    <None Include="Properties\DataSources\Model.HSX.datasource" />
+    <None Include="Properties\DataSources\Model.KhoHang.datasource" />
+    <None Include="Properties\DataSources\Model.NhanVien.datasource" />
+    <None Include="Properties\DataSources\Model.SanPham.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{36788115-9068-47b9-a5fa-1eef30f88989}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{bb8afdb1-1713-4d65-bbdb-4c54cf8d9fff}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{7aa97434-9ab8-438c-88d0-8b622fed80d8}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

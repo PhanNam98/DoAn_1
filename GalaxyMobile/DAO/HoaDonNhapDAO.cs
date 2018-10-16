@@ -8,9 +8,9 @@ namespace DAO
 {
     public class HoaDonNhapDAO
     {
-        public HoaDonNhapHang GetHoaDonNhap(string id)
-        {
-            return;
-        }
+        //public HoaDonNhapHang GetHoaDonNhap(string id)
+        //{
+        //    return;
+        //}
     }
 }

@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GalaxyMobile", "GalaxyMobile\GalaxyMobile.csproj", "{95605F76-97ED-485D-9852-5133CC99ED99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{7AA97434-9AB8-438C-88D0-8B622FED80D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{BB8AFDB1-1713-4D65-BBDB-4C54CF8D9FFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS", "BUS\BUS.csproj", "{36788115-9068-47B9-A5FA-1EEF30F88989}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95605F76-97ED-485D-9852-5133CC99ED99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95605F76-97ED-485D-9852-5133CC99ED99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95605F76-97ED-485D-9852-5133CC99ED99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95605F76-97ED-485D-9852-5133CC99ED99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AA97434-9AB8-438C-88D0-8B622FED80D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AA97434-9AB8-438C-88D0-8B622FED80D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AA97434-9AB8-438C-88D0-8B622FED80D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AA97434-9AB8-438C-88D0-8B622FED80D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB8AFDB1-1713-4D65-BBDB-4C54CF8D9FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB8AFDB1-1713-4D65-BBDB-4C54CF8D9FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB8AFDB1-1713-4D65-BBDB-4C54CF8D9FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB8AFDB1-1713-4D65-BBDB-4C54CF8D9FFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36788115-9068-47B9-A5FA-1EEF30F88989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36788115-9068-47B9-A5FA-1EEF30F88989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36788115-9068-47B9-A5FA-1EEF30F88989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36788115-9068-47B9-A5FA-1EEF30F88989}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c439591948244e32bf34704d39f04efa" Name="Diagram1" ZoomLevel="93">
+        <EntityTypeShape EntityType="GalaxyMobileModel.CuaHang" Width="1.5" PointX="7.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.DongSanPham" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.HoaDon" Width="1.5" PointX="7.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.HSX" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.KhachHang" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.LoaiNV" Width="1.5" PointX="7.5" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.LoaiSP" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.LoaiTaiKhoan" Width="1.5" PointX="10.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.MauSP" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.SanPham" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_DongSanPham_HSX" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_DongSanPham_LoaiSP" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_SanPham_DongSanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_HoaDon_KhachHang" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.sysdiagram" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.ChiTietHoaDon" Width="1.5" PointX="13.125" PointY="4.5" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.KhoHang" Width="1.5" PointX="10.125" PointY="4.375" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietHoaDon_HoaDon1" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_KhoHang_CuaHang" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.NhanVien" Width="1.5" PointX="9.75" PointY="7.625" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_NhanVien_CuaHang" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_NhanVien_LoaiNV" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.ChiTietSP" Width="1.5" PointX="7.5" PointY="3" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietHoaDon_ChiTietSP1" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietSP_MauSP" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietSP_SanPham" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_KhoHang_ChiTietSP" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.TaiKhoan" Width="1.5" PointX="12.75" PointY="9.5" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_TaiKhoan_CuaHang" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_TaiKhoan_LoaiTaiKhoan" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.ChiTietHDNhapHang" Width="1.5" PointX="10.875" PointY="1.75" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.GiaoHang" Width="1.5" PointX="9.75" PointY="15.875" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.HoaDonNhapHang" Width="1.5" PointX="7.5" PointY="0.75" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietHDNhapHang_ChiTietSP" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietHDNhapHang_HoaDonNhapHang" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_GiaoHang_HoaDon" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
