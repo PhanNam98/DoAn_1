@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlClinet = new System.Windows.Forms.Panel();
             this.pnlTimKiem = new System.Windows.Forms.Panel();
             this.btnDongSearch = new System.Windows.Forms.Button();
@@ -124,6 +127,7 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.khachHangTableAdapter = new GalaxyMobile.GalaxyMobileDataSet1TableAdapters.KhachHangTableAdapter();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlClinet.SuspendLayout();
             this.pnlTimKiem.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -140,11 +144,13 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dongSanPhamBindingSource)).BeginInit();
+            this.tabThongKe.SuspendLayout();
             this.tabKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galaxyMobileDataSet1)).BeginInit();
             this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlClinet
@@ -259,6 +265,7 @@
             this.tabControlMainClient.SelectedIndex = 0;
             this.tabControlMainClient.Size = new System.Drawing.Size(894, 473);
             this.tabControlMainClient.TabIndex = 0;
+            this.tabControlMainClient.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControlMainClient_Selected);
             // 
             // tabHoaDon
             // 
@@ -824,6 +831,7 @@
             // 
             // tabThongKe
             // 
+            this.tabThongKe.Controls.Add(this.chart1);
             this.tabThongKe.Location = new System.Drawing.Point(4, 22);
             this.tabThongKe.Name = "tabThongKe";
             this.tabThongKe.Padding = new System.Windows.Forms.Padding(3);
@@ -952,7 +960,6 @@
             this.label14.Size = new System.Drawing.Size(85, 23);
             this.label14.TabIndex = 11;
             this.label14.Text = "Địa Chỉ :";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // txtDiaChi
             // 
@@ -1077,6 +1084,23 @@
             // 
             this.khachHangTableAdapter.ClearBeforeFill = true;
             // 
+            // chart1
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(3, 3);
+            this.chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(880, 441);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
             // frmMainClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1106,12 +1130,14 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dongSanPhamBindingSource)).EndInit();
+            this.tabThongKe.ResumeLayout(false);
             this.tabKhachHang.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.galaxyMobileDataSet1)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1213,5 +1239,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tenKHDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diaChiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

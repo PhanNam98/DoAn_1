@@ -265,5 +265,23 @@ namespace Model
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KhachHang>("spGetKH", mergeOption);
         }
+    
+        public virtual ObjectResult<spSPBanDuoc_Result> spSPBanDuoc(string ten)
+        {
+            var tenParameter = ten != null ?
+                new ObjectParameter("ten", ten) :
+                new ObjectParameter("ten", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spSPBanDuoc_Result>("spSPBanDuoc", tenParameter);
+        }
+    
+        public virtual ObjectResult<USP_GetHDTheoThang_Result> USP_GetHDTheoThang(Nullable<int> date)
+        {
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("date", date) :
+                new ObjectParameter("date", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetHDTheoThang_Result>("USP_GetHDTheoThang", dateParameter);
+        }
     }
 }

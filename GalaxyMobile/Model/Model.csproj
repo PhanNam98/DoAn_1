@@ -139,6 +139,9 @@
     <Compile Include="spGetKH_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="spSPBanDuoc_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -149,6 +152,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="USP_GetAllKhoHang_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_GetHDTheoThang_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -18,5 +18,17 @@ namespace BUS
         {
             return db.GetLoaiSP();
         }
+        public static void ThemLSP( LoaiSP obj)
+        {
+            db.ThemLSP(obj);
+        }
+        public static void XoaLSP(LoaiSP obj)
+        {
+            db.XoaLSP(obj);
+        }
+        public static void SuaLSP(LoaiSP obj)
+        {
+            db.ChinhSuaLSP(obj);
+        }
     }
 }

@@ -22,5 +22,21 @@ namespace BUS
         {
             return db.GetAllHoaDonByMaCH(maCH);
         }
+        public static void ThemHD(HoaDon obj)
+        {
+            db.ThemHD(obj);
+        }
+        public static void XoaHD(HoaDon obj)
+        {
+            db.XoaHD(obj);
+        }
+        public static void ChinhSuaHD(HoaDon obj)
+        {
+            db.ChinhSuaHD(obj);
+        }
+        public static List<USP_GetHDTheoThang_Result> GetHoaDonTheoThang(int thang)
+        {
+            return db.GetHoaDonbyMonth(thang);
+        }
     }
 }

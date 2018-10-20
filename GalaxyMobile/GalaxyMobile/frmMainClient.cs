@@ -16,10 +16,10 @@ namespace GalaxyMobile
         public frmMainClient(TaiKhoan username, int matruycap)
         {
             InitializeComponent();
-            User = username;
+            User = username; 
             MaTruyCap = matruycap;
         }
-
+       
         private TaiKhoan User;
         private int MaTruyCap;
         private CuaHang CH;
@@ -91,10 +91,20 @@ namespace GalaxyMobile
 
         #endregion
 
-        private void label14_Click(object sender, EventArgs e)
+        #region Thong Ke
+        private void tabControlMainClient_Selected(object sender, TabControlEventArgs e)
         {
-
+            chart1.DataSource = ThongKeBUS.getProductSale(User.MaCuaHang);
+            chart1.ChartAreas[0].AxisY.Title = "Số lượng";
+            chart1.ChartAreas[0].AxisX.Title = "Tên sản phẩm";
+            chart1.Series["Series1"].XValueMember = "TenSP";
+            chart1.Series["Series1"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            chart1.Series["Series1"].YValueMembers = "SoLuong";
+            chart1.Series["Series1"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
         }
+        #endregion
+
+
         #region Khach Hang 
         bool Them = false;
         public void LoadKH()
@@ -245,5 +255,7 @@ namespace GalaxyMobile
             btnHuy.Enabled = false;
             panel.Enabled = false;
         }
+
+       
     }
 }

@@ -9,14 +9,32 @@ namespace BUS
 {
     public class HSXBUS
     {
-        static HSXDAO db;
+       
+        static NSXDAO dbs;
         static HSXBUS()
         {
-            db = new HSXDAO();
+            dbs = new NSXDAO();
         }
         public static List<HSX> GetAllHSX()
         {
-            return db.GetAllHSX();
+            return dbs.GetAllHSX();
+        }
+        public static HSX GetHSXByID(string id)
+        {
+            return dbs.getHSXbyID(id);
+        }
+        public static void ThemHSX( HSX obj)
+        {
+            dbs.ThemHSX(obj);
+
+        }
+        public static void XoaHSX(HSX obj)
+        {
+            dbs.XoaHSX(obj);
+        }
+        public static void ChinhSuaHXS(HSX obj)
+        {
+            dbs.ChinhSuaHSX(obj);
         }
     }
 }

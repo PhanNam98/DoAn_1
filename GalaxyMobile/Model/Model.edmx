@@ -403,6 +403,9 @@
           <Parameter Name="diachi" Type="nvarchar" Mode="In" />
           <Parameter Name="sdt" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="spSPBanDuoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ten" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="spThemNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="manv" Type="varchar" Mode="In" />
           <Parameter Name="macuahang" Type="varchar" Mode="In" />
@@ -431,6 +434,9 @@
         </Function>
         <Function Name="USP_GetAllCuaHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="USP_GetAllKhoHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="USP_GetHDTheoThang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="date" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="GalaxyMobileModelStoreContainer">
           <EntitySet Name="ChiTietHDNhapHang" EntityType="Self.ChiTietHDNhapHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiTietHoaDon" EntityType="Self.ChiTietHoaDon" Schema="dbo" store:Type="Tables" />
@@ -823,6 +829,12 @@
             <End Role="HoaDon" EntitySet="HoaDons" />
             <End Role="GiaoHang" EntitySet="GiaoHangs" />
           </AssociationSet>
+          <FunctionImport Name="spSPBanDuoc" ReturnType="Collection(GalaxyMobileModel.spSPBanDuoc_Result)">
+          <Parameter Name="ten" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetHDTheoThang" ReturnType="Collection(GalaxyMobileModel.USP_GetHDTheoThang_Result)">
+            <Parameter Name="date" Mode="In" Type="Int32" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1163,6 +1175,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="spSPBanDuoc_Result">
+          <Property Type="Int32" Name="SoLuong" Nullable="true" />
+          <Property Type="String" Name="TenSP" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="USP_GetHDTheoThang_Result">
+          <Property Type="String" Name="MaHoaDon" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="MaKH" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaNV" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaCuaHang" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="TinhTrang" Nullable="false" />
+          <Property Type="String" Name="HTGiaoHang" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="NgayLapHD" Nullable="false" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1381,6 +1406,27 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spSPBanDuoc" FunctionName="GalaxyMobileModel.Store.spSPBanDuoc">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GalaxyMobileModel.spSPBanDuoc_Result">
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_GetHDTheoThang" FunctionName="GalaxyMobileModel.Store.USP_GetHDTheoThang">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GalaxyMobileModel.USP_GetHDTheoThang_Result">
+                <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
+                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="HTGiaoHang" ColumnName="HTGiaoHang" />
+                <ScalarProperty Name="NgayLapHD" ColumnName="NgayLapHD" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

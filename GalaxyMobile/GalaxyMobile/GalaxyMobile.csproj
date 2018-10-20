@@ -52,6 +52,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -139,6 +140,12 @@
     <Compile Include="LNhanVIen.Designer.cs">
       <DependentUpon>LNhanVIen.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLoaiSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoaiSP.Designer.cs">
+      <DependentUpon>frmLoaiSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVIen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +194,9 @@
     <EmbeddedResource Include="LNhanVIen.resx">
       <DependentUpon>LNhanVIen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLoaiSP.resx">
+      <DependentUpon>frmLoaiSP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVIen.resx">
       <DependentUpon>NhanVIen.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +244,7 @@
     <None Include="Properties\DataSources\Model.HoaDonNhapHang.datasource" />
     <None Include="Properties\DataSources\Model.HSX.datasource" />
     <None Include="Properties\DataSources\Model.KhoHang.datasource" />
+    <None Include="Properties\DataSources\Model.LoaiSP.datasource" />
     <None Include="Properties\DataSources\Model.NhanVien.datasource" />
     <None Include="Properties\DataSources\Model.SanPham.datasource" />
     <None Include="Properties\Settings.settings">

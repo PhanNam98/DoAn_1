@@ -126,9 +126,14 @@ namespace GalaxyMobile
             catch { }
         }
         #endregion
-        
+
 
         #region San Pham
+        private void btnLSP_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmLoaiSP();
+            frm.ShowDialog();
+        }
         private void btnLoadSP_Click(object sender, EventArgs e)
         {
             LoadSp();
@@ -335,23 +340,7 @@ namespace GalaxyMobile
         private void btnHuy_Click(object sender, EventArgs e)
         {
 
-            // Xóa trống các đối tượng trong Panel 
-            txtMaNV.ResetText();
-            txtTenNV.ResetText();
-            txtSDT.ResetText();
-            cboLoaiNV.ResetText();
-            cboSex.ResetText();
-            txtDiaChi.ResetText();
-            txtLuong.ResetText();
-            cboCH.ResetText();
-            // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
-            btnThem.Enabled = true;
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-            // Không cho thao tác trên các nút Lưu / Hủy / Panel 
-            btnLuu.Enabled = false;
-            btnHuy.Enabled = false;
-            panel.Enabled = false;
+           
         }
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -398,8 +387,254 @@ namespace GalaxyMobile
 
         }
         #endregion
+  
+        #region Thongke(tabControllHere)
 
+        private void tabControlMainServer_Selected(object sender, TabControlEventArgs e)
+        {
+            // Hiện biểu đồ 
+            chart1.DataSource = ThongKeBUS.getProductSale(User.MaCuaHang);
+            chart1.ChartAreas[0].AxisY.Title = "Số lượng";
+            chart1.ChartAreas[0].AxisX.Title = "Tên sản phẩm";
+            chart1.Series["Series1"].XValueMember = "TenSP";
+            chart1.Series["Series1"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            chart1.Series["Series1"].YValueMembers = "SoLuong";
+            chart1.Series["Series1"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            // hiện dữ liệu hóa đơn tất cả.
+            LoadHD();
+            LoadButtonHD();
+        }
+        #endregion
+        #region Hoa Don
+        bool ThemHD = false;
+        private void btnLuuHD_Click(object sender, EventArgs e)
+        {
+            if (Them)
+            {
+                try
+                {
+                    HoaDon hd = new HoaDon();
+                    hd.MaHoaDon = txtMaHD.Text;
+                    hd.MaKH = cboKhachHangHD.SelectedValue.ToString();
+                    hd.MaNV = cboNhanVienHD.SelectedValue.ToString();
+                    hd.MaCuaHang = cboCuaHangHD.SelectedValue.ToString();
+                    hd.TinhTrang = int.Parse(txtTinhTrangHD.Text);
+                    hd.HTGiaoHang = txtHinhThucGH.Text;
+                    hd.NgayLapHD = DatePickerHD.Value.Date;
+                    HoaDonBUS.ThemHD(hd);
+                    LoadHD();
+                    LoadButtonHD();
+                    // Thông báo 
+                    MessageBox.Show("Đã thêm xong!");
+                }
+                catch
+                {
+                    MessageBox.Show("Mã hóa đơn tồn tại không thể thêm !");
+                    txtMaHD.ResetText();
+                    cboKhachHangHD.ResetText();
+                    cboNhanVienHD.ResetText();
+                    cboCuaHangHD.ResetText();
+                    txtTinhTrangHD.ResetText();
+                    txtHinhThucGH.ResetText();
 
+                }
+            }
+            else
+            {
+                HoaDon hd = new HoaDon();
+                hd.MaHoaDon = txtMaHD.Text;
+                hd.MaKH = cboKhachHangHD.SelectedValue.ToString();
+                hd.MaNV = cboNhanVienHD.SelectedValue.ToString();
+                hd.MaCuaHang = cboCuaHangHD.SelectedValue.ToString();
+                hd.TinhTrang = int.Parse(txtTinhTrangHD.Text);
+                hd.HTGiaoHang = txtHinhThucGH.Text;
+                hd.NgayLapHD = DatePickerHD.Value.Date;
+                HoaDonBUS.ChinhSuaHD(hd);
+                LoadHD();
+                LoadButtonHD();
+                // Thông báo 
+                MessageBox.Show("Đã sửa xong!");
+            }
+        }
+
+        private void btnXoaHD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HoaDon hd = new HoaDon();
+                hd.MaHoaDon = txtMaHD.Text;
+                hd.MaKH = cboKhachHangHD.SelectedValue.ToString();
+                hd.MaNV = cboNhanVienHD.SelectedValue.ToString();
+                hd.MaCuaHang = cboCuaHangHD.SelectedValue.ToString();
+                hd.TinhTrang = int.Parse(txtTinhTrangHD.Text);
+                hd.HTGiaoHang = txtHinhThucGH.Text;
+                hd.NgayLapHD = DatePickerHD.Value.Date;
+                HoaDonBUS.XoaHD(hd);
+                //hd.GiaoHang = txtHinhThucGH.Text;
+                //LoaiNvBUS.XoaLNV(strMaLNV);
+                LoadHD();
+                LoadButtonHD();
+                dgvHoaDon_CellClick(null, null);
+                MessageBox.Show("Đã xóa xong!");
+        }
+            catch
+            {
+                MessageBox.Show("Không được phép xóa nhân viên này");
+            }
+}
+
+        private void btnThemHD_Click(object sender, EventArgs e)
+        {
+            ThemHD = true;
+            txtMaHD.Enabled = true;
+            // Xóa trống các đối tượng trong Panel 
+            txtMaHD.ResetText();
+            cboKhachHangHD.ResetText();
+            cboNhanVienHD.ResetText();
+            cboCuaHangHD.ResetText();
+            txtTinhTrangHD.ResetText();
+            txtHinhThucGH.ResetText();
+            // Cho thao tác trên các nút Lưu / Hủy / Panel 
+            btnLuuHD.Enabled = true;
+            btnHuyHD.Enabled = true;
+            panelHD.Enabled = true;
+            // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
+            btnThemHD.Enabled = false;
+            btnSuaHD.Enabled = false;
+            btnXoaHD.Enabled = false;
+            txtMaHD.Focus();
+        }
+
+        private void btnSuaHD_Click(object sender, EventArgs e)
+        {
+            // Kích hoạt biến Sửa
+            ThemHD = false;
+            dgvHoaDon_CellClick(null, null);
+            // Cho phép thao tác trên Panel 
+            panelHD.Enabled = true;
+            // Cho thao tác trên các nút Lưu / Hủy / Panel 
+            btnLuuHD.Enabled = true;
+            btnHuyHD.Enabled = true;
+            // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
+            btnThemHD.Enabled = false;
+            btnSuaHD.Enabled = false;
+            btnXoaHD.Enabled = false;
+            // Đưa con trỏ đến TextField txtTenNV         
+            txtMaHD.Enabled = false;
+          
+        }
+
+        private void btnHuyHD_Click(object sender, EventArgs e)
+        {
+            // Xóa trống các đối tượng trong Panel 
+            txtMaHD.ResetText();
+            cboKhachHangHD.ResetText();
+            cboNhanVienHD.ResetText();
+            cboCuaHangHD.ResetText();
+            txtTinhTrangHD.ResetText();
+            txtHinhThucGH.ResetText();
+            // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
+            btnThemHD.Enabled = true;
+            btnSuaHD.Enabled = true;
+            btnXoaHD.Enabled = true;
+            // Không cho thao tác trên các nút Lưu / Hủy / Panel 
+            btnLuuHD.Enabled = false;
+            btnHuyHD.Enabled = false;
+            panelHD.Enabled = false;
+        }
+        private void dgvHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = dgvHoaDon.CurrentCell.RowIndex;
+            cboKhachHangHD.DataSource = KHBUS.GetKH();
+            cboKhachHangHD.DisplayMember = "TenKH";
+            cboKhachHangHD.ValueMember = "MaKH";
+            cboNhanVienHD.DataSource = NhanVienBUS.GetNV();
+            cboNhanVienHD.DisplayMember = "TenNV";
+            cboNhanVienHD.ValueMember = "MaNV";
+            cboCuaHangHD.DataSource= CuaHangBUS.GetAllCuaHang();
+            cboCuaHangHD.DisplayMember = "TenCuaHang";
+            cboCuaHangHD.ValueMember = "MaCuaHang";
+            //mapping
+            txtMaHD.Text= dgvHoaDon.Rows[r].Cells[0].Value.ToString();
+            cboKhachHangHD.SelectedValue= dgvHoaDon.Rows[r].Cells[1].Value.ToString();
+            cboNhanVienHD.SelectedValue= dgvHoaDon.Rows[r].Cells[2].Value.ToString();
+            cboCuaHangHD.SelectedValue= dgvHoaDon.Rows[r].Cells[3].Value.ToString();
+            txtTinhTrangHD.Text= dgvHoaDon.Rows[r].Cells[4].Value.ToString();
+            txtHinhThucGH.Text= dgvHoaDon.Rows[r].Cells[5].Value.ToString();
+            DatePickerHD.Text= dgvHoaDon.Rows[r].Cells[6].Value.ToString();
+        }
+        private void cboHDbyMonth_TextChanged(object sender, EventArgs e)
+        {
+            string thang = ((KeyValuePair<string, string>)cboHDbyMonth.SelectedItem).Key;
+            if (int.Parse(thang) == 0)
+            {
+                hoaDonBindingSource.DataSource = HoaDonBUS.GetAllHoaDon();
+                dgvHoaDon_CellClick(null, null);
+            }
+            else
+            {
+                try
+                {
+                    hoaDonBindingSource.DataSource = HoaDonBUS.GetHoaDonTheoThang(int.Parse(thang));
+                    dgvHoaDon_CellClick(null, null);
+                }
+                catch
+                {
+                    txtMaHD.ResetText();
+                    cboKhachHangHD.ResetText();
+                    cboNhanVienHD.ResetText();
+                    cboCuaHangHD.ResetText();
+                    txtTinhTrangHD.ResetText();
+                    txtHinhThucGH.ResetText();
+                }
+            }
+        }
+        public void LoadButtonHD()
+        {
+           
+            txtMaHD.ResetText();
+            cboKhachHangHD.ResetText();
+            cboNhanVienHD.ResetText();
+            cboCuaHangHD.ResetText();
+            txtTinhTrangHD.ResetText();
+            txtHinhThucGH.ResetText();
+            // Không cho thao tác trên các nút Lưu / Hủy 
+            btnLuuHD.Enabled = false;
+            btnHuyHD.Enabled = false;
+            panelHD.Enabled = false;
+            // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
+            btnThemHD.Enabled = true;
+            btnSuaHD.Enabled = true;
+            btnXoaHD.Enabled = true;
+            dgvHoaDon_CellClick(null, null);
+        }
+        public void LoadHD()
+        {
+            // tạo dictionary chứa value and key cho combo box 
+            Dictionary<string,string > combosource = new Dictionary<string, string>();
+            combosource.Add("0", "Tất cả");
+            combosource.Add("1", "Tháng 1");
+            combosource.Add("2", "Tháng 2");
+            combosource.Add("3", "Tháng 3");
+            combosource.Add("4", "Tháng 4");
+            combosource.Add("5", "Tháng 5");
+            combosource.Add("6", "Tháng 6");
+            combosource.Add("7", "Tháng 7");
+            combosource.Add("8", "Tháng 8");
+            combosource.Add("9", "Tháng 9");
+            combosource.Add("10", "Tháng 10");
+            combosource.Add("11", "Tháng 11");
+            combosource.Add("12", "Tháng 12");
+            cboHDbyMonth.DataSource = new BindingSource(combosource,null);
+            cboHDbyMonth.DisplayMember = "Value";
+            cboHDbyMonth.ValueMember = "Key";
+            string key = ((KeyValuePair<string, string>)cboHDbyMonth.SelectedItem).Key;
+            string value = ((KeyValuePair<string, string>)cboHDbyMonth.SelectedItem).Key;
+            hoaDonBindingSource.DataSource = HoaDonBUS.GetAllHoaDon();
+            dgvHoaDon_CellClick(null, null);
+
+        }
+        #endregion
         #region LoaiNhanVIen
         private void btnLNV_Click(object sender, EventArgs e)
         {
@@ -549,7 +784,139 @@ namespace GalaxyMobile
         }
         #endregion
 
+        #region NSX
+        bool ThemNSX = false;
+        public void LoadNSX()
+        {
+            hSXBindingSource.DataSource = HSXBUS.GetAllHSX();
+            txtMaNSX.ResetText();
+            txtTenNSX.ResetText();
+            // Không cho thao tác trên các nút Lưu / Hủy 
+            btnLuuNSX.Enabled = false;
+            btnHuyNSX.Enabled = false;
+            panelNSX.Enabled = false;
+            // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
+            btnThemNSX.Enabled = true;
+            btnSuaNSX.Enabled = true;
+            btnXoaNSX.Enabled = true;
+        }
+        private void btnThemNSX_Click(object sender, EventArgs e)
+        {
+            ThemNSX = true;
+            txtMaNSX.Enabled = true;
+            // Xóa trống các đối tượng trong Panel 
+            txtMaNSX.ResetText();
+            txtTenNSX.ResetText();
+            // Cho thao tác trên các nút Lưu / Hủy / Panel 
+            btnLuuNSX.Enabled = true;
+            btnHuyNSX.Enabled = true;
+            panelNSX.Enabled = true;
+            // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
+            btnThemNSX.Enabled = false;
+            btnSuaNSX.Enabled = false;
+            btnXoaNSX.Enabled = false;
+            txtMaNSX.Focus();
+        }
+        private void btnSuaNSX_Click(object sender, EventArgs e)
+        {
+            // Kích hoạt biến Sửa
+            ThemNSX = false;
+            dgvNSX_CellClick(null, null);
+            
+            // Cho phép thao tác trên Panel 
+            panelNSX.Enabled = true;
+            // Cho thao tác trên các nút Lưu / Hủy / Panel 
+            btnLuuNSX.Enabled = true;
+            btnHuyNSX.Enabled = true;
+            // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
+            btnThemNSX.Enabled = false;
+            btnSuaNSX.Enabled = false;
+            btnXoaNSX.Enabled = false;
+            // Đưa con trỏ đến TextField txtTenNV         
+            txtMaNSX.Enabled = false;
+            txtTenNSX.Focus();
+        }
 
+        private void btnXoaNSX_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               
+                HSX a = new HSX();
+                a.MaHSX = txtMaNSX.Text;
+                a.TenHSX = txtTenNSX.Text;
+                HSXBUS.XoaHSX(a);
+                LoadNSX();
+                dgvNSX_CellClick(null, null);
+                MessageBox.Show("Đã xóa xong!");
+            }
+            catch
+            {
+                MessageBox.Show("Không được phép xóa nhà sản xuất này");
+            }
+        }
+
+        private void btnHuyNSX_Click(object sender, EventArgs e)
+        {
+            txtMaNSX.ResetText();
+            txtTenNSX.ResetText();
+            // Không cho thao tác trên các nút Lưu / Hủy 
+            btnLuuNSX.Enabled = false;
+            btnHuyNSX.Enabled = false;
+            panelNSX.Enabled = false;
+            // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
+            btnThemNSX.Enabled = true;
+            btnSuaNSX.Enabled = true;
+            btnXoaNSX.Enabled = true;
+        }
+
+        private void btnLuuNSX_Click(object sender, EventArgs e)
+        {
+            if (ThemNSX)
+            {
+                
+                try
+                {
+                    HSX a = new HSX();
+                    a.MaHSX = txtMaNSX.Text;
+                    a.TenHSX = txtTenNSX.Text;
+                    HSXBUS.ThemHSX(a);
+                    LoadNSX();
+                    // Thông báo 
+                    MessageBox.Show("Đã thêm xong!");
+                }
+            catch
+                  {
+                MessageBox.Show("Mã nhà sản xuất tồn tai. Nhập Mã nhân viên khác !");
+                txtMaNSX.ResetText();
+                txtTenNSX.ResetText();
+                txtMaNSX.Focus();
+                 }
+            }
+            else
+            {
+                HSX a = new HSX();
+                a.TenHSX = txtTenNSX.Text;
+                a.MaHSX = txtMaNSX.Text;
+                HSXBUS.ChinhSuaHXS(a);
+                LoadNSX();
+                // Thông báo 
+                MessageBox.Show("Đã sửa xong!");
+            }
+        }
+        private void btnLoadNSX_Click(object sender, EventArgs e)
+        {
+            LoadNSX();
+            dgvNSX_CellClick(null, null);
+        }
+        private void dgvNSX_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = dgvNSX.CurrentCell.RowIndex;
+            txtMaNSX.Text = dgvNSX.Rows[r].Cells[0].Value.ToString();
+            txtTenNSX.Text = dgvNSX.Rows[r].Cells[1].Value.ToString();
+
+        }
+        #endregion
 
         #region Hhap Hang
 

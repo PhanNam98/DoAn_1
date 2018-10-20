@@ -213,5 +213,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spSPBanDuoc" FunctionName="GalaxyMobileModel.Store.spSPBanDuoc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GalaxyMobileModel.spSPBanDuoc_Result">
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_GetHDTheoThang" FunctionName="GalaxyMobileModel.Store.USP_GetHDTheoThang">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GalaxyMobileModel.USP_GetHDTheoThang_Result">
+          <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+          <ScalarProperty Name="HTGiaoHang" ColumnName="HTGiaoHang" />
+          <ScalarProperty Name="NgayLapHD" ColumnName="NgayLapHD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
