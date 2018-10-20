@@ -213,5 +213,38 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_GETAllInfoSP" FunctionName="GalaxyMobileModel.Store.USP_GETAllInfoSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GalaxyMobileModel.USP_GETAllInfoSP_Result">
+          <ScalarProperty Name="MaLSP" ColumnName="MaLSP" />
+          <ScalarProperty Name="MaDSP" ColumnName="MaDSP" />
+          <ScalarProperty Name="MaHSX" ColumnName="MaHSX" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="MaKieu" ColumnName="MaKieu" />
+          <ScalarProperty Name="SoluongSP" ColumnName="SoluongSP" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_GETAllInfoSPNew" FunctionName="GalaxyMobileModel.Store.USP_GETAllInfoSPNew">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GalaxyMobileModel.USP_GETAllInfoSPNew_Result">
+          <ScalarProperty Name="TenLSP" ColumnName="TenLSP" />
+          <ScalarProperty Name="TenDong" ColumnName="TenDong" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="MaKieu" ColumnName="MaKieu" />
+          <ScalarProperty Name="SoluongSP" ColumnName="SoluongSP" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="TenHSX" ColumnName="TenHSX" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_DeleteCTSP" FunctionName="GalaxyMobileModel.Store.USP_DeleteCTSP" />
+    <FunctionImportMapping FunctionImportName="USP_ThayDoiGiaChiTietSP" FunctionName="GalaxyMobileModel.Store.USP_ThayDoiGiaChiTietSP" />
+    <FunctionImportMapping FunctionImportName="USP_ThayDoiSoLuongChiTietSP" FunctionName="GalaxyMobileModel.Store.USP_ThayDoiSoLuongChiTietSP" />
+    <FunctionImportMapping FunctionImportName="USP_GetCTSPOderByMaCHByMaKieu" FunctionName="GalaxyMobileModel.Store.USP_GetCTSPOderByMaCHByMaKieu" />
+    <FunctionImportMapping FunctionImportName="USP_GetCTSPOderByMaCHByMaSP" FunctionName="GalaxyMobileModel.Store.USP_GetCTSPOderByMaCHByMaSP" />
+    <FunctionImportMapping FunctionImportName="USP_PhanChiaSP" FunctionName="GalaxyMobileModel.Store.USP_PhanChiaSP" />
+    <FunctionImportMapping FunctionImportName="USP_ThemSL_KhoHangByMaKieuByMaCH" FunctionName="GalaxyMobileModel.Store.USP_ThemSL_KhoHangByMaKieuByMaCH" />
   </EntityContainerMapping>
 </Mapping>

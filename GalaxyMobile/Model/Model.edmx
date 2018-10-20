@@ -429,8 +429,44 @@
           <Parameter Name="sdt" Type="varchar" Mode="In" />
           <Parameter Name="luong" Type="decimal" Mode="In" />
         </Function>
+        <Function Name="USP_DeleteCTSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="USP_GetAllCuaHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="USP_GETAllInfoSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="USP_GETAllInfoSPNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="USP_GetAllKhoHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="USP_GetCTSPOderByMaCHByMaKieu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idch" Type="varchar" Mode="In" />
+          <Parameter Name="id" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="USP_GetCTSPOderByMaCHByMaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idch" Type="varchar" Mode="In" />
+          <Parameter Name="id" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="USP_PhanChiaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="varchar" Mode="In" />
+          <Parameter Name="idNhap" Type="varchar" Mode="In" />
+          <Parameter Name="idPP" Type="varchar" Mode="In" />
+          <Parameter Name="SL" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_ThayDoiGiaChiTietSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="varchar" Mode="In" />
+          <Parameter Name="Gia" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="USP_ThayDoiSoLuongChiTietSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="varchar" Mode="In" />
+          <Parameter Name="sl" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_ThemSL_KhoHangByMaKieuByMaCH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="varchar" Mode="In" />
+          <Parameter Name="idCH" Type="varchar" Mode="In" />
+          <Parameter Name="SL" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="GalaxyMobileModelStoreContainer">
           <EntitySet Name="ChiTietHDNhapHang" EntityType="Self.ChiTietHDNhapHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiTietHoaDon" EntityType="Self.ChiTietHoaDon" Schema="dbo" store:Type="Tables" />
@@ -823,6 +859,42 @@
             <End Role="HoaDon" EntitySet="HoaDons" />
             <End Role="GiaoHang" EntitySet="GiaoHangs" />
           </AssociationSet>
+          <FunctionImport Name="USP_GETAllInfoSP" ReturnType="Collection(GalaxyMobileModel.USP_GETAllInfoSP_Result)">
+          <Parameter Name="id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GETAllInfoSPNew" ReturnType="Collection(GalaxyMobileModel.USP_GETAllInfoSPNew_Result)">
+          <Parameter Name="id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_DeleteCTSP">
+          <Parameter Name="id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_ThayDoiGiaChiTietSP">
+            <Parameter Name="id" Mode="In" Type="String" />
+            <Parameter Name="Gia" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="USP_ThayDoiSoLuongChiTietSP">
+            <Parameter Name="id" Mode="In" Type="String" />
+            <Parameter Name="sl" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetCTSPOderByMaCHByMaKieu" EntitySet="ChiTietSPs" ReturnType="Collection(GalaxyMobileModel.ChiTietSP)">
+            <Parameter Name="idch" Mode="In" Type="String" />
+            <Parameter Name="id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetCTSPOderByMaCHByMaSP" EntitySet="ChiTietSPs" ReturnType="Collection(GalaxyMobileModel.ChiTietSP)">
+            <Parameter Name="idch" Mode="In" Type="String" />
+            <Parameter Name="id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_PhanChiaSP">
+            <Parameter Name="id" Mode="In" Type="String" />
+            <Parameter Name="idNhap" Mode="In" Type="String" />
+            <Parameter Name="idPP" Mode="In" Type="String" />
+            <Parameter Name="SL" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_ThemSL_KhoHangByMaKieuByMaCH">
+            <Parameter Name="id" Mode="In" Type="String" />
+            <Parameter Name="idCH" Mode="In" Type="String" />
+            <Parameter Name="SL" Mode="In" Type="Int32" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1163,6 +1235,56 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="USP_GETAllInfoSP_Result">
+          <Property Type="String" Name="MaLSP" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaDSP" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MaHSX" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="MaSP" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="MaKieu" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="SoluongSP" Nullable="false" />
+          <Property Type="Decimal" Name="Gia" Nullable="false" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="USP_GETAllInfoSPNew_Result">
+          <Property Type="String" Name="TenLSP" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="TenDong" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="TenSP" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="MaKieu" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="SoluongSP" Nullable="false" />
+          <Property Type="Decimal" Name="Gia" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="TenHSX" Nullable="false" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="USP_GetCTSPOderByMaCHByMaKieu_Result">
+          <Property Type="String" Name="MaSP" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="MaKieu" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MaMau" Nullable="false" MaxLength="20" />
+          <Property Type="Binary" Name="Anh" Nullable="true" MaxLength="Max" />
+          <Property Type="Decimal" Name="Gia" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="SoluongSP" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="USP_GetCTSPOderByMaCHByMaSP_Result">
+          <Property Type="String" Name="MaSP" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="MaKieu" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MaMau" Nullable="false" MaxLength="20" />
+          <Property Type="Binary" Name="Anh" Nullable="true" MaxLength="Max" />
+          <Property Type="Decimal" Name="Gia" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="SoluongSP" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="USP_GetCTSPOderByMaCHByMaKieu1_Result">
+          <Property Type="String" Name="MaSP" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="MaKieu" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MaMau" Nullable="false" MaxLength="20" />
+          <Property Type="Decimal" Name="Gia" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="SoluongSP" Nullable="false" />
+          <Property Type="Binary" Name="Anh" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="USP_GetCTSPOderByMaCHByMaSP1_Result">
+          <Property Type="String" Name="MaSP" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="MaKieu" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MaMau" Nullable="false" MaxLength="20" />
+          <Property Type="Decimal" Name="Gia" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="SoluongSP" Nullable="false" />
+          <Property Type="Binary" Name="Anh" Nullable="true" MaxLength="Max" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1381,6 +1503,39 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="USP_GETAllInfoSP" FunctionName="GalaxyMobileModel.Store.USP_GETAllInfoSP">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GalaxyMobileModel.USP_GETAllInfoSP_Result">
+                <ScalarProperty Name="MaLSP" ColumnName="MaLSP" />
+                <ScalarProperty Name="MaDSP" ColumnName="MaDSP" />
+                <ScalarProperty Name="MaHSX" ColumnName="MaHSX" />
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="MaKieu" ColumnName="MaKieu" />
+                <ScalarProperty Name="SoluongSP" ColumnName="SoluongSP" />
+                <ScalarProperty Name="Gia" ColumnName="Gia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_GETAllInfoSPNew" FunctionName="GalaxyMobileModel.Store.USP_GETAllInfoSPNew">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GalaxyMobileModel.USP_GETAllInfoSPNew_Result">
+                <ScalarProperty Name="TenLSP" ColumnName="TenLSP" />
+                <ScalarProperty Name="TenDong" ColumnName="TenDong" />
+                <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+                <ScalarProperty Name="MaKieu" ColumnName="MaKieu" />
+                <ScalarProperty Name="SoluongSP" ColumnName="SoluongSP" />
+                <ScalarProperty Name="Gia" ColumnName="Gia" />
+                <ScalarProperty Name="TenHSX" ColumnName="TenHSX" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_DeleteCTSP" FunctionName="GalaxyMobileModel.Store.USP_DeleteCTSP" />
+          <FunctionImportMapping FunctionImportName="USP_ThayDoiGiaChiTietSP" FunctionName="GalaxyMobileModel.Store.USP_ThayDoiGiaChiTietSP" />
+          <FunctionImportMapping FunctionImportName="USP_ThayDoiSoLuongChiTietSP" FunctionName="GalaxyMobileModel.Store.USP_ThayDoiSoLuongChiTietSP" />
+          <FunctionImportMapping FunctionImportName="USP_GetCTSPOderByMaCHByMaKieu" FunctionName="GalaxyMobileModel.Store.USP_GetCTSPOderByMaCHByMaKieu" />
+          <FunctionImportMapping FunctionImportName="USP_GetCTSPOderByMaCHByMaSP" FunctionName="GalaxyMobileModel.Store.USP_GetCTSPOderByMaCHByMaSP" />
+          <FunctionImportMapping FunctionImportName="USP_PhanChiaSP" FunctionName="GalaxyMobileModel.Store.USP_PhanChiaSP" />
+          <FunctionImportMapping FunctionImportName="USP_ThemSL_KhoHangByMaKieuByMaCH" FunctionName="GalaxyMobileModel.Store.USP_ThemSL_KhoHangByMaKieuByMaCH" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

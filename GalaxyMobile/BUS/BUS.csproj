@@ -45,12 +45,14 @@
     <Compile Include="CuaHangBUS.cs" />
     <Compile Include="DongSanPhamBUS.cs" />
     <Compile Include="HoaDonBUS.cs" />
+    <Compile Include="HoaDonNhapHangBUS.cs" />
     <Compile Include="HSXBUS.cs" />
     <Compile Include="KHBUS.cs" />
     <Compile Include="KhoHangBUS.cs" />
     <Compile Include="LoaiNvBUS.cs" />
     <Compile Include="LoaiSPBUS.cs" />
     <Compile Include="LoaiTaiKhoanBUS.cs" />
+    <Compile Include="MauBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanPhamBUS.cs" />

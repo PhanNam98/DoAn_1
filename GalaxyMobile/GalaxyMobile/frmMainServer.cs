@@ -110,9 +110,25 @@ namespace GalaxyMobile
             }
             catch { }
         }
+        private void btnChiaSP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtboxMaKieuSP.Text.Trim(' ') != "")
+                {
+                    frmPhanChiaSP pc = new frmPhanChiaSP(txtboxMaKieuSP.Text);
+                    pc.Show();
+                    LoadKhoHang();
+                }
+                else
+                    MessageBox.Show("Lỗi! Mã Kiểu Sản Phẩm Không Có Giá Trị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch { MessageBox.Show("Lỗi! Không thể thực hiện thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
         private void linklbChiTietSP_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            //
         }
         private void dgvKhoHang_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -125,8 +141,12 @@ namespace GalaxyMobile
             }
             catch { }
         }
+        private void btnLoadKho_Click(object sender, EventArgs e)
+        {
+            LoadKhoHang();
+        }
         #endregion
-        
+
 
         #region San Pham
         private void btnLoadSP_Click(object sender, EventArgs e)
@@ -143,7 +163,7 @@ namespace GalaxyMobile
             {
                 int r = dgvSP.CurrentCell.RowIndex;
                 string id = dgvSP.Rows[r].Cells[0].Value.ToString();
-                frmChiTietSanPham ctsp = new frmChiTietSanPham(id,MaTruyCap,null,false);
+                frmChiTietSanPham ctsp = new frmChiTietSanPham(id,User.MaCuaHang,null,false);
                 ctsp.ShowDialog();
             }
             catch { }
@@ -154,7 +174,7 @@ namespace GalaxyMobile
             {
                 int r = dgvSP.CurrentCell.RowIndex;
                 string id = dgvSP.Rows[r].Cells[0].Value.ToString();
-                frmChiTietSanPham ctsp = new frmChiTietSanPham(id,MaTruyCap,null,true);
+                frmChiTietSanPham ctsp = new frmChiTietSanPham(id, User.MaCuaHang, null,true);
                 ctsp.ShowDialog();
             }
             catch { }
@@ -163,7 +183,7 @@ namespace GalaxyMobile
         private void btnThemSP_Click(object sender, EventArgs e)
         {
            
-                frmChiTietSanPham ctsp = new frmChiTietSanPham(null,MaTruyCap, null,false);
+                frmChiTietSanPham ctsp = new frmChiTietSanPham(null, User.MaCuaHang, null,false);
                 ctsp.ShowDialog();
                 LoadSp();
            
@@ -195,7 +215,7 @@ namespace GalaxyMobile
             {
                 int r = dgvSP.CurrentCell.RowIndex;
                 string id = dgvSP.Rows[r].Cells[0].Value.ToString();
-                frmChiTietSanPham ctsp = new frmChiTietSanPham(id,MaTruyCap,null,false);
+                frmChiTietSanPham ctsp = new frmChiTietSanPham(id,User.MaCuaHang,null,false);
                 ctsp.ShowDialog();
             }
             catch { }
@@ -502,7 +522,7 @@ namespace GalaxyMobile
                 try
                 {
                     DongSanPham dsp = new DongSanPham();
-                    dsp.MaDSP = txtboxMaDongSP.Text;
+                    dsp.MaDSP = txtboxMaDongSP.Text;  
                     dsp.MaHSX = cmBoxHSX.SelectedValue.ToString();
                     dsp.TenDong = txtboxTenDongSP.Text;
                     dsp.MaLSP = cmBoxLoaiSP.SelectedValue.ToString();
@@ -552,13 +572,78 @@ namespace GalaxyMobile
 
 
         #region Hhap Hang
+        void LoadNhapHang()
+        {
+            hoaDonNhapHangBindingSource.DataSource = HoaDonNhapHangBUS.GetAllHoaDonNhap();
+        }
+        private void btnLoadHDNH_Click(object sender, EventArgs e)
+        {
+            LoadNhapHang();
+        }
+        private void btnChiTietHDNH_Click(object sender, EventArgs e)
+        {
 
+            int r = dgvNhapHang.CurrentCell.RowIndex;
+            string id = dgvNhapHang.Rows[r].Cells[0].Value.ToString();
+            frmChiTietHoaDonNhapHang fr = new frmChiTietHoaDonNhapHang(id,User.UserName,false);
+            fr.Show();
+        }
+        private void dgvNhapHang_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = dgvNhapHang.CurrentCell.RowIndex;
+            string id = dgvNhapHang.Rows[r].Cells[0].Value.ToString();
+            frmChiTietHoaDonNhapHang fr = new frmChiTietHoaDonNhapHang(id, User.UserName, false);
+            fr.Show();
+        }
 
-
-
-
+        private void dgvNhapHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int r = dgvNhapHang.CurrentCell.RowIndex;
+                txtboxMaHDNH.Text = dgvNhapHang.Rows[r].Cells[0].Value.ToString();
+                txtboxMaNVNH.Text= dgvNhapHang.Rows[r].Cells[1].Value.ToString();
+                dateTimePickerNgayNH.Value= Convert.ToDateTime((dgvNhapHang.Rows[r].Cells[2].Value.ToString()));
+            }
+            catch { }
+        }
+        private void btnThemHDNH_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmChiTietHoaDonNhapHang frm = new frmChiTietHoaDonNhapHang(null, User.UserName, true);
+                frm.Show();
+                LoadNhapHang();
+            }
+            catch { }
+            LoadNhapHang();
+            LoadKhoHang();
+        }
+        private void btnXoaHDNH_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn xóa dòng này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                HoaDonNhapHang hd = new HoaDonNhapHang();
+                hd.MaHoaDonNH = txtboxMaHDNH.Text;
+                hd.MaNV = txtboxMaNVNH.Text;
+                hd.NgayNhapHang = dateTimePickerNgayNH.Value;
+                try
+                {
+                    HoaDonNhapHangBUS.XoaHDNhap(hd);
+                    MessageBox.Show("Xóa Thành Công!", "Thông Báo");
+                    txtboxMaHDNH.Text = "";
+                    txtboxMaNVNH.Text = "";
+                    LoadNhapHang();
+                }
+                catch { MessageBox.Show("Không Thể Thực Hiện Thao Tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+        }
 
         #endregion
+
+       
+      
+
         private void pnlMainServer_Paint(object sender, PaintEventArgs e)
         {
 
@@ -597,6 +682,6 @@ namespace GalaxyMobile
 
         }
 
-       
+      
     }
 }

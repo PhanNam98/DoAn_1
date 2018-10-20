@@ -57,6 +57,7 @@
     <Compile Include="LoaiNvDAO.cs" />
     <Compile Include="LoaiSPDAO.cs" />
     <Compile Include="LoaiTaiKhoanDAO.cs" />
+    <Compile Include="MauDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />
     <Compile Include="HSXDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

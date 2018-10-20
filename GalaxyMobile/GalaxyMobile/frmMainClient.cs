@@ -68,12 +68,43 @@ namespace GalaxyMobile
         {
             hoaDonBindingSource.DataSource = HoaDonBUS.GetAllHoaDonByMaCH(CH.MaCuaHang);
         }
+        private void btnCTHD_Click(object sender, EventArgs e)
+        {
 
+        }
         #endregion
 
         #region Kho Hang
         #endregion
-
+        #region Dong SP
+        void LoadDSP()
+        {
+            dongSanPhamBindingSource.DataSource = DongSanPhamBUS.GetAllDongSP();
+            cmBoxHSX.DataSource = HSXBUS.GetAllHSX();
+            cmBoxHSX.DisplayMember = "TenHSX";
+            cmBoxHSX.ValueMember = "MaHSX";
+            cmBoxLoaiSP.DataSource = LoaiSPBUS.GetAllLoaiSP();
+            cmBoxLoaiSP.DisplayMember = "TenLSP";
+            cmBoxLoaiSP.ValueMember = "MaLSP";
+        }
+        private void btnLoadDSP_Click(object sender, EventArgs e)
+        {
+            LoadDSP();
+        }
+        private void dgvDongSP_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int r = dgvDongSP.CurrentCell.RowIndex;
+                string id = dgvDongSP.Rows[r].Cells[0].Value.ToString();
+                txtboxMaDongSP.Text = id;
+                txtboxTenDongSP.Text = dgvDongSP.Rows[r].Cells[1].Value.ToString();
+                cmBoxHSX.SelectedValue = dgvDongSP.Rows[r].Cells[2].Value.ToString();
+                cmBoxLoaiSP.SelectedValue = dgvDongSP.Rows[r].Cells[3].Value.ToString();
+            }
+            catch { }
+        }
+        #endregion
         #region San Pham
 
         private void btnLoadSP_Click(object sender, EventArgs e)
@@ -244,6 +275,18 @@ namespace GalaxyMobile
             btnLuu.Enabled = false;
             btnHuy.Enabled = false;
             panel.Enabled = false;
+        }
+
+        private void btnChiTietSP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int r = dgvSP.CurrentCell.RowIndex;
+                string id = dgvSP.Rows[r].Cells[0].Value.ToString();
+                frmChiTietSanPham ctsp = new frmChiTietSanPham(id, User.MaCuaHang, null, false);
+                ctsp.ShowDialog();
+            }
+            catch { }
         }
     }
 }

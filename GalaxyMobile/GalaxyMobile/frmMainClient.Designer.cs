@@ -312,6 +312,7 @@
             this.btnCTHD.TabIndex = 1;
             this.btnCTHD.Text = "Chi Tiết Hoá Đơn";
             this.btnCTHD.UseVisualStyleBackColor = true;
+            this.btnCTHD.Click += new System.EventHandler(this.btnCTHD_Click);
             // 
             // btnXoaHD
             // 
@@ -447,6 +448,7 @@
             this.btnChiTietSP.TabIndex = 7;
             this.btnChiTietSP.Text = "Chi Tiết";
             this.btnChiTietSP.UseVisualStyleBackColor = true;
+            this.btnChiTietSP.Click += new System.EventHandler(this.btnChiTietSP_Click);
             // 
             // dgvSP
             // 
@@ -749,6 +751,7 @@
             this.btnLoadDSP.TabIndex = 1;
             this.btnLoadDSP.Text = "Load";
             this.btnLoadDSP.UseVisualStyleBackColor = true;
+            this.btnLoadDSP.Click += new System.EventHandler(this.btnLoadDSP_Click);
             // 
             // dgvDongSP
             // 
@@ -769,6 +772,7 @@
             this.dgvDongSP.ReadOnly = true;
             this.dgvDongSP.Size = new System.Drawing.Size(465, 328);
             this.dgvDongSP.TabIndex = 0;
+            this.dgvDongSP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDongSP_CellClick);
             // 
             // maDSPDataGridViewTextBoxColumn1
             // 

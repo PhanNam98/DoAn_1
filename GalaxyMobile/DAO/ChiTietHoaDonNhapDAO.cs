@@ -15,5 +15,41 @@ namespace DAO
                 return dbs.ChiTietHDNhapHangs.Where(p => p.MaHoaDonNH == id).ToList();
             }
         }
+        public void ThemSPintoCTNH(ChiTietHDNhapHang obj)
+        {
+            using (GalaxyMobileEntities dbs = new GalaxyMobileEntities())
+            {
+                dbs.ChiTietHDNhapHangs.Add(obj);
+                dbs.SaveChanges();
+            }
+        }
+        public ChiTietHDNhapHang  KiemTRaTonTaiSPinCTNH(string  id, string idsp)
+        {
+            using (GalaxyMobileEntities dbs = new GalaxyMobileEntities())
+            {
+                return dbs.ChiTietHDNhapHangs.Where(p => p.MaHoaDonNH == id && p.MaKieu == idsp).SingleOrDefault();
+            }
+        }
+        public void ThayDoiSLNhap(ChiTietHDNhapHang obj)
+        {
+            using (GalaxyMobileEntities dbs = new GalaxyMobileEntities())
+            {
+                dbs.ChiTietHDNhapHangs.Attach(obj);
+                dbs.Entry(obj).State = System.Data.Entity.EntityState.Modified;
+                dbs.SaveChanges();
+            }
+        }
+        public void LuuHoaDonNhap(string id)
+        {
+            using (GalaxyMobileEntities dbs = new GalaxyMobileEntities())
+            {
+                var p = (from u in dbs.ChiTietHDNhapHangs
+                         where u.MaHoaDonNH == id
+                         select u).ToList();
+                foreach (var t in p)
+                    dbs.USP_ThayDoiSoLuongChiTietSP(t.MaKieu, t.SoLuongNhap);
+
+            }
+        }
     }
 }

@@ -18,6 +18,10 @@ namespace BUS
         {
             return db.GetAllDongSP();
         }
+        public static DongSanPham Get1DongSPByMaSP(string id)
+        {
+            return db.Get1DongSPByMaSP(id);
+        }
         public static void XoaDongSP(DongSanPham obj)
         {
             db.XoaDSP(obj);
@@ -29,6 +33,14 @@ namespace BUS
         public static void ChinhSuaDongSP(DongSanPham obj)
         {
             db.ChinhSuaDSP(obj);
+        }
+        public static List<DongSanPham> GetAllDongSPByMaHSX(string id)
+        {
+            return db.GetAllDongSPByMaHSX(id);
+        }
+        public static List<DongSanPham> GetAllDongSPByMaHSXAndMaLoai(string id, string idloai)
+        {
+            return db.GetAllDongSPByMaHSXAndMaLoai(id, idloai);
         }
     }
 }

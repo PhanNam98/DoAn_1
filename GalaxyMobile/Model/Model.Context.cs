@@ -265,5 +265,148 @@ namespace Model
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KhachHang>("spGetKH", mergeOption);
         }
+    
+        public virtual ObjectResult<USP_GETAllInfoSP_Result> USP_GETAllInfoSP(string id)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GETAllInfoSP_Result>("USP_GETAllInfoSP", idParameter);
+        }
+    
+        public virtual ObjectResult<USP_GETAllInfoSPNew_Result> USP_GETAllInfoSPNew(string id)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GETAllInfoSPNew_Result>("USP_GETAllInfoSPNew", idParameter);
+        }
+    
+        public virtual int USP_DeleteCTSP(string id)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USP_DeleteCTSP", idParameter);
+        }
+    
+        public virtual int USP_ThayDoiGiaChiTietSP(string id, Nullable<decimal> gia)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var giaParameter = gia.HasValue ?
+                new ObjectParameter("Gia", gia) :
+                new ObjectParameter("Gia", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USP_ThayDoiGiaChiTietSP", idParameter, giaParameter);
+        }
+    
+        public virtual int USP_ThayDoiSoLuongChiTietSP(string id, Nullable<int> sl)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var slParameter = sl.HasValue ?
+                new ObjectParameter("sl", sl) :
+                new ObjectParameter("sl", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USP_ThayDoiSoLuongChiTietSP", idParameter, slParameter);
+        }
+    
+        public virtual ObjectResult<ChiTietSP> USP_GetCTSPOderByMaCHByMaKieu(string idch, string id)
+        {
+            var idchParameter = idch != null ?
+                new ObjectParameter("idch", idch) :
+                new ObjectParameter("idch", typeof(string));
+    
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ChiTietSP>("USP_GetCTSPOderByMaCHByMaKieu", idchParameter, idParameter);
+        }
+    
+        public virtual ObjectResult<ChiTietSP> USP_GetCTSPOderByMaCHByMaKieu(string idch, string id, MergeOption mergeOption)
+        {
+            var idchParameter = idch != null ?
+                new ObjectParameter("idch", idch) :
+                new ObjectParameter("idch", typeof(string));
+    
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ChiTietSP>("USP_GetCTSPOderByMaCHByMaKieu", mergeOption, idchParameter, idParameter);
+        }
+    
+        public virtual ObjectResult<ChiTietSP> USP_GetCTSPOderByMaCHByMaSP(string idch, string id)
+        {
+            var idchParameter = idch != null ?
+                new ObjectParameter("idch", idch) :
+                new ObjectParameter("idch", typeof(string));
+    
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ChiTietSP>("USP_GetCTSPOderByMaCHByMaSP", idchParameter, idParameter);
+        }
+    
+        public virtual ObjectResult<ChiTietSP> USP_GetCTSPOderByMaCHByMaSP(string idch, string id, MergeOption mergeOption)
+        {
+            var idchParameter = idch != null ?
+                new ObjectParameter("idch", idch) :
+                new ObjectParameter("idch", typeof(string));
+    
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ChiTietSP>("USP_GetCTSPOderByMaCHByMaSP", mergeOption, idchParameter, idParameter);
+        }
+    
+        public virtual int USP_PhanChiaSP(string id, string idNhap, string idPP, Nullable<int> sL)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var idNhapParameter = idNhap != null ?
+                new ObjectParameter("idNhap", idNhap) :
+                new ObjectParameter("idNhap", typeof(string));
+    
+            var idPPParameter = idPP != null ?
+                new ObjectParameter("idPP", idPP) :
+                new ObjectParameter("idPP", typeof(string));
+    
+            var sLParameter = sL.HasValue ?
+                new ObjectParameter("SL", sL) :
+                new ObjectParameter("SL", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USP_PhanChiaSP", idParameter, idNhapParameter, idPPParameter, sLParameter);
+        }
+    
+        public virtual int USP_ThemSL_KhoHangByMaKieuByMaCH(string id, string idCH, Nullable<int> sL)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var idCHParameter = idCH != null ?
+                new ObjectParameter("idCH", idCH) :
+                new ObjectParameter("idCH", typeof(string));
+    
+            var sLParameter = sL.HasValue ?
+                new ObjectParameter("SL", sL) :
+                new ObjectParameter("SL", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USP_ThemSL_KhoHangByMaKieuByMaCH", idParameter, idCHParameter, sLParameter);
+        }
     }
 }
