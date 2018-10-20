@@ -116,3 +116,14 @@ begin
 	from KhachHang
 end
 go
+-----------------------------thong ke-------------------
+alter procedure spSPBanDuoc
+	@ten varchar(100)
+as
+begin
+select sum(ct.SoluongSP)as 'SoLuong',sp.TenSP
+from ChiTietHoaDon ct join ChiTietSP csp on (ct.MaKieu=csp.MaKieu) join SanPham sp on (csp.MaSP=sp.MaSP)
+where ct.MaCuaHang = @ten
+group by sp.TenSP
+end
+go
