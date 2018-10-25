@@ -48,10 +48,13 @@
     <Reference Include="MetroFramework">
       <HintPath>..\..\..\..\..\C#\AnimeManagerment\AnimeManagerment\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,11 +66,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiTietHoaDon.cs">
+    <Compile Include="frmChiTietHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChiTietHoaDon.Designer.cs">
-      <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
+    <Compile Include="frmChiTietHoaDon.Designer.cs">
+      <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChiTietHoaDonNhapHang.cs">
       <SubType>Form</SubType>
@@ -92,6 +95,12 @@
     </Compile>
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInHoaDon.Designer.cs">
+      <DependentUpon>frmInHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMainClient.cs">
       <SubType>Form</SubType>
@@ -123,6 +132,12 @@
     <Compile Include="frmThemMau.Designer.cs">
       <DependentUpon>frmThemMau.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThongTinGiaoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTinGiaoHang.Designer.cs">
+      <DependentUpon>frmThongTinGiaoHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GalaxyMobileDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -153,8 +168,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ChiTietHoaDon.resx">
-      <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="frmChiTietHoaDon.resx">
+      <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietHoaDonNhapHang.resx">
       <DependentUpon>frmChiTietHoaDonNhapHang.cs</DependentUpon>
@@ -167,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInHoaDon.resx">
+      <DependentUpon>frmInHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainClient.resx">
       <DependentUpon>frmMainClient.cs</DependentUpon>
@@ -183,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemMau.resx">
       <DependentUpon>frmThemMau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTinGiaoHang.resx">
+      <DependentUpon>frmThongTinGiaoHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LNhanVIen.resx">
       <DependentUpon>LNhanVIen.cs</DependentUpon>
@@ -202,6 +223,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportInHoaDon.rdlc" />
     <None Include="App1.config" />
     <None Include="GalaxyMobileDataSet.xsc">
       <DependentUpon>GalaxyMobileDataSet.xsd</DependentUpon>
@@ -230,12 +252,37 @@
     <None Include="Properties\DataSources\Model.ChiTietSP.datasource" />
     <None Include="Properties\DataSources\Model.CuaHang.datasource" />
     <None Include="Properties\DataSources\Model.DongSanPham.datasource" />
+    <None Include="Properties\DataSources\Model.GalaxyMobileEntities.datasource" />
+    <None Include="Properties\DataSources\Model.GetAllNV1_Result.datasource" />
+    <None Include="Properties\DataSources\Model.GetAllNV_Result.datasource" />
+    <None Include="Properties\DataSources\Model.GetAllNV_Result1.datasource" />
+    <None Include="Properties\DataSources\Model.GetAllNV_Result2.datasource" />
+    <None Include="Properties\DataSources\Model.GetLNV_Result.datasource" />
+    <None Include="Properties\DataSources\Model.GetNV2_Result.datasource" />
+    <None Include="Properties\DataSources\Model.GiaoHang.datasource" />
     <None Include="Properties\DataSources\Model.HoaDon.datasource" />
     <None Include="Properties\DataSources\Model.HoaDonNhapHang.datasource" />
     <None Include="Properties\DataSources\Model.HSX.datasource" />
+    <None Include="Properties\DataSources\Model.InHoaDon_Result.datasource" />
+    <None Include="Properties\DataSources\Model.KhachHang.datasource" />
     <None Include="Properties\DataSources\Model.KhoHang.datasource" />
+    <None Include="Properties\DataSources\Model.LoaiNV.datasource" />
+    <None Include="Properties\DataSources\Model.LoaiSP1.datasource" />
+    <None Include="Properties\DataSources\Model.LoaiTaiKhoan.datasource" />
+    <None Include="Properties\DataSources\Model.MauSP.datasource" />
     <None Include="Properties\DataSources\Model.NhanVien.datasource" />
     <None Include="Properties\DataSources\Model.SanPham.datasource" />
+    <None Include="Properties\DataSources\Model.spGetKH_Result.datasource" />
+    <None Include="Properties\DataSources\Model.sysdiagram.datasource" />
+    <None Include="Properties\DataSources\Model.TaiKhoan.datasource" />
+    <None Include="Properties\DataSources\Model.USP_GetAllCuaHang_Result.datasource" />
+    <None Include="Properties\DataSources\Model.USP_GETAllInfoSPNew_Result.datasource" />
+    <None Include="Properties\DataSources\Model.USP_GETAllInfoSP_Result.datasource" />
+    <None Include="Properties\DataSources\Model.USP_GetAllKhoHang_Result.datasource" />
+    <None Include="Properties\DataSources\Model.USP_GetCTSPOderByMaCHByMaKieu1_Result.datasource" />
+    <None Include="Properties\DataSources\Model.USP_GetCTSPOderByMaCHByMaKieu_Result.datasource" />
+    <None Include="Properties\DataSources\Model.USP_GetCTSPOderByMaCHByMaSP1_Result.datasource" />
+    <None Include="Properties\DataSources\Model.USP_GetCTSPOderByMaCHByMaSP_Result.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

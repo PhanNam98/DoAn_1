@@ -339,6 +339,16 @@
       <Parameter Name="idCH" Mode="In" Type="String" />
       <Parameter Name="SL" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="USP_ThayDoiSLChiTietHoaDon">
+      <Parameter Name="idhd" Mode="In" Type="String" />
+      <Parameter Name="idch" Mode="In" Type="String" />
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="SL" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InHoaDon" ReturnType="Collection(GalaxyMobileModel.InHoaDon_Result)">
+      <Parameter Name="idhd" Mode="In" Type="String" />
+      <Parameter Name="idch" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="sysdiagram">
     <Key>
@@ -728,5 +738,21 @@
     <Property Type="Decimal" Name="Gia" Nullable="false" Precision="18" Scale="2" />
     <Property Type="Int32" Name="SoluongSP" Nullable="false" />
     <Property Type="Binary" Name="Anh" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="InHoaDon_Result">
+    <Property Type="Decimal" Name="Giá" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Mã_Sản_Phẩm" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Tên_Sản_Phẩm" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Màu_Sắc" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Số_Lượng_Mua" Nullable="false" />
+    <Property Type="Decimal" Name="Tổng_Tiền" Nullable="true" Precision="29" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="InHoaDon_Result1">
+    <Property Type="String" Name="Mã_Sản_Phẩm" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Tên_Sản_Phẩm" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Màu_Sắc" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Giá" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="Số_Lượng_Mua" Nullable="false" />
+    <Property Type="Decimal" Name="Tổng_Tiền" Nullable="true" Precision="29" Scale="2" />
   </ComplexType>
 </Schema>

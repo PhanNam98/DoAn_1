@@ -22,6 +22,10 @@ namespace BUS
         {
             db.ThemSPintoCTNH(obj);
         }
+        public static void XoaSPfromCTNH(string idhd, string idsp)
+        {
+            db.XoaSPfromCTNH(idhd,idsp);
+        }
         public static ChiTietHDNhapHang KiemTRaTonTaiSPinCTNH(string id, string idsp)
         {
             return db.KiemTRaTonTaiSPinCTNH(id, idsp);
@@ -33,6 +37,14 @@ namespace BUS
         public static void LuuHoaDonNhap(string id)
         {
             db.LuuHoaDonNhap(id);
+        }
+        public static void XoaAll(string mahd)
+        {
+            db.XoaAll(mahd);
+        }
+        public static decimal TinhTien_ByMaHD(string mahd)
+        {
+          return  db.TinhTien_ByMaHD(mahd);
         }
     }
 }

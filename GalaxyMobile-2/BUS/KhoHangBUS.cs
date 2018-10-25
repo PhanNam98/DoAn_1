@@ -18,5 +18,17 @@ namespace BUS
         {
             return db.GetAllKhoHang();
         }
+        public static List<KhoHang> GetAllKhoHangByMaKieu(string id)
+        {
+            return db.GetAllKhoHangByMaKieu(id);
+        }
+        public static void KiemTraKho_CuaHang_MaKieu(string idma, string idch)
+        {
+            db.KiemTraKho_CuaHang_MaKieu(idma, idch);
+        }
+        public static void ThemSL_SP_Kho_ByCuaHangBy_MaKieu(string idhdnhap, string idch)
+        {
+            db.ThemSL_SP_Kho_ByCuaHangBy_MaKieu(idhdnhap, idch);
+        }
     }
 }

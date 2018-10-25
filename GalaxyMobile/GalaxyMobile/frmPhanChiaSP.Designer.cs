@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxNXS = new System.Windows.Forms.ComboBox();
+            this.comboBoxDSP = new System.Windows.Forms.ComboBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -43,11 +48,6 @@
             this.maCuaHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.khoHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBoxDSP = new System.Windows.Forms.ComboBox();
-            this.comboBoxNXS = new System.Windows.Forms.ComboBox();
             this.textBoxSLTonCHPP = new System.Windows.Forms.TextBox();
             this.comboBoxCHNhan = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,20 +58,21 @@
             this.textBoxSLTonCHNhan = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBoxCHPP = new System.Windows.Forms.ComboBox();
-            this.textBoxMaKieu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBoxMaKieu = new System.Windows.Forms.TextBox();
+            this.comboBoxCHPP = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownThemBotSL)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBox1.Controls.Add(this.comboBoxNXS);
             this.groupBox1.Controls.Add(this.comboBoxDSP);
             this.groupBox1.Controls.Add(this.pictureBox);
@@ -87,10 +88,56 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(31, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(426, 264);
+            this.groupBox1.Size = new System.Drawing.Size(438, 264);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin cơ bản";
+            // 
+            // comboBoxNXS
+            // 
+            this.comboBoxNXS.FormattingEnabled = true;
+            this.comboBoxNXS.Location = new System.Drawing.Point(118, 26);
+            this.comboBoxNXS.Name = "comboBoxNXS";
+            this.comboBoxNXS.Size = new System.Drawing.Size(157, 21);
+            this.comboBoxNXS.TabIndex = 5;
+            this.comboBoxNXS.SelectedIndexChanged += new System.EventHandler(this.comboBoxNXS_SelectedIndexChanged);
+            // 
+            // comboBoxDSP
+            // 
+            this.comboBoxDSP.FormattingEnabled = true;
+            this.comboBoxDSP.Location = new System.Drawing.Point(117, 68);
+            this.comboBoxDSP.Name = "comboBoxDSP";
+            this.comboBoxDSP.Size = new System.Drawing.Size(158, 21);
+            this.comboBoxDSP.TabIndex = 5;
+            this.comboBoxDSP.SelectedIndexChanged += new System.EventHandler(this.comboBoxDSP_SelectedIndexChanged);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.Location = new System.Drawing.Point(296, 28);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(122, 162);
+            this.pictureBox.TabIndex = 3;
+            this.pictureBox.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 29);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Nhà Cung Cấp:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Dòng Sản Phẩm:";
             // 
             // label10
             // 
@@ -208,52 +255,6 @@
             // 
             this.khoHangBindingSource.DataSource = typeof(Model.KhoHang);
             // 
-            // pictureBox
-            // 
-            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(296, 28);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(122, 162);
-            this.pictureBox.TabIndex = 3;
-            this.pictureBox.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Dòng Sản Phẩm:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 29);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Nhà Cung Cấp:";
-            // 
-            // comboBoxDSP
-            // 
-            this.comboBoxDSP.FormattingEnabled = true;
-            this.comboBoxDSP.Location = new System.Drawing.Point(117, 68);
-            this.comboBoxDSP.Name = "comboBoxDSP";
-            this.comboBoxDSP.Size = new System.Drawing.Size(158, 21);
-            this.comboBoxDSP.TabIndex = 5;
-            this.comboBoxDSP.SelectedIndexChanged += new System.EventHandler(this.comboBoxDSP_SelectedIndexChanged);
-            // 
-            // comboBoxNXS
-            // 
-            this.comboBoxNXS.FormattingEnabled = true;
-            this.comboBoxNXS.Location = new System.Drawing.Point(118, 26);
-            this.comboBoxNXS.Name = "comboBoxNXS";
-            this.comboBoxNXS.Size = new System.Drawing.Size(157, 21);
-            this.comboBoxNXS.TabIndex = 5;
-            this.comboBoxNXS.SelectedIndexChanged += new System.EventHandler(this.comboBoxNXS_SelectedIndexChanged);
-            // 
             // textBoxSLTonCHPP
             // 
             this.textBoxSLTonCHPP.Location = new System.Drawing.Point(205, 209);
@@ -339,6 +340,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.textBoxMaKieu);
             this.groupBox2.Controls.Add(this.comboBoxCHPP);
@@ -359,14 +361,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cửa Hàng";
             // 
-            // label5
+            // label3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 164);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Tên Cửa Hàng Phân Phối:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(22, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Mã Kiểu Sản Phẩm:";
+            // 
+            // textBoxMaKieu
+            // 
+            this.textBoxMaKieu.Location = new System.Drawing.Point(162, 29);
+            this.textBoxMaKieu.Name = "textBoxMaKieu";
+            this.textBoxMaKieu.ReadOnly = true;
+            this.textBoxMaKieu.Size = new System.Drawing.Size(145, 20);
+            this.textBoxMaKieu.TabIndex = 9;
             // 
             // comboBoxCHPP
             // 
@@ -377,27 +387,20 @@
             this.comboBoxCHPP.TabIndex = 8;
             this.comboBoxCHPP.SelectedIndexChanged += new System.EventHandler(this.comboBoxCHPP_SelectedIndexChanged);
             // 
-            // textBoxMaKieu
+            // label5
             // 
-            this.textBoxMaKieu.Location = new System.Drawing.Point(162, 29);
-            this.textBoxMaKieu.Name = "textBoxMaKieu";
-            this.textBoxMaKieu.ReadOnly = true;
-            this.textBoxMaKieu.Size = new System.Drawing.Size(145, 20);
-            this.textBoxMaKieu.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Mã Kiểu Sản Phẩm:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(22, 164);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(132, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Tên Cửa Hàng Phân Phối:";
             // 
             // frmPhanChiaSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(820, 494);
             this.Controls.Add(this.dgvKho);
             this.Controls.Add(this.groupBox2);
@@ -408,9 +411,9 @@
             this.Load += new System.EventHandler(this.frmPhanChiaSP_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownThemBotSL)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

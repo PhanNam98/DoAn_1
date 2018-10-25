@@ -499,8 +499,8 @@ namespace GalaxyMobile
                 sp.MaKieu = textBoxMaKieu.Text;
                 sp.MaSP = /*textBoxMaSP.Text;*/ cmBoxMaSP.SelectedValue.ToString();
                 sp.MaMau = cmBoxMauSP.SelectedValue.ToString();
-                //try
-                //{
+                try
+                {
                     if (NewCTSP)
                     {
 
@@ -535,10 +535,10 @@ namespace GalaxyMobile
                         chiTietSPBindingSource.DataSource = ChiTietSPBUS.GetChiTietSPByIDSP(id);
                     }
 
-                //}
-                //catch { MessageBox.Show("Không Thể Thực Hiện Thao Tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-
             }
+                catch { MessageBox.Show("Không Thể Thực Hiện Thao Tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
+        }
             btnLuuKieuSP.Visible = false;
             btnHuyKieuSP.Visible = false;
             btnThemKieuSP.Visible = true;

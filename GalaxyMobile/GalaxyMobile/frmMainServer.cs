@@ -14,16 +14,13 @@ namespace GalaxyMobile
 {
     public partial class frmMainServer : Form
     {
-        public frmMainServer(TaiKhoan username,int matruycap)
+        public frmMainServer(TaiKhoan username, int matruycap)
         {
             InitializeComponent();
             User = username;
             MaTruyCap = matruycap;
         }
-        //public frmMainServer()
-        //{
-        //    InitializeComponent();
-        //}
+      
 
         private TaiKhoan User;
         private int MaTruyCap;
@@ -42,6 +39,14 @@ namespace GalaxyMobile
             {
                 tabControlMainServer.Controls.Remove(tabNhanVien);
                 tabControlMainServer.Controls.Remove(tabTaiKhoan);
+                tabControlMainServer.Controls.Remove(tabCuaHang);
+                tabControlMainServer.Controls.Remove(tabThongKe);
+
+                cmBoxTimKiemTheo.Items.Add("Dòng Sản Phẩm");
+                cmBoxTimKiemTheo.Items.Add("Sản Phẩm");
+                cmBoxTimKiemTheo.Items.Add("Nhà Sản Xuất");
+                cmBoxTimKiemTheo.Items.Add("Hóa Đơn Nhập");
+
             }
             if (MaTruyCap == 2)
             {
@@ -50,6 +55,18 @@ namespace GalaxyMobile
                 tabControlMainServer.Controls.Remove(tabSanPham);
                 tabControlMainServer.Controls.Remove(tabNSX);
                 tabControlMainServer.Controls.Remove(tabNhapHang);
+                tabControlMainServer.Controls.Remove(tabCuaHang);
+                tabControlMainServer.Controls.Remove(tabThongKe);
+                cmBoxTimKiemTheo.Items.Add("Nhân Viên");
+
+            }
+            else if (MaTruyCap == 0)
+            {
+                cmBoxTimKiemTheo.Items.Add("Nhân Viên");
+                cmBoxTimKiemTheo.Items.Add("Dòng Sản Phẩm");
+                cmBoxTimKiemTheo.Items.Add("Sản Phẩm");
+                cmBoxTimKiemTheo.Items.Add("Nhà Sản Xuất");
+                cmBoxTimKiemTheo.Items.Add("Hóa Đơn Nhập");
             }
             label12.Text = User.UserName;
             loadCmboxDongSanPham();
@@ -72,7 +89,7 @@ namespace GalaxyMobile
             frmChiTietTaiKhoan frm = new frmChiTietTaiKhoan(User);
             frm.ShowDialog();
         }
-      
+
         #endregion
 
         #region Kho Hang
@@ -85,8 +102,8 @@ namespace GalaxyMobile
             cmBoxKhoHang.ValueMember = "MaCuaHang";
 
         }
-        
-        
+
+
         private void dgvKhoHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -102,9 +119,10 @@ namespace GalaxyMobile
 
         private void cmBoxKhoHang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try {
-                string id = cmBoxKhoHang.SelectedValue.ToString(); 
-                KhoHang kh = CuaHangBUS.GetMaKieuByMaCH(id,txtboxMaKieuSP.Text);
+            try
+            {
+                string id = cmBoxKhoHang.SelectedValue.ToString();
+                KhoHang kh = CuaHangBUS.GetMaKieuByMaCH(id, txtboxMaKieuSP.Text);
                 txtSoLuongTonKho.Text = kh.SoLuong.ToString();
                 txtboxMaKieuSP.Text = kh.MaKieu.ToString();
             }
@@ -128,7 +146,10 @@ namespace GalaxyMobile
 
         private void linklbChiTietSP_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //
+            if (txtboxMaKieuSP.Text == "")
+                return;
+            frmChiTietSanPham ctsp = new frmChiTietSanPham(ChiTietSPBUS.GetMaSPByIDKieuSP(txtboxMaKieuSP.Text).MaSP, User.MaCuaHang, null, false);
+            ctsp.ShowDialog();
         }
         private void dgvKhoHang_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -136,7 +157,7 @@ namespace GalaxyMobile
             {
                 int r = dgvKhoHang.CurrentCell.RowIndex;
                 string id = dgvKhoHang.Rows[r].Cells[0].Value.ToString();
-                
+
                 MessageBox.Show(id);
             }
             catch { }
@@ -163,7 +184,7 @@ namespace GalaxyMobile
             {
                 int r = dgvSP.CurrentCell.RowIndex;
                 string id = dgvSP.Rows[r].Cells[0].Value.ToString();
-                frmChiTietSanPham ctsp = new frmChiTietSanPham(id,User.MaCuaHang,null,false);
+                frmChiTietSanPham ctsp = new frmChiTietSanPham(id, User.MaCuaHang, null, false);
                 ctsp.ShowDialog();
             }
             catch { }
@@ -174,7 +195,7 @@ namespace GalaxyMobile
             {
                 int r = dgvSP.CurrentCell.RowIndex;
                 string id = dgvSP.Rows[r].Cells[0].Value.ToString();
-                frmChiTietSanPham ctsp = new frmChiTietSanPham(id, User.MaCuaHang, null,true);
+                frmChiTietSanPham ctsp = new frmChiTietSanPham(id, User.MaCuaHang, null, true);
                 ctsp.ShowDialog();
             }
             catch { }
@@ -182,11 +203,11 @@ namespace GalaxyMobile
         }
         private void btnThemSP_Click(object sender, EventArgs e)
         {
-           
-                frmChiTietSanPham ctsp = new frmChiTietSanPham(null, User.MaCuaHang, null,false);
-                ctsp.ShowDialog();
-                LoadSp();
-           
+
+            frmChiTietSanPham ctsp = new frmChiTietSanPham(null, User.MaCuaHang, null, false);
+            ctsp.ShowDialog();
+            LoadSp();
+
         }
         private void btXoaSP_Click(object sender, EventArgs e)
         {
@@ -207,7 +228,7 @@ namespace GalaxyMobile
         }
         private void dgvSP_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
         private void dgvSP_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -215,7 +236,7 @@ namespace GalaxyMobile
             {
                 int r = dgvSP.CurrentCell.RowIndex;
                 string id = dgvSP.Rows[r].Cells[0].Value.ToString();
-                frmChiTietSanPham ctsp = new frmChiTietSanPham(id,User.MaCuaHang,null,false);
+                frmChiTietSanPham ctsp = new frmChiTietSanPham(id, User.MaCuaHang, null, false);
                 ctsp.ShowDialog();
             }
             catch { }
@@ -395,16 +416,16 @@ namespace GalaxyMobile
                 txtDiaChi.Text = dgvNhanVien.Rows[r].Cells[5].Value.ToString();
             }
             catch { txtDiaChi.Text = " "; }
-               
-                try
-                {
-                    txtSDT.Text = dgvNhanVien.Rows[r].Cells[6].Value.ToString();
-                }
-                catch
-                {
-                   
-                    txtSDT.Text = " ";
-                }
+
+            try
+            {
+                txtSDT.Text = dgvNhanVien.Rows[r].Cells[6].Value.ToString();
+            }
+            catch
+            {
+
+                txtSDT.Text = " ";
+            }
             try
             {
                 txtLuong.Text = dgvNhanVien.Rows[r].Cells[7].Value.ToString();
@@ -480,7 +501,7 @@ namespace GalaxyMobile
             txtboxMaDongSP.ReadOnly = true;
             lbTitle.Visible = true;
             lbTitle.Text = "Chỉnh Sửa Dòng Sản Phẩm";
-           
+
             try
             {
                 int r = dgvDongSP.CurrentCell.RowIndex;
@@ -491,8 +512,8 @@ namespace GalaxyMobile
                 cmBoxLoaiSP.SelectedValue = dgvDongSP.Rows[r].Cells[3].Value.ToString();
             }
             catch { }
-            
-            
+
+
         }
         private void btnXoaDSP_Click(object sender, EventArgs e)
         {
@@ -522,7 +543,7 @@ namespace GalaxyMobile
                 try
                 {
                     DongSanPham dsp = new DongSanPham();
-                    dsp.MaDSP = txtboxMaDongSP.Text;  
+                    dsp.MaDSP = txtboxMaDongSP.Text;
                     dsp.MaHSX = cmBoxHSX.SelectedValue.ToString();
                     dsp.TenDong = txtboxTenDongSP.Text;
                     dsp.MaLSP = cmBoxLoaiSP.SelectedValue.ToString();
@@ -558,14 +579,14 @@ namespace GalaxyMobile
         {
             if (MessageBox.Show("Bạn Có Chắc Muốn Hủy Thao Tác Này Không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                MessageBox.Show("Đã Hủy Thay Đổi!","Thông Báo");
+                MessageBox.Show("Đã Hủy Thay Đổi!", "Thông Báo");
                 btnThemDSP.Visible = true;
                 btnXoaDSP.Visible = true;
                 btnChinhSuaDSP.Visible = true;
                 btnLuuChangeDSP.Visible = false;
                 btnHuyChangeDSP.Visible = false;
             }
-           
+
         }
         #endregion
 
@@ -585,7 +606,7 @@ namespace GalaxyMobile
 
             int r = dgvNhapHang.CurrentCell.RowIndex;
             string id = dgvNhapHang.Rows[r].Cells[0].Value.ToString();
-            frmChiTietHoaDonNhapHang fr = new frmChiTietHoaDonNhapHang(id,User.UserName,false);
+            frmChiTietHoaDonNhapHang fr = new frmChiTietHoaDonNhapHang(id, User.UserName, false);
             fr.Show();
         }
         private void dgvNhapHang_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -602,8 +623,8 @@ namespace GalaxyMobile
             {
                 int r = dgvNhapHang.CurrentCell.RowIndex;
                 txtboxMaHDNH.Text = dgvNhapHang.Rows[r].Cells[0].Value.ToString();
-                txtboxMaNVNH.Text= dgvNhapHang.Rows[r].Cells[1].Value.ToString();
-                dateTimePickerNgayNH.Value= Convert.ToDateTime((dgvNhapHang.Rows[r].Cells[2].Value.ToString()));
+                txtboxMaNVNH.Text = dgvNhapHang.Rows[r].Cells[1].Value.ToString();
+                dateTimePickerNgayNH.Value = Convert.ToDateTime((dgvNhapHang.Rows[r].Cells[2].Value.ToString()));
             }
             catch { }
         }
@@ -641,14 +662,484 @@ namespace GalaxyMobile
 
         #endregion
 
-       
-      
-
-        private void pnlMainServer_Paint(object sender, PaintEventArgs e)
+        #region NSX
+        private void dgvHSX_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                int r = dgvHSX.CurrentCell.RowIndex;
+                textBoxMaHSX.Text = dgvHSX.Rows[r].Cells[0].Value.ToString();
+                textBoxTenHSX.Text = dgvHSX.Rows[r].Cells[1].Value.ToString();
+            }
+            catch { }
+
 
         }
 
+        private void btnLoadHSX_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                hSXBindingSource.DataSource = HSXBUS.GetAllHSX();
+            }
+            catch { }
+        }
+
+        private void btnThemHSX_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBoxMaHSX.Text != "" && textBoxTenHSX.Text != "")
+                {
+                    HSX hsx = new HSX();
+                    hsx.MaHSX = textBoxMaHSX.Text;
+                    hsx.TenHSX = textBoxTenHSX.Text;
+                    HSXBUS.ThemHSX(hsx);
+                    MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    hSXBindingSource.DataSource = HSXBUS.GetAllHSX();
+                }
+                else
+                {
+                    MessageBox.Show("Mã HSX hoặc Tên HSX Không Được Điền!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch { MessageBox.Show("Không Thể Thực Hiện Thao Tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+        private void btnXoaHSX_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBoxMaHSX.Text != "")
+                {
+                    HSX hsx = new HSX();
+                    hsx.MaHSX = textBoxMaHSX.Text;
+                    hsx.TenHSX = textBoxTenHSX.Text;
+                    HSXBUS.XoaHSX(hsx);
+                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    hSXBindingSource.DataSource = HSXBUS.GetAllHSX();
+                }
+                else
+                {
+                    MessageBox.Show("Mã HSX Không Được Điền!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch { MessageBox.Show("Không Thể Thực Hiện Thao Tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+        private void btnNewHSX_Click(object sender, EventArgs e)
+        {
+            textBoxMaHSX.Text = "";
+            textBoxTenHSX.Text = "";
+        }
+
+        private void btnEditHSX_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBoxMaHSX.Text != "" && textBoxTenHSX.Text != "")
+                {
+                    HSX hsx = new HSX();
+                    hsx.MaHSX = textBoxMaHSX.Text;
+                    hsx.TenHSX = textBoxTenHSX.Text;
+                    HSXBUS.ChinhSua(hsx);
+                    MessageBox.Show("Chỉnh Sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    hSXBindingSource.DataSource = HSXBUS.GetAllHSX();
+                }
+                else
+                {
+                    MessageBox.Show("Mã HSX Không Được Điền!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch { MessageBox.Show("Không Thể Thực Hiện Thao Tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+        #endregion
+
+        #region TaiKhoan
+        void LoadTK()
+        {
+            taiKhoanBindingSource.DataSource = TaiKhoanBUS.GetAllTK();
+            comboBoxUser.DataSource = TaiKhoanBUS.GetAllTK();
+            comboBoxUser.DisplayMember = "UserName";
+            comboBoxUser.ValueMember = "UserName";
+            comboBoxMaCHUser.DataSource = CuaHangBUS.GetAllCuaHang();
+            comboBoxMaCHUser.DisplayMember = "TenCuaHang";
+            comboBoxMaCHUser.ValueMember = "MaCuaHang";
+            comboBoxLoaiTK.DataSource = LoaiTaiKhoanBUS.GetAllLoaiTaiKhoan();
+            comboBoxLoaiTK.DisplayMember = "TenLoaiTK";
+            comboBoxLoaiTK.ValueMember = "MaLoaiTK";
+        }
+        private bool IsNewTK = false;
+        private void btnLoadTK_Click(object sender, EventArgs e)
+        {
+            LoadTK();
+        }
+        private void dgvTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int r = dgvTaiKhoan.CurrentCell.RowIndex;
+                comboBoxUser.SelectedValue = dgvTaiKhoan.Rows[r].Cells[0].Value.ToString();
+                comboBoxMaCHUser.SelectedValue = dgvTaiKhoan.Rows[r].Cells[1].Value.ToString();
+                textBoxLoaiTK.Text = dgvTaiKhoan.Rows[r].Cells[2].Value.ToString();
+                comboBoxLoaiTK.SelectedValue = textBoxLoaiTK.Text;
+            }
+            catch { }
+        }
+        private void comboBoxUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (IsNewTK == false)
+                {
+                    TaiKhoan tk = TaiKhoanBUS.Get1TK(comboBoxLoaiTK.SelectedValue.ToString());
+
+                    comboBoxMaCHUser.SelectedValue = tk.MaCuaHang;
+                    textBoxLoaiTK.Text = tk.MaLoaiTK;
+                    comboBoxLoaiTK.SelectedValue = textBoxLoaiTK.Text;
+                }
+                else if (IsNewTK == true)
+
+                {
+                    NhanVien nv = NhanVienBUS.Get1NV(comboBoxUser.SelectedValue.ToString());
+                    comboBoxMaCHUser.SelectedValue = nv.MaCuaHang;
+                    textBoxLoaiTK.Text = nv.MaLoaiNV;
+                    comboBoxLoaiTK.SelectedValue = textBoxLoaiTK.Text;
+                }
+            }
+            catch { }
+        }
+        private void btnNewTK_Click(object sender, EventArgs e)
+        {
+            comboBoxLoaiTK.Visible = false;
+            comboBoxUser.DataSource = NhanVienBUS.GetallNVWithoutAdmin();
+            comboBoxUser.DisplayMember = "MaNV";
+            comboBoxUser.ValueMember = "MaNV";
+            IsNewTK = true;
+
+        }
+        private void btnThemTK_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TaiKhoan tk = new TaiKhoan();
+                tk.UserName = comboBoxUser.SelectedValue.ToString();
+                tk.MaCuaHang = comboBoxMaCHUser.SelectedValue.ToString();
+                tk.Password = "123";
+                tk.MaLoaiTK = textBoxLoaiTK.Text;
+                TaiKhoanBUS.ThemTK(tk);
+                MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi! Không thể thực hiện thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            LoadTK();
+            comboBoxLoaiTK.Visible = true;
+            IsNewTK = false;
+        }
+
+        private void btnXoaTK_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (MessageBox.Show("Bạn Có Chắc Muốn Hủy Thao Tác Này Không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    TaiKhoanBUS.XoaTK(comboBoxUser.SelectedValue.ToString());
+                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi! Không thể thực hiện thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            LoadTK();
+            comboBoxLoaiTK.Visible = true;
+        }
+
+        private void btnChinhSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBoxMaCHUser.SelectedValue.ToString() == "admin" && User.MaLoaiTK != "admin")
+                {
+                    MessageBox.Show("Lỗi! Tài Khoản Của Bạn Không Có Quyền Chọn Loại Tài Khoản Admin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                TaiKhoan tk = TaiKhoanBUS.Get1TK(comboBoxUser.SelectedValue.ToString());
+                //tk.UserName = comboBoxUser.SelectedValue.ToString();
+                tk.MaCuaHang = comboBoxMaCHUser.SelectedValue.ToString();
+                tk.MaLoaiTK = comboBoxMaCHUser.SelectedValue.ToString();
+                TaiKhoanBUS.EditTk(tk);
+                MessageBox.Show("Chỉnh Sửa Thành Công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi! Không thể thực hiện thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            LoadTK();
+            comboBoxLoaiTK.Visible = true;
+        }
+        private void btnDatLaiMK_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TaiKhoan tk = TaiKhoanBUS.Get1TK(comboBoxUser.SelectedValue.ToString());
+                //tk.UserName = comboBoxUser.SelectedValue.ToString();
+                //tk.MaCuaHang = comboBoxMaCHUser.SelectedValue.ToString();
+                //tk.MaLoaiTK = textBoxLoaiTK.Text;
+                tk.Password = "123";
+                TaiKhoanBUS.EditTk(tk);
+                MessageBox.Show("Đặt Lại Mật Khẩu Thành Công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi! Không thể thực hiện thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            LoadTK();
+            comboBoxLoaiTK.Visible = true;
+        }
+        #endregion
+
+
+        #region
+        private bool IsNewCH;
+        void LoadCuaHang()
+        {
+            cmBoxMaCH.DataSource = CuaHangBUS.GetAllCuaHang();
+            cmBoxMaCH.DisplayMember = "TenCuaHang";
+            cmBoxMaCH.ValueMember = "MaCuaHang";
+        }
+        private void btnLoadCH_Click(object sender, EventArgs e)
+        {
+            LoadCuaHang();
+        }
+        private void cmBoxMaCH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var ch = CuaHangBUS.GetThongTinCuaHang(cmBoxMaCH.SelectedValue.ToString());
+            if (ch != null)
+            {
+                txtboxTenCuaHang.Text = ch.TenCuaHang;
+                txtboxDiaChiCH.Text = ch.DiaChi;
+                txtboxMaCH.Text = ch.MaCuaHang;
+            }
+        }
+        private void btnThemCuaHang_Click(object sender, EventArgs e)
+        {
+            txtboxTenCuaHang.ReadOnly = false;
+            txtboxDiaChiCH.ReadOnly = false;
+            btnXoaCH.Visible = false;
+            btnChinhSuaCH.Visible = false;
+            btnThemCuaHang.Visible = false;
+            cmBoxMaCH.Visible = false;
+
+            btnLuuCuaHang.Visible = true;
+            btnHuyLuuCuaHang.Visible = true;
+            IsNewCH = true;
+
+        }
+        private void btnChinhSuaCH_Click(object sender, EventArgs e)
+        {
+            txtboxTenCuaHang.ReadOnly = false;
+            txtboxDiaChiCH.ReadOnly = false;
+            btnXoaCH.Visible = false;
+            btnChinhSuaCH.Visible = false;
+            btnThemCuaHang.Visible = false;
+
+            btnLuuCuaHang.Visible = true;
+            btnHuyLuuCuaHang.Visible = true;
+            IsNewCH = false;
+        }
+
+        private void btnXoaCH_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                CuaHang ch = new CuaHang();
+
+
+                if (txtboxDiaChiCH.Text != "" && txtboxMaCH.Text != "")
+                {
+                    ch.DiaChi = txtboxDiaChiCH.Text;
+                    ch.MaCuaHang = cmBoxMaCH.SelectedValue.ToString();
+                    ch.TenCuaHang = txtboxTenCuaHang.Text;
+                    CuaHangBUS.XoaCH(ch);
+                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi! Mã CH Hoặc Tên CH Không Được Điền", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi! Không thể thực hiện thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLuuCuaHang_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            CuaHang ch = new CuaHang();
+            if (IsNewCH)
+            {
+
+                if (txtboxDiaChiCH.Text != "" && txtboxTenCuaHang.Text != "" && txtboxTenCuaHang.Text != "")
+                {
+                    ch.DiaChi = txtboxDiaChiCH.Text;
+                    ch.MaCuaHang = txtboxMaCH.Text;
+                    ch.TenCuaHang = txtboxTenCuaHang.Text;
+                    CuaHangBUS.ThemCH(ch);
+                    MessageBox.Show("Thêm Thành Công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi! Mã CH Hoặc Tên CH Không Được Điền", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+
+                if (txtboxDiaChiCH.Text != "" && txtboxMaCH.Text != "")
+                {
+                    ch.DiaChi = txtboxDiaChiCH.Text;
+                    ch.MaCuaHang = cmBoxMaCH.SelectedValue.ToString();
+                    ch.TenCuaHang = txtboxTenCuaHang.Text;
+                    CuaHangBUS.SuaCH(ch);
+                    MessageBox.Show("Chỉnh Sửa Thành Công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi! Mã CH Hoặc Tên CH Không Được Điền", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+            }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Lỗi! Không thể thực hiện thao tác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            LoadCuaHang();
+            txtboxTenCuaHang.ReadOnly = true;
+            txtboxDiaChiCH.ReadOnly = true;
+            btnXoaCH.Visible = true;
+            btnChinhSuaCH.Visible = true;
+            btnThemCuaHang.Visible = true;
+            cmBoxMaCH.Visible = true;
+
+            btnLuuCuaHang.Visible = false;
+            btnHuyLuuCuaHang.Visible = false;
+            IsNewCH = false;
+        }
+
+        private void btnHuyLuuCuaHang_Click(object sender, EventArgs e)
+        {
+
+            txtboxTenCuaHang.ReadOnly = true;
+            txtboxDiaChiCH.ReadOnly = true;
+            btnXoaCH.Visible = true;
+            btnChinhSuaCH.Visible = true;
+            btnThemCuaHang.Visible = true;
+            cmBoxMaCH.Visible = true;
+
+            btnLuuCuaHang.Visible = false;
+            btnHuyLuuCuaHang.Visible = false;
+            IsNewCH = false;
+        }
+        #endregion
+        #region TimKiem
+
+        private void btnDongSearch_Click(object sender, EventArgs e)
+        {
+            txtboxTimKiem.Text = "";
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string i = cmBoxTimKiemTheo.SelectedItem.ToString();
+
+            if (i == "Dòng Sản Phẩm")
+            {
+                tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[2];
+                dongSanPhamBindingSource.DataSource = DongSanPhamBUS.TimKiemDongSP(txtboxTimKiem.Text);
+            }
+            else
+                if (i == "Nhân Viên")
+            {
+                if (MaTruyCap == 2)
+                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[0];
+                else
+                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[4];
+                nhanVienBindingSource.DataSource = NhanVienBUS.TimKiemNV(txtboxTimKiem.Text);
+            }
+            else if (i == "Sản Phẩm")
+            {
+                tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[1];
+                sanPhamBindingSource.DataSource = SanPhamBUS.TimKiemSP(txtboxTimKiem.Text);
+            }
+            else if (i == "Nhà Sản Xuất")
+            {
+                tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[3];
+                hSXBindingSource.DataSource = HSXBUS.TimKiemHSX(txtboxTimKiem.Text);
+            }
+            else if (i == "Hóa Đơn Nhập")
+            {
+                if (MaTruyCap == 1)
+                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[4];
+                else
+                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[8];
+                hoaDonNhapHangBindingSource.DataSource = HoaDonNhapHangBUS.TimKiemHDNhap(txtboxTimKiem.Text);
+            }
+        }
+
+        private void cmBoxTimKiemTheo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtboxTimKiem.Text = "";
+        }
+        private void txtboxTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string i = cmBoxTimKiemTheo.SelectedItem.ToString();
+
+            if (i == "Dòng Sản Phẩm")
+            {
+                tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[2];
+                dongSanPhamBindingSource.DataSource = DongSanPhamBUS.TimKiemDongSP(txtboxTimKiem.Text);
+            }
+            else
+                if (i == "Nhân Viên")
+            {
+                if (MaTruyCap == 2)
+                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[0];
+                else
+                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[4];
+                nhanVienBindingSource.DataSource = NhanVienBUS.TimKiemNV(txtboxTimKiem.Text);
+            }
+            else if (i == "Sản Phẩm")
+            {
+                tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[1];
+                sanPhamBindingSource.DataSource = SanPhamBUS.TimKiemSP(txtboxTimKiem.Text);
+            }
+            else if (i == "Nhà Sản Xuất")
+            {
+                tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[3];
+                hSXBindingSource.DataSource = HSXBUS.TimKiemHSX(txtboxTimKiem.Text);
+            }
+            else if (i == "Hóa Đơn Nhập")
+            {
+                if (MaTruyCap == 1)
+                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[4];
+                else
+                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[8];
+                hoaDonNhapHangBindingSource.DataSource = HoaDonNhapHangBUS.TimKiemHDNhap(txtboxTimKiem.Text);
+            }
+        }
+        #endregion
+        #region tras
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
@@ -664,7 +1155,7 @@ namespace GalaxyMobile
 
         }
 
-       
+
 
         private void panel_Paint(object sender, PaintEventArgs e)
         {
@@ -681,6 +1172,18 @@ namespace GalaxyMobile
         {
 
         }
+
+
+
+
+
+
+
+
+
+
+
+        #endregion
 
       
     }

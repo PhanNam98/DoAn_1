@@ -18,6 +18,10 @@ namespace BUS
         {
             return db.GetAllDongSP();
         }
+        public static List<DongSanPham> TimKiemDongSP(string id)
+        {
+          return  db.TimKiemDongSP(id);
+        }
         public static DongSanPham Get1DongSPByMaSP(string id)
         {
             return db.Get1DongSPByMaSP(id);

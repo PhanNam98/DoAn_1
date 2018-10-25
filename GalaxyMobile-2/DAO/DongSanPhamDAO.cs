@@ -15,6 +15,34 @@ namespace DAO
                 return db.DongSanPhams.ToList();
             }
         }
+        public List<DongSanPham> TimKiemDongSP(string id)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                return db.DongSanPhams.Where(p => p.MaDSP.Contains(id) || p.TenDong.Contains(id)).ToList();
+            }
+        }
+        public List<DongSanPham> GetAllDongSPByMaHSX(string id)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                return db.DongSanPhams.Where(p=>p.MaHSX==id).ToList();
+            }
+        }
+        public List<DongSanPham> GetAllDongSPByMaHSXAndMaLoai(string id,string idloai)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                return db.DongSanPhams.Where(p => p.MaHSX == id && p.MaLSP==idloai).ToList();
+            }
+        }
+        public DongSanPham Get1DongSPByMaSP(string id)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                return db.DongSanPhams.Where(p => p.MaDSP == id).SingleOrDefault();
+            }
+        }
         public void XoaDSP(DongSanPham obj)
         {
             using (GalaxyMobileEntities db = new GalaxyMobileEntities())

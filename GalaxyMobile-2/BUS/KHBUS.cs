@@ -34,5 +34,13 @@ namespace BUS
         {
             return db.KtKH(ma);
         }
+        public static KhachHang GetKHByMAKH(string makh)
+        {
+           return db.GetKHByMAKH(makh);
+        }
+        public static List<KhachHang> TimKiemKhachHang(string id)
+        {
+            return db.TimKiemKhachHang(id);
+        }
     }
 }

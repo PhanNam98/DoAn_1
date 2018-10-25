@@ -63,11 +63,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiTietHoaDon.cs">
+    <Compile Include="frmChiTietHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChiTietHoaDon.Designer.cs">
-      <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
+    <Compile Include="frmChiTietHoaDon.Designer.cs">
+      <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChiTietHoaDonNhapHang.cs">
       <SubType>Form</SubType>
@@ -123,6 +123,12 @@
     <Compile Include="frmThemMau.Designer.cs">
       <DependentUpon>frmThemMau.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThongTinGiaoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTinGiaoHang.Designer.cs">
+      <DependentUpon>frmThongTinGiaoHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GalaxyMobileDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -153,8 +159,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ChiTietHoaDon.resx">
-      <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="frmChiTietHoaDon.resx">
+      <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietHoaDonNhapHang.resx">
       <DependentUpon>frmChiTietHoaDonNhapHang.cs</DependentUpon>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemMau.resx">
       <DependentUpon>frmThemMau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTinGiaoHang.resx">
+      <DependentUpon>frmThongTinGiaoHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LNhanVIen.resx">
       <DependentUpon>LNhanVIen.cs</DependentUpon>
@@ -236,6 +245,7 @@
     <None Include="Properties\DataSources\Model.KhoHang.datasource" />
     <None Include="Properties\DataSources\Model.NhanVien.datasource" />
     <None Include="Properties\DataSources\Model.SanPham.datasource" />
+    <None Include="Properties\DataSources\Model.TaiKhoan.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

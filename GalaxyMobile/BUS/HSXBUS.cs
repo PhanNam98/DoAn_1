@@ -18,5 +18,21 @@ namespace BUS
         {
             return db.GetAllHSX();
         }
+        public static void ThemHSX(HSX hsx)
+        {
+            db.ThemHSX(hsx);
+        }
+        public static  void XoaHSX(HSX hsx)
+        {
+            db.XoaHSX(hsx);
+        }
+        public static void ChinhSua(HSX hsx)
+        {
+            db.ChinhSua(hsx);
+        }
+        public static  List<HSX> TimKiemHSX(string id)
+        {
+            return db.TimKiemHSX(id);
+        }
     }
 }

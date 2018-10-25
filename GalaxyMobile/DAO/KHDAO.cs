@@ -42,6 +42,21 @@ namespace DAO
                 return nv;
             }
         }
+        public KhachHang GetKHByMAKH(string makh)
+        {
+            using (GalaxyMobileEntities dbs = new GalaxyMobileEntities())
+            {
+               return dbs.KhachHangs.Where(p => p.MaKH == makh).SingleOrDefault();
+              
+            }
+        }
+        public List<KhachHang> TimKiemKhachHang(string id)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                return db.KhachHangs.Where(p => p.MaKH.Contains(id) || p.TenKH.Contains(id) || p.DiaChi.Contains(id)).ToList();
+            }
+        }
 
     }
 }

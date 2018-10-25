@@ -14,6 +14,10 @@ namespace BUS
         {
             db = new SanPhamDAO();
         }
+        public static List<SanPham> TimKiemSP(string id)
+        {
+            return db.TimKiemSP(id);
+        }
         public static List<SanPham> GetAllSanPham()
         {
             return db.GetAllSanPham();

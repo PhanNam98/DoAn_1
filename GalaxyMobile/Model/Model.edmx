@@ -393,6 +393,10 @@
           <Parameter Name="manv" Type="varchar" Mode="In" />
         </Function>
         <Function Name="GetLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="InHoaDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idhd" Type="varchar" Mode="In" />
+          <Parameter Name="idch" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="spDelKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ma" Type="varchar" Mode="In" />
         </Function>
@@ -457,6 +461,12 @@
         <Function Name="USP_ThayDoiGiaChiTietSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="varchar" Mode="In" />
           <Parameter Name="Gia" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="USP_ThayDoiSLChiTietHoaDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idhd" Type="varchar" Mode="In" />
+          <Parameter Name="idch" Type="varchar" Mode="In" />
+          <Parameter Name="id" Type="varchar" Mode="In" />
+          <Parameter Name="SL" Type="int" Mode="In" />
         </Function>
         <Function Name="USP_ThayDoiSoLuongChiTietSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="varchar" Mode="In" />
@@ -895,6 +905,16 @@
             <Parameter Name="idCH" Mode="In" Type="String" />
             <Parameter Name="SL" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="USP_ThayDoiSLChiTietHoaDon">
+            <Parameter Name="idhd" Mode="In" Type="String" />
+            <Parameter Name="idch" Mode="In" Type="String" />
+            <Parameter Name="id" Mode="In" Type="String" />
+            <Parameter Name="SL" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InHoaDon" ReturnType="Collection(GalaxyMobileModel.InHoaDon_Result)">
+            <Parameter Name="idhd" Mode="In" Type="String" />
+            <Parameter Name="idch" Mode="In" Type="String" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1285,6 +1305,22 @@
           <Property Type="Int32" Name="SoluongSP" Nullable="false" />
           <Property Type="Binary" Name="Anh" Nullable="true" MaxLength="Max" />
         </ComplexType>
+        <ComplexType Name="InHoaDon_Result">
+          <Property Type="Decimal" Name="Giá" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="Mã_Sản_Phẩm" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Tên_Sản_Phẩm" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Màu_Sắc" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Số_Lượng_Mua" Nullable="false" />
+          <Property Type="Decimal" Name="Tổng_Tiền" Nullable="true" Precision="29" Scale="2" />
+          </ComplexType>
+        <ComplexType Name="InHoaDon_Result1">
+          <Property Type="String" Name="Mã_Sản_Phẩm" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Tên_Sản_Phẩm" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Màu_Sắc" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="Giá" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="Số_Lượng_Mua" Nullable="false" />
+          <Property Type="Decimal" Name="Tổng_Tiền" Nullable="true" Precision="29" Scale="2" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1536,6 +1572,19 @@
           <FunctionImportMapping FunctionImportName="USP_GetCTSPOderByMaCHByMaSP" FunctionName="GalaxyMobileModel.Store.USP_GetCTSPOderByMaCHByMaSP" />
           <FunctionImportMapping FunctionImportName="USP_PhanChiaSP" FunctionName="GalaxyMobileModel.Store.USP_PhanChiaSP" />
           <FunctionImportMapping FunctionImportName="USP_ThemSL_KhoHangByMaKieuByMaCH" FunctionName="GalaxyMobileModel.Store.USP_ThemSL_KhoHangByMaKieuByMaCH" />
+          <FunctionImportMapping FunctionImportName="USP_ThayDoiSLChiTietHoaDon" FunctionName="GalaxyMobileModel.Store.USP_ThayDoiSLChiTietHoaDon" />
+          <FunctionImportMapping FunctionImportName="InHoaDon" FunctionName="GalaxyMobileModel.Store.InHoaDon">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GalaxyMobileModel.InHoaDon_Result">
+                <ScalarProperty Name="Giá" ColumnName="Giá" />
+                <ScalarProperty Name="Mã_Sản_Phẩm" ColumnName="Mã Sản Phẩm" />
+                <ScalarProperty Name="Tên_Sản_Phẩm" ColumnName="Tên Sản Phẩm" />
+                <ScalarProperty Name="Màu_Sắc" ColumnName="Màu Sắc" />
+                <ScalarProperty Name="Số_Lượng_Mua" ColumnName="Số Lượng Mua" />
+                <ScalarProperty Name="Tổng_Tiền" ColumnName="Tổng Tiền" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

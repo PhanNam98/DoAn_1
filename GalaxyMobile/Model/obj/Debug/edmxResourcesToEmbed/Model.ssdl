@@ -388,6 +388,10 @@
     <Parameter Name="manv" Type="varchar" Mode="In" />
   </Function>
   <Function Name="GetLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="InHoaDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idhd" Type="varchar" Mode="In" />
+    <Parameter Name="idch" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="spDelKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ma" Type="varchar" Mode="In" />
   </Function>
@@ -452,6 +456,12 @@
   <Function Name="USP_ThayDoiGiaChiTietSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="varchar" Mode="In" />
     <Parameter Name="Gia" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="USP_ThayDoiSLChiTietHoaDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idhd" Type="varchar" Mode="In" />
+    <Parameter Name="idch" Type="varchar" Mode="In" />
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="SL" Type="int" Mode="In" />
   </Function>
   <Function Name="USP_ThayDoiSoLuongChiTietSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="varchar" Mode="In" />

@@ -15,6 +15,21 @@ namespace DAO
                 return dbs.NhanViens.ToList();
             }
         }
+        public List<NhanVien> TimKiemNV(string id)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                return db.NhanViens.Where(p => p.MaNV.Contains(id) || p.TenNV.Contains(id) ||p.SDT.Contains(id)||p.DiaChi.Contains(id)).ToList();
+            }
+        }
+        public List<NhanVien> GetallNVWithoutAdmin()
+        {
+            using (GalaxyMobileEntities dbs = new GalaxyMobileEntities())
+            {
+                return dbs.NhanViens.Where(p => p.MaLoaiNV != "admin").ToList();
+            }
+        }
+
         public void DelNV(string ma)
         {
             using (GalaxyMobileEntities dbs = new GalaxyMobileEntities())
@@ -36,6 +51,22 @@ namespace DAO
             {
                 var nv = dbs.NhanViens.Where(p => p.MaNV == manv).Count();
                 return nv;
+            }
+        }
+        public List<NhanVien> GetNVShiper()
+        {
+            using (GalaxyMobileEntities dbs = new GalaxyMobileEntities())
+            {
+                return dbs.NhanViens.Where(p => p.MaLoaiNV =="shiper").ToList();
+ 
+            }
+        }
+        public NhanVien Get1NV(string id)
+        {
+            using (GalaxyMobileEntities dbs = new GalaxyMobileEntities())
+            {
+                return dbs.NhanViens.Where(p => p.MaNV == id ).SingleOrDefault();
+
             }
         }
     }

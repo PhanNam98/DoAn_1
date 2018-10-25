@@ -24,6 +24,7 @@ namespace GalaxyMobile
         private HoaDonNhapHang hdn;
         private bool IsChange;// true Add new, Edit
         private string MaNV;
+        private bool Luu = false;
         private void frmChiTietHoaDonNhapHang_Load(object sender, EventArgs e)
         {
             if (IsChange == true)
@@ -36,6 +37,11 @@ namespace GalaxyMobile
                 btnSuaSPHDNH.Visible = true;
                 numUpDownSLNhap.Visible = true;
                 // btnHuySPHDNH.Visible = true;
+            }
+            else
+            {
+                Luu = true;
+                
             }
             LoadCTHDNH();
             LoadComboBox();
@@ -50,7 +56,7 @@ namespace GalaxyMobile
                 txtBoxMaHDNH.Text = hdn.MaHoaDonNH;
                 txtBoxMaNVNH.Text = hdn.MaNV;
                 dateNhapHang.Value = hdn.NgayNhapHang;
-
+                lbTongTien.Text = ChiTietHoaDonNhapHangBUS.TinhTien_ByMaHD(txtBoxMaHDNH.Text).ToString();
             }
             catch { }
 
@@ -122,7 +128,7 @@ namespace GalaxyMobile
                 txtboxGiaNhap.Text = dgvNhapHang.Rows[r].Cells[2].Value.ToString();
                 textBoxSLNhap.Text = dgvNhapHang.Rows[r].Cells[1].Value.ToString();
 
-              
+
 
 
 
@@ -281,7 +287,7 @@ namespace GalaxyMobile
 
             txtboxGiaBan.ReadOnly = false;
             txtboxGiaNhap.ReadOnly = false;
-         
+
 
             txtboxHSX.Visible = false;
             txtBoxLSP.Visible = false;
@@ -299,6 +305,13 @@ namespace GalaxyMobile
             btnXoaSPHDNH.Visible = false;
             btnThemSPHDNH.Visible = false;
             IsAddSP = true;
+
+            textBoxSLNhap.Text = "";
+            txtBoxSLTon.Text = "";
+            txtboxGiaBan.Text = "";
+            txtboxGiaNhap.Text = "";
+            cmBoxSP.DataSource = null;
+            cmBoxKieuSP.DataSource = null;
         }
 
         private void numUpDownSLNhap_ValueChanged(object sender, EventArgs e)
@@ -338,6 +351,7 @@ namespace GalaxyMobile
                         {
                             ct.SoLuongNhap += ct1.SoLuongNhap;
                             ChiTietHoaDonNhapHangBUS.ThayDoiSLNhap(ct);
+                            
                         }
                         else { MessageBox.Show("Sản Phẩm Có Trong Hóa Đơn Có Giá Khác Giá Bạn Nhập", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
                     }
@@ -347,9 +361,10 @@ namespace GalaxyMobile
                     ChiTietHDNhapHang ct = new ChiTietHDNhapHang();
                     ct.MaHoaDonNH = txtBoxMaHDNH.Text;
                     ct.MaKieu = cmBoxKieuSP.SelectedValue.ToString();
-                    ct.SoLuongNhap = Convert.ToInt32(numUpDownSLNhap.Value)+ Convert.ToInt32(textBoxSLNhap.Text);
+                    ct.SoLuongNhap = Convert.ToInt32(numUpDownSLNhap.Value) + Convert.ToInt32(textBoxSLNhap.Text);
                     ct.GiaNSX = Convert.ToDecimal(txtboxGiaNhap.Text);
                     ChiTietHoaDonNhapHangBUS.ThayDoiSLNhap(ct);
+                    
                 }
                 txtboxHSX.Visible = true;
                 txtBoxLSP.Visible = true;
@@ -357,10 +372,11 @@ namespace GalaxyMobile
                 txtboxGiaBan.Visible = true;
                 txtBoxKieuSP.Visible = true;
                 txtboxSP.Visible = true;
+                lbTongTien.Text = ChiTietHoaDonNhapHangBUS.TinhTien_ByMaHD(txtBoxMaHDNH.Text).ToString();
                 Clear();
 
             }
-           catch { MessageBox.Show("Không Thể Thực Hiện Thao Tác", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch { MessageBox.Show("Không Thể Thực Hiện Thao Tác", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             btnLuuSPHDNH.Visible = false;
             btnHuySPHDNH.Visible = false;
             btnSuaSPHDNH.Visible = true;
@@ -390,7 +406,7 @@ namespace GalaxyMobile
             IsAddSP = false;
             numUpDownSLNhap.Minimum = -1000;
         }
-        
+
         private void btnThayDoiGia_Click(object sender, EventArgs e)
         {
 
@@ -398,13 +414,14 @@ namespace GalaxyMobile
             {
                 btnThayDoiGia.Text = "Lưu";
                 txtboxGiaBan.ReadOnly = false;
-                
+
             }
             else
             {
                 if (btnThayDoiGia.Text == "Lưu")
                 {
-                    try {
+                    try
+                    {
                         btnThayDoiGia.Text = "Đổi Giá";
                         txtboxGiaBan.ReadOnly = true;
                         string id = cmBoxKieuSP.SelectedValue.ToString();
@@ -433,19 +450,78 @@ namespace GalaxyMobile
         private void btnLuuFullHDNhap_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Bạn có đồng ý lưu hóa dơn này không?\n Khi lưu bạn sẽ không thể thay đổi hóa đơn!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("Bạn có đồng ý Lưu hóa đơn này không?\n Khi lưu bạn sẽ không thể thay đổi hóa đơn!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 try
                 {
                     ChiTietHoaDonNhapHangBUS.LuuHoaDonNhap(txtBoxMaHDNH.Text);
                     MessageBox.Show("Lưu Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     KhoHangBUS.ThemSL_SP_Kho_ByCuaHangBy_MaKieu(txtBoxMaHDNH.Text, comboBoxNoiNhapHang.SelectedValue.ToString());
+                    Luu = true;
                     this.Close();
+                    
                 }
                 catch
                 {
                     MessageBox.Show("Không Thể Thực Hiện Thao Tác", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void btnHuyFullHDN_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có đồng ý Hủy hóa đơn này không?\n Khi Hủy, Hóa Đơn Sẽ bị xóa, dữ liệu sẽ bị mất!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                try
+                {
+                    ChiTietHoaDonNhapHangBUS.XoaAll(txtBoxMaHDNH.Text);
+                    HoaDonNhapHangBUS.XoaHDNhap(HoaDonNhapHangBUS.GetGetHoaDonNhapByID(txtBoxMaHDNH.Text));
+                    Luu = true;
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+       
+        private void frmChiTietHoaDonNhapHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Luu == false)
+            {
+
+                if (MessageBox.Show("Bạn có đồng ý Hủy hóa đơn này không?\n Khi Hủy, Hóa Đơn Sẽ bị xóa, dữ liệu sẽ bị mất!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    try
+                    {
+                        ChiTietHoaDonNhapHangBUS.XoaAll(txtBoxMaHDNH.Text);
+                        HoaDonNhapHangBUS.XoaHDNhap(HoaDonNhapHangBUS.GetGetHoaDonNhapByID(txtBoxMaHDNH.Text));
+
+                    }
+                    catch
+                    {
+
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+
+            }
+        }
+
+        private void btnXoaSPHDNH_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ChiTietHoaDonNhapHangBUS.XoaSPfromCTNH(txtBoxMaHDNH.Text, txtBoxKieuSP.Text);
+                chiTietHDNhapHangBindingSource.DataSource = ChiTietHoaDonNhapHangBUS.GetAllSanPham(txtBoxMaHDNH.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Không Thể Thực Hiện Thao Tác", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

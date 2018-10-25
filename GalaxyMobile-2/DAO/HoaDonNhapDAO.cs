@@ -10,7 +10,41 @@ namespace DAO
     {
         public HoaDonNhapHang GetHoaDonNhap(string id)
         {
-            return;
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                return db.HoaDonNhapHangs.Where(p => p.MaHoaDonNH == id).Single();
+            }
+        }
+        public List<HoaDonNhapHang> GetAllHoaDonNhap()
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                return db.HoaDonNhapHangs.ToList();
+            }
+        }
+        public void ThemHDNhap(HoaDonNhapHang obj)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                db.HoaDonNhapHangs.Add(obj);
+                db.SaveChanges();
+            }
+        }
+        public void XoaHDNhap(HoaDonNhapHang obj)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                db.HoaDonNhapHangs.Attach(obj);
+                db.HoaDonNhapHangs.Remove(obj);
+                db.SaveChanges();
+            }
+        }
+        public List<HoaDonNhapHang> TimKiemHDNhap(string id)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                return db.HoaDonNhapHangs.Where(p => p.MaHoaDonNH.Contains(id) || p.MaNV.Contains(id)).ToList();
+            }
         }
     }
 }

@@ -47,6 +47,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBox2.Controls.Add(this.btnDuyetHinh);
             this.groupBox2.Controls.Add(this.btnLuuChinhSua);
             this.groupBox2.Controls.Add(this.txtBoxDuongdanHinh);
@@ -61,7 +62,7 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(480, 338);
+            this.groupBox2.Size = new System.Drawing.Size(493, 338);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mã Kiểu Sản Phẩm";
@@ -173,6 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(517, 363);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmThemKieuSP";

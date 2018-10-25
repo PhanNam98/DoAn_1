@@ -408,5 +408,39 @@ namespace Model
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USP_ThemSL_KhoHangByMaKieuByMaCH", idParameter, idCHParameter, sLParameter);
         }
+    
+        public virtual int USP_ThayDoiSLChiTietHoaDon(string idhd, string idch, string id, Nullable<int> sL)
+        {
+            var idhdParameter = idhd != null ?
+                new ObjectParameter("idhd", idhd) :
+                new ObjectParameter("idhd", typeof(string));
+    
+            var idchParameter = idch != null ?
+                new ObjectParameter("idch", idch) :
+                new ObjectParameter("idch", typeof(string));
+    
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var sLParameter = sL.HasValue ?
+                new ObjectParameter("SL", sL) :
+                new ObjectParameter("SL", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USP_ThayDoiSLChiTietHoaDon", idhdParameter, idchParameter, idParameter, sLParameter);
+        }
+    
+        public virtual ObjectResult<InHoaDon_Result> InHoaDon(string idhd, string idch)
+        {
+            var idhdParameter = idhd != null ?
+                new ObjectParameter("idhd", idhd) :
+                new ObjectParameter("idhd", typeof(string));
+    
+            var idchParameter = idch != null ?
+                new ObjectParameter("idch", idch) :
+                new ObjectParameter("idch", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<InHoaDon_Result>("InHoaDon", idhdParameter, idchParameter);
+        }
     }
 }

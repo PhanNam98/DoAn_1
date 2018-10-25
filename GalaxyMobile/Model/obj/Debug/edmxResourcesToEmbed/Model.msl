@@ -246,5 +246,18 @@
     <FunctionImportMapping FunctionImportName="USP_GetCTSPOderByMaCHByMaSP" FunctionName="GalaxyMobileModel.Store.USP_GetCTSPOderByMaCHByMaSP" />
     <FunctionImportMapping FunctionImportName="USP_PhanChiaSP" FunctionName="GalaxyMobileModel.Store.USP_PhanChiaSP" />
     <FunctionImportMapping FunctionImportName="USP_ThemSL_KhoHangByMaKieuByMaCH" FunctionName="GalaxyMobileModel.Store.USP_ThemSL_KhoHangByMaKieuByMaCH" />
+    <FunctionImportMapping FunctionImportName="USP_ThayDoiSLChiTietHoaDon" FunctionName="GalaxyMobileModel.Store.USP_ThayDoiSLChiTietHoaDon" />
+    <FunctionImportMapping FunctionImportName="InHoaDon" FunctionName="GalaxyMobileModel.Store.InHoaDon">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GalaxyMobileModel.InHoaDon_Result">
+          <ScalarProperty Name="Giá" ColumnName="Giá" />
+          <ScalarProperty Name="Mã_Sản_Phẩm" ColumnName="Mã Sản Phẩm" />
+          <ScalarProperty Name="Tên_Sản_Phẩm" ColumnName="Tên Sản Phẩm" />
+          <ScalarProperty Name="Màu_Sắc" ColumnName="Màu Sắc" />
+          <ScalarProperty Name="Số_Lượng_Mua" ColumnName="Số Lượng Mua" />
+          <ScalarProperty Name="Tổng_Tiền" ColumnName="Tổng Tiền" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

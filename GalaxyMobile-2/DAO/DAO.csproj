@@ -46,10 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHoaDonDAO.cs" />
     <Compile Include="ChiTietSPDAO.cs" />
     <Compile Include="CuaHangDAO.cs" />
     <Compile Include="DongSanPhamDAO.cs" />
     <Compile Include="ChiTietHoaDonNhapDAO.cs" />
+    <Compile Include="GiaoHangDAO.cs" />
     <Compile Include="HoaDonDAO.cs" />
     <Compile Include="HoaDonNhapDAO.cs" />
     <Compile Include="KHDAO.cs" />
@@ -57,6 +59,7 @@
     <Compile Include="LoaiNvDAO.cs" />
     <Compile Include="LoaiSPDAO.cs" />
     <Compile Include="LoaiTaiKhoanDAO.cs" />
+    <Compile Include="MauDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />
     <Compile Include="HSXDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

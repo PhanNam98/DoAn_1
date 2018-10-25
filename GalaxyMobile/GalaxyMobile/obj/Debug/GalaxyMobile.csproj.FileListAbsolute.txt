@@ -12,7 +12,6 @@ D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobi
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\EntityFramework.xml
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\EntityFramework.SqlServer.xml
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csprojResolveAssemblyReference.cache
-D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.ChiTietHoaDon.resources
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmChiTietTaiKhoan.resources
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmChiTietSanPham.resources
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmDangNhap.resources
@@ -60,3 +59,9 @@ D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\D
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\Model.pdb
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\EntityFramework.xml
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\GalaxyMobile\GalaxyMobile\bin\Debug\EntityFramework.SqlServer.xml
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmChiTietHoaDon.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmThongTinGiaoHang.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmInHoaDon.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\RdlCompile.cache
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\GalaxyMobile\obj\Debug\RdlCompile.compiled

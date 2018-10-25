@@ -1,4 +1,4 @@
-alter proc USP_GetAllCuaHang
+﻿alter proc USP_GetAllCuaHang
 as
 begin
 	select u.MaCuaHang,u.TenCuaHang,u.DiaChi
@@ -129,3 +129,30 @@ begin
 end
 go
 
+create proc USP_ThayDoiSLChiTietHoaDon
+ @idhd varchar(15),@idch varchar(10) , @id varchar(50), @SL int 
+as
+begin
+	update ChiTietHoaDon set SoluongSP+= @SL where MaKieu=@id and MaCuaHang=@idch and MaHoaDon=@idhd
+end
+go
+
+
+--create proc USP_ThanhToanHoaDon
+-- @idhd varchar(15),@idch varchar(10)
+-- as
+-- begin
+-- end
+-- go
+
+alter proc InHoaDon
+@idhd varchar(15), @idch varchar(10)
+as
+begin
+	select ct.MaKieu as [Mã Sản Phẩm],sp.TenSP as [Tên Sản Phẩm],mau.Mau as [Màu Sắc],ct.GiaSP as [Giá], ct.SoluongSP[Số Lượng Mua],ct.SoluongSP*ct.GiaSP as [Tổng Tiền]
+	from ((ChiTietHoaDon ct join ChiTietSP ctsp on ct.MaKieu=ctsp.MaKieu ) join SanPham sp on sp.MaSP= ctsp.MaSP )join MauSP mau on mau.MaMau = ctsp.MaMau
+	 where ct.MaHoaDon=@idhd and ct.MaCuaHang=@idch
+end
+go
+
+exec InHoaDon @idhd='hd0002' , @idch= 'cs2'

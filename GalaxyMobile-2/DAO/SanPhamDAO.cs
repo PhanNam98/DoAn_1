@@ -15,6 +15,13 @@ namespace DAO
                 return db.SanPhams.ToList();
             }
         }
+        public List<SanPham> TimKiemSP(string id)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                return db.SanPhams.Where(p => p.MaDSP.Contains(id) || p.MaSP.Contains(id) || p.TenSP.Contains(id) || p.Ram.Contains(id) || p.BoNhoTrong.Contains(id) || p.NămSX.Contains(id)).ToList();
+            }
+        }
         public SanPham GetSanPhamByID(string id)
         {
             using (GalaxyMobileEntities db = new GalaxyMobileEntities())
@@ -55,6 +62,7 @@ namespace DAO
                 db.SaveChanges();
             }
         }
-
+       
+        
     }
 }

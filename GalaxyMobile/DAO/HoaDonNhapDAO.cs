@@ -39,5 +39,12 @@ namespace DAO
                 db.SaveChanges();
             }
         }
+        public List<HoaDonNhapHang> TimKiemHDNhap(string id)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                return db.HoaDonNhapHangs.Where(p => p.MaHoaDonNH.Contains(id) || p.MaNV.Contains(id)).ToList();
+            }
+        }
     }
 }
