@@ -216,12 +216,14 @@
             this.dgvKho.AllowUserToAddRows = false;
             this.dgvKho.AllowUserToDeleteRows = false;
             this.dgvKho.AutoGenerateColumns = false;
+            this.dgvKho.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maKieuDataGridViewTextBoxColumn,
             this.maCuaHangDataGridViewTextBoxColumn,
             this.soLuongDataGridViewTextBoxColumn});
             this.dgvKho.DataSource = this.khoHangBindingSource;
+            this.dgvKho.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvKho.Location = new System.Drawing.Point(40, 310);
             this.dgvKho.Name = "dgvKho";
             this.dgvKho.ReadOnly = true;

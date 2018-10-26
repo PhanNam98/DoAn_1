@@ -115,6 +115,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBox1.Controls.Add(this.linkLbChiTietGiaoHang);
             this.groupBox1.Controls.Add(this.textBoxTinhTrangGiaHang);
             this.groupBox1.Controls.Add(this.lbTrangGiaoHang);
@@ -404,6 +405,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBox2.Controls.Add(this.textBoxSLMua);
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.btnLuuEditSL);
@@ -652,6 +654,7 @@
             // 
             this.dgvHoaDon.AllowUserToAddRows = false;
             this.dgvHoaDon.AutoGenerateColumns = false;
+            this.dgvHoaDon.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maHoaDonDataGridViewTextBoxColumn,
@@ -840,6 +843,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(965, 604);
             this.Controls.Add(this.btnLuuTam);
             this.Controls.Add(this.panel1);

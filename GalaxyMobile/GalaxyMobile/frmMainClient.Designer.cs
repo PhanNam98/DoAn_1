@@ -303,6 +303,7 @@
             // 
             // pnlHD
             // 
+            this.pnlHD.BackColor = System.Drawing.Color.SkyBlue;
             this.pnlHD.Controls.Add(this.button1);
             this.pnlHD.Controls.Add(this.pnlTG);
             this.pnlHD.Controls.Add(this.checkBoxTG);
@@ -468,6 +469,7 @@
             this.dgvHD.AllowUserToAddRows = false;
             this.dgvHD.AllowUserToDeleteRows = false;
             this.dgvHD.AutoGenerateColumns = false;
+            this.dgvHD.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maHoaDonDataGridViewTextBoxColumn,
@@ -548,6 +550,7 @@
             // 
             // tabSanPham
             // 
+            this.tabSanPham.BackColor = System.Drawing.Color.SkyBlue;
             this.tabSanPham.Controls.Add(this.btnLoadSP);
             this.tabSanPham.Controls.Add(this.btnChiTietSP);
             this.tabSanPham.Controls.Add(this.dgvSP);
@@ -557,14 +560,13 @@
             this.tabSanPham.Size = new System.Drawing.Size(981, 473);
             this.tabSanPham.TabIndex = 1;
             this.tabSanPham.Text = "Sản Phẩm";
-            this.tabSanPham.UseVisualStyleBackColor = true;
             // 
             // btnLoadSP
             // 
             this.btnLoadSP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLoadSP.Location = new System.Drawing.Point(441, 388);
             this.btnLoadSP.Name = "btnLoadSP";
-            this.btnLoadSP.Size = new System.Drawing.Size(75, 37);
+            this.btnLoadSP.Size = new System.Drawing.Size(93, 37);
             this.btnLoadSP.TabIndex = 8;
             this.btnLoadSP.Text = "Lấy Dữ Liệu";
             this.btnLoadSP.UseVisualStyleBackColor = true;
@@ -589,6 +591,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSP.AutoGenerateColumns = false;
+            this.dgvSP.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maSPDataGridViewTextBoxColumn,
@@ -740,6 +743,7 @@
             // 
             // tabDongSp
             // 
+            this.tabDongSp.BackColor = System.Drawing.Color.LightSteelBlue;
             this.tabDongSp.Controls.Add(this.groupBox2);
             this.tabDongSp.Location = new System.Drawing.Point(4, 24);
             this.tabDongSp.Name = "tabDongSp";
@@ -747,13 +751,13 @@
             this.tabDongSp.Size = new System.Drawing.Size(981, 473);
             this.tabDongSp.TabIndex = 2;
             this.tabDongSp.Text = "Dòng Sản Phẩm";
-            this.tabDongSp.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.btnLoadDSP);
             this.groupBox2.Controls.Add(this.dgvDongSP);
@@ -768,6 +772,7 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBox3.Controls.Add(this.txtboxTenDongSP);
             this.groupBox3.Controls.Add(this.txtboxMaDongSP);
             this.groupBox3.Controls.Add(this.cmBoxLoaiSP);
@@ -891,6 +896,7 @@
             this.dgvDongSP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvDongSP.AutoGenerateColumns = false;
+            this.dgvDongSP.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvDongSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDongSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maDSPDataGridViewTextBoxColumn1,
@@ -950,6 +956,7 @@
             // 
             // pnlHSX
             // 
+            this.pnlHSX.BackColor = System.Drawing.Color.LightSteelBlue;
             this.pnlHSX.Controls.Add(this.dgvHSX);
             this.pnlHSX.Controls.Add(this.groupBox5);
             this.pnlHSX.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -963,6 +970,7 @@
             this.dgvHSX.AllowUserToAddRows = false;
             this.dgvHSX.AllowUserToDeleteRows = false;
             this.dgvHSX.AutoGenerateColumns = false;
+            this.dgvHSX.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvHSX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHSX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maHSXDataGridViewTextBoxColumn1,
@@ -997,6 +1005,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBox5.Controls.Add(this.btnLoadHSX);
             this.groupBox5.Controls.Add(this.textBoxTenHSX);
             this.groupBox5.Controls.Add(this.label25);
@@ -1058,36 +1067,37 @@
             // 
             // tabNhanVien
             // 
+            this.tabNhanVien.BackColor = System.Drawing.Color.LightSteelBlue;
             this.tabNhanVien.Location = new System.Drawing.Point(4, 24);
             this.tabNhanVien.Name = "tabNhanVien";
             this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
             this.tabNhanVien.Size = new System.Drawing.Size(981, 473);
             this.tabNhanVien.TabIndex = 4;
             this.tabNhanVien.Text = "Nhân Viên";
-            this.tabNhanVien.UseVisualStyleBackColor = true;
             // 
             // tabThongKe
             // 
+            this.tabThongKe.BackColor = System.Drawing.Color.LightSteelBlue;
             this.tabThongKe.Location = new System.Drawing.Point(4, 24);
             this.tabThongKe.Name = "tabThongKe";
             this.tabThongKe.Padding = new System.Windows.Forms.Padding(3);
             this.tabThongKe.Size = new System.Drawing.Size(981, 473);
             this.tabThongKe.TabIndex = 5;
             this.tabThongKe.Text = "Thống Kê";
-            this.tabThongKe.UseVisualStyleBackColor = true;
             // 
             // tabCuaHang
             // 
+            this.tabCuaHang.BackColor = System.Drawing.Color.LightSteelBlue;
             this.tabCuaHang.Location = new System.Drawing.Point(4, 24);
             this.tabCuaHang.Name = "tabCuaHang";
             this.tabCuaHang.Padding = new System.Windows.Forms.Padding(3);
             this.tabCuaHang.Size = new System.Drawing.Size(981, 473);
             this.tabCuaHang.TabIndex = 6;
             this.tabCuaHang.Text = "Của Hàng";
-            this.tabCuaHang.UseVisualStyleBackColor = true;
             // 
             // tabKhachHang
             // 
+            this.tabKhachHang.BackColor = System.Drawing.Color.LightSteelBlue;
             this.tabKhachHang.Controls.Add(this.dgvKH);
             this.tabKhachHang.Controls.Add(this.btnXoa);
             this.tabKhachHang.Controls.Add(this.panel);
@@ -1102,13 +1112,13 @@
             this.tabKhachHang.Size = new System.Drawing.Size(981, 473);
             this.tabKhachHang.TabIndex = 7;
             this.tabKhachHang.Text = "Khách Hàng";
-            this.tabKhachHang.UseVisualStyleBackColor = true;
             // 
             // dgvKH
             // 
             this.dgvKH.AllowUserToAddRows = false;
             this.dgvKH.AllowUserToDeleteRows = false;
             this.dgvKH.AutoGenerateColumns = false;
+            this.dgvKH.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maKHDataGridViewTextBoxColumn1,
@@ -1116,7 +1126,7 @@
             this.diaChiDataGridViewTextBoxColumn,
             this.sDTDataGridViewTextBoxColumn});
             this.dgvKH.DataSource = this.khachHangBindingSource;
-            this.dgvKH.Location = new System.Drawing.Point(12, 99);
+            this.dgvKH.Location = new System.Drawing.Point(62, 102);
             this.dgvKH.Name = "dgvKH";
             this.dgvKH.ReadOnly = true;
             this.dgvKH.Size = new System.Drawing.Size(861, 303);
@@ -1175,6 +1185,7 @@
             // 
             // panel
             // 
+            this.panel.BackColor = System.Drawing.Color.SkyBlue;
             this.panel.Controls.Add(this.label14);
             this.panel.Controls.Add(this.txtDiaChi);
             this.panel.Controls.Add(this.txtTenKH);
@@ -1183,7 +1194,7 @@
             this.panel.Controls.Add(this.txtSDT);
             this.panel.Controls.Add(this.label18);
             this.panel.Controls.Add(this.label19);
-            this.panel.Location = new System.Drawing.Point(12, 3);
+            this.panel.Location = new System.Drawing.Point(62, 6);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(863, 90);
             this.panel.TabIndex = 67;
@@ -1273,7 +1284,7 @@
             // 
             this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnReload.Location = new System.Drawing.Point(11, 410);
+            this.btnReload.Location = new System.Drawing.Point(62, 408);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(72, 33);
             this.btnReload.TabIndex = 62;
@@ -1325,6 +1336,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1068, 562);
             this.Controls.Add(this.pnlClinet);
             this.Name = "frmMainClient";

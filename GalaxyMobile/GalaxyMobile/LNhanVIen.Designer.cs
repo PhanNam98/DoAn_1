@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvLNV = new System.Windows.Forms.DataGridView();
+            this.maLoaiNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLoaiNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaiNVBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.galaxyMobileDataSet = new GalaxyMobile.GalaxyMobileDataSet();
             this.btnThem = new System.Windows.Forms.Button();
@@ -42,8 +44,6 @@
             this.txtTenLoai = new System.Windows.Forms.TextBox();
             this.panel = new System.Windows.Forms.Panel();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.maLoaiNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenLoaiNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaiNVBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galaxyMobileDataSet)).BeginInit();
@@ -55,6 +55,7 @@
             this.dgvLNV.AllowUserToAddRows = false;
             this.dgvLNV.AllowUserToDeleteRows = false;
             this.dgvLNV.AutoGenerateColumns = false;
+            this.dgvLNV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvLNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLNV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maLoaiNVDataGridViewTextBoxColumn,
@@ -66,6 +67,22 @@
             this.dgvLNV.Size = new System.Drawing.Size(289, 197);
             this.dgvLNV.TabIndex = 0;
             this.dgvLNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLNV_CellClick);
+            // 
+            // maLoaiNVDataGridViewTextBoxColumn
+            // 
+            this.maLoaiNVDataGridViewTextBoxColumn.DataPropertyName = "MaLoaiNV";
+            this.maLoaiNVDataGridViewTextBoxColumn.HeaderText = "Mã Loại";
+            this.maLoaiNVDataGridViewTextBoxColumn.Name = "maLoaiNVDataGridViewTextBoxColumn";
+            this.maLoaiNVDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maLoaiNVDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // tenLoaiNVDataGridViewTextBoxColumn
+            // 
+            this.tenLoaiNVDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiNV";
+            this.tenLoaiNVDataGridViewTextBoxColumn.HeaderText = "Tên Loại Nhân Viên";
+            this.tenLoaiNVDataGridViewTextBoxColumn.Name = "tenLoaiNVDataGridViewTextBoxColumn";
+            this.tenLoaiNVDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenLoaiNVDataGridViewTextBoxColumn.Width = 150;
             // 
             // loaiNVBindingSource
             // 
@@ -170,24 +187,11 @@
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // maLoaiNVDataGridViewTextBoxColumn
-            // 
-            this.maLoaiNVDataGridViewTextBoxColumn.DataPropertyName = "MaLoaiNV";
-            this.maLoaiNVDataGridViewTextBoxColumn.HeaderText = "Mã Loại";
-            this.maLoaiNVDataGridViewTextBoxColumn.Name = "maLoaiNVDataGridViewTextBoxColumn";
-            this.maLoaiNVDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // tenLoaiNVDataGridViewTextBoxColumn
-            // 
-            this.tenLoaiNVDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiNV";
-            this.tenLoaiNVDataGridViewTextBoxColumn.HeaderText = "Tên Loại Nhân Viên";
-            this.tenLoaiNVDataGridViewTextBoxColumn.Name = "tenLoaiNVDataGridViewTextBoxColumn";
-            this.tenLoaiNVDataGridViewTextBoxColumn.Width = 150;
-            // 
             // LNhanVIen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(329, 360);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnHuy);

@@ -126,6 +126,7 @@
             // 
             // pnlfrmChiSP
             // 
+            this.pnlfrmChiSP.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnlfrmChiSP.Controls.Add(this.tabControl1);
             this.pnlfrmChiSP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlfrmChiSP.Location = new System.Drawing.Point(0, 0);
@@ -156,6 +157,7 @@
             // 
             // pnlChiTietCauHinhSP
             // 
+            this.pnlChiTietCauHinhSP.BackColor = System.Drawing.Color.LightSteelBlue;
             this.pnlChiTietCauHinhSP.Controls.Add(this.btnLuuThayDoi);
             this.pnlChiTietCauHinhSP.Controls.Add(this.btnThemSP);
             this.pnlChiTietCauHinhSP.Controls.Add(this.groupBoxThongTin);
@@ -187,6 +189,7 @@
             // 
             // groupBoxThongTin
             // 
+            this.groupBoxThongTin.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBoxThongTin.Controls.Add(this.cmBoxSP);
             this.groupBoxThongTin.Controls.Add(this.txtNamSX);
             this.groupBoxThongTin.Controls.Add(this.txtTenSP);
@@ -283,6 +286,7 @@
             // 
             // groupBoxCauHInh
             // 
+            this.groupBoxCauHInh.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBoxCauHInh.Controls.Add(this.txtboxPin);
             this.groupBoxCauHInh.Controls.Add(this.txtBoxTrongLuong);
             this.groupBoxCauHInh.Controls.Add(this.txtboxSim);
@@ -520,6 +524,7 @@
             // 
             // tabThongTinKieuSP
             // 
+            this.tabThongTinKieuSP.BackColor = System.Drawing.Color.LightSteelBlue;
             this.tabThongTinKieuSP.Controls.Add(this.btnAnh);
             this.tabThongTinKieuSP.Controls.Add(this.textBoxPathAnh);
             this.tabThongTinKieuSP.Controls.Add(this.picBoxKieuSP);
@@ -532,7 +537,6 @@
             this.tabThongTinKieuSP.Size = new System.Drawing.Size(781, 443);
             this.tabThongTinKieuSP.TabIndex = 1;
             this.tabThongTinKieuSP.Text = "Màu sắc và số lượng";
-            this.tabThongTinKieuSP.UseVisualStyleBackColor = true;
             // 
             // btnAnh
             // 
@@ -630,6 +634,7 @@
             // 
             // groupBoxMau
             // 
+            this.groupBoxMau.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBoxMau.Controls.Add(this.btnLuuMau);
             this.groupBoxMau.Controls.Add(this.txtBoxTenMau);
             this.groupBoxMau.Controls.Add(this.btnXoaMau);
@@ -719,6 +724,7 @@
             // 
             // groupBoxKieuSP
             // 
+            this.groupBoxKieuSP.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBoxKieuSP.Controls.Add(this.textBoxMau);
             this.groupBoxKieuSP.Controls.Add(this.textBoxMaKieu);
             this.groupBoxKieuSP.Controls.Add(this.textBoxMaSP);

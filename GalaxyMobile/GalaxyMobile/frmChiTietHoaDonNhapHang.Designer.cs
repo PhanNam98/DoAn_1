@@ -95,6 +95,7 @@
             // 
             // pnlCTHDNH
             // 
+            this.pnlCTHDNH.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnlCTHDNH.Controls.Add(this.label17);
             this.pnlCTHDNH.Controls.Add(this.lbTongTien);
             this.pnlCTHDNH.Controls.Add(this.label15);
@@ -201,6 +202,7 @@
             this.dgvNhapHang.AllowUserToAddRows = false;
             this.dgvNhapHang.AllowUserToDeleteRows = false;
             this.dgvNhapHang.AutoGenerateColumns = false;
+            this.dgvNhapHang.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvNhapHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhapHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maKieuDataGridViewTextBoxColumn,
@@ -242,6 +244,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBox2.Controls.Add(this.btnThayDoiGia);
             this.groupBox2.Controls.Add(this.numUpDownSLNhap);
             this.groupBox2.Controls.Add(this.textBoxSLNhap);
@@ -350,14 +353,14 @@
             // 
             // txtBoxDSP
             // 
-            this.txtBoxDSP.Location = new System.Drawing.Point(161, 145);
+            this.txtBoxDSP.Location = new System.Drawing.Point(154, 132);
             this.txtBoxDSP.Name = "txtBoxDSP";
             this.txtBoxDSP.Size = new System.Drawing.Size(147, 20);
             this.txtBoxDSP.TabIndex = 10;
             // 
             // txtBoxLSP
             // 
-            this.txtBoxLSP.Location = new System.Drawing.Point(155, 91);
+            this.txtBoxLSP.Location = new System.Drawing.Point(152, 91);
             this.txtBoxLSP.Name = "txtBoxLSP";
             this.txtBoxLSP.Size = new System.Drawing.Size(150, 20);
             this.txtBoxLSP.TabIndex = 10;
@@ -525,6 +528,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBox1.Controls.Add(this.btnHuyThongTinHD);
             this.groupBox1.Controls.Add(this.btnLuuThongTInHD);
             this.groupBox1.Controls.Add(this.dateNhapHang);

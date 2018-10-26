@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnThemMau = new System.Windows.Forms.Button();
+            this.txtBoxMaMau = new System.Windows.Forms.TextBox();
             this.txtBoxTenMau = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtBoxMaMau = new System.Windows.Forms.TextBox();
-            this.btnThemMau = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.btnThemMau);
             this.groupBox1.Controls.Add(this.txtBoxMaMau);
             this.groupBox1.Controls.Add(this.txtBoxTenMau);
@@ -51,14 +52,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Màu:";
             // 
-            // label1
+            // btnThemMau
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Màu:";
+            this.btnThemMau.Location = new System.Drawing.Point(121, 164);
+            this.btnThemMau.Name = "btnThemMau";
+            this.btnThemMau.Size = new System.Drawing.Size(75, 23);
+            this.btnThemMau.TabIndex = 2;
+            this.btnThemMau.Text = "Thêm";
+            this.btnThemMau.UseVisualStyleBackColor = true;
+            // 
+            // txtBoxMaMau
+            // 
+            this.txtBoxMaMau.Location = new System.Drawing.Point(76, 47);
+            this.txtBoxMaMau.Name = "txtBoxMaMau";
+            this.txtBoxMaMau.Size = new System.Drawing.Size(118, 20);
+            this.txtBoxMaMau.TabIndex = 1;
             // 
             // txtBoxTenMau
             // 
@@ -76,26 +84,20 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Mã Màu:";
             // 
-            // txtBoxMaMau
+            // label1
             // 
-            this.txtBoxMaMau.Location = new System.Drawing.Point(76, 47);
-            this.txtBoxMaMau.Name = "txtBoxMaMau";
-            this.txtBoxMaMau.Size = new System.Drawing.Size(118, 20);
-            this.txtBoxMaMau.TabIndex = 1;
-            // 
-            // btnThemMau
-            // 
-            this.btnThemMau.Location = new System.Drawing.Point(121, 164);
-            this.btnThemMau.Name = "btnThemMau";
-            this.btnThemMau.Size = new System.Drawing.Size(75, 23);
-            this.btnThemMau.TabIndex = 2;
-            this.btnThemMau.Text = "Thêm";
-            this.btnThemMau.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Màu:";
             // 
             // frmThemMau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(269, 250);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmThemMau";
