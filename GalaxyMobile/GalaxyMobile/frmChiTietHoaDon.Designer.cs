@@ -507,7 +507,7 @@
             // 
             // textBoxMaKieuSP
             // 
-            this.textBoxMaKieuSP.Location = new System.Drawing.Point(124, 234);
+            this.textBoxMaKieuSP.Location = new System.Drawing.Point(126, 235);
             this.textBoxMaKieuSP.Name = "textBoxMaKieuSP";
             this.textBoxMaKieuSP.Size = new System.Drawing.Size(121, 20);
             this.textBoxMaKieuSP.TabIndex = 10;
@@ -539,7 +539,7 @@
             // 
             // textBoxSP
             // 
-            this.textBoxSP.Location = new System.Drawing.Point(124, 165);
+            this.textBoxSP.Location = new System.Drawing.Point(126, 164);
             this.textBoxSP.Name = "textBoxSP";
             this.textBoxSP.Size = new System.Drawing.Size(121, 20);
             this.textBoxSP.TabIndex = 7;
@@ -596,7 +596,7 @@
             // comboBoxSP
             // 
             this.comboBoxSP.FormattingEnabled = true;
-            this.comboBoxSP.Location = new System.Drawing.Point(124, 164);
+            this.comboBoxSP.Location = new System.Drawing.Point(125, 164);
             this.comboBoxSP.Name = "comboBoxSP";
             this.comboBoxSP.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSP.TabIndex = 5;

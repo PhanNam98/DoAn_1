@@ -1103,40 +1103,43 @@ namespace GalaxyMobile
         }
         private void txtboxTimKiem_TextChanged(object sender, EventArgs e)
         {
-            string i = cmBoxTimKiemTheo.SelectedItem.ToString();
+            try {
+                string i = cmBoxTimKiemTheo.SelectedItem.ToString();
 
-            if (i == "Dòng Sản Phẩm")
-            {
-                tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[2];
-                dongSanPhamBindingSource.DataSource = DongSanPhamBUS.TimKiemDongSP(txtboxTimKiem.Text);
-            }
-            else
-                if (i == "Nhân Viên")
-            {
-                if (MaTruyCap == 2)
-                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[0];
+                if (i == "Dòng Sản Phẩm")
+                {
+                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[2];
+                    dongSanPhamBindingSource.DataSource = DongSanPhamBUS.TimKiemDongSP(txtboxTimKiem.Text);
+                }
                 else
-                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[4];
-                nhanVienBindingSource.DataSource = NhanVienBUS.TimKiemNV(txtboxTimKiem.Text);
+                    if (i == "Nhân Viên")
+                {
+                    if (MaTruyCap == 2)
+                        tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[0];
+                    else
+                        tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[4];
+                    nhanVienBindingSource.DataSource = NhanVienBUS.TimKiemNV(txtboxTimKiem.Text);
+                }
+                else if (i == "Sản Phẩm")
+                {
+                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[1];
+                    sanPhamBindingSource.DataSource = SanPhamBUS.TimKiemSP(txtboxTimKiem.Text);
+                }
+                else if (i == "Nhà Sản Xuất")
+                {
+                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[3];
+                    hSXBindingSource.DataSource = HSXBUS.TimKiemHSX(txtboxTimKiem.Text);
+                }
+                else if (i == "Hóa Đơn Nhập")
+                {
+                    if (MaTruyCap == 1)
+                        tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[4];
+                    else
+                        tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[8];
+                    hoaDonNhapHangBindingSource.DataSource = HoaDonNhapHangBUS.TimKiemHDNhap(txtboxTimKiem.Text);
+                }
             }
-            else if (i == "Sản Phẩm")
-            {
-                tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[1];
-                sanPhamBindingSource.DataSource = SanPhamBUS.TimKiemSP(txtboxTimKiem.Text);
-            }
-            else if (i == "Nhà Sản Xuất")
-            {
-                tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[3];
-                hSXBindingSource.DataSource = HSXBUS.TimKiemHSX(txtboxTimKiem.Text);
-            }
-            else if (i == "Hóa Đơn Nhập")
-            {
-                if (MaTruyCap == 1)
-                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[4];
-                else
-                    tabControlMainServer.SelectedTab = tabControlMainServer.TabPages[8];
-                hoaDonNhapHangBindingSource.DataSource = HoaDonNhapHangBUS.TimKiemHDNhap(txtboxTimKiem.Text);
-            }
+            catch { MessageBox.Show("Bạn Chưa Chọn Đối Tượng Tìm Kiếm!"); }
         }
         #endregion
         #region tras

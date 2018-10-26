@@ -111,5 +111,9 @@ namespace BUS
         {
             return db.Get1HD(mahd, mach);
         }
+        public static bool KiemTraSL_SP_trong_Kho_va_HoaDon(string mahd, string mach)
+        {
+            return db.KiemTraSL_SP_trong_Kho_va_HoaDon(mahd, mach);
+        }
     }
 }

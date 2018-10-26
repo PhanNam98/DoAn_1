@@ -156,3 +156,5 @@ end
 go
 
 exec InHoaDon @idhd='hd0002' , @idch= 'cs2'
+
+

@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlCTHDNH = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lbTongTien = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.comboBoxNoiNhapHang = new System.Windows.Forms.ComboBox();
             this.btnHuyFullHDN = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -82,9 +85,6 @@
             this.btnXoaSPHDNH = new System.Windows.Forms.Button();
             this.btnLuuSPHDNH = new System.Windows.Forms.Button();
             this.btnThemSPHDNH = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lbTongTien = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.pnlCTHDNH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhapHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietHDNhapHangBindingSource)).BeginInit();
@@ -115,6 +115,36 @@
             this.pnlCTHDNH.Name = "pnlCTHDNH";
             this.pnlCTHDNH.Size = new System.Drawing.Size(882, 644);
             this.pnlCTHDNH.TabIndex = 0;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(302, 487);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(26, 13);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "vnđ";
+            // 
+            // lbTongTien
+            // 
+            this.lbTongTien.AutoSize = true;
+            this.lbTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTongTien.ForeColor = System.Drawing.Color.Red;
+            this.lbTongTien.Location = new System.Drawing.Point(112, 485);
+            this.lbTongTien.Name = "lbTongTien";
+            this.lbTongTien.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbTongTien.Size = new System.Drawing.Size(15, 16);
+            this.lbTongTien.TabIndex = 23;
+            this.lbTongTien.Text = "0";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(36, 487);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 13);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Tổng Tiền";
             // 
             // comboBoxNoiNhapHang
             // 
@@ -289,7 +319,7 @@
             // 
             // txtboxSP
             // 
-            this.txtboxSP.Location = new System.Drawing.Point(156, 177);
+            this.txtboxSP.Location = new System.Drawing.Point(155, 178);
             this.txtboxSP.Name = "txtboxSP";
             this.txtboxSP.Size = new System.Drawing.Size(148, 20);
             this.txtboxSP.TabIndex = 14;
@@ -320,7 +350,7 @@
             // 
             // txtBoxDSP
             // 
-            this.txtBoxDSP.Location = new System.Drawing.Point(155, 131);
+            this.txtBoxDSP.Location = new System.Drawing.Point(161, 145);
             this.txtBoxDSP.Name = "txtBoxDSP";
             this.txtBoxDSP.Size = new System.Drawing.Size(147, 20);
             this.txtBoxDSP.TabIndex = 10;
@@ -626,36 +656,6 @@
             this.btnThemSPHDNH.UseVisualStyleBackColor = true;
             this.btnThemSPHDNH.Visible = false;
             this.btnThemSPHDNH.Click += new System.EventHandler(this.btnThemSPHDNH_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(36, 487);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 13);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "Tổng Tiền";
-            // 
-            // lbTongTien
-            // 
-            this.lbTongTien.AutoSize = true;
-            this.lbTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTongTien.ForeColor = System.Drawing.Color.Red;
-            this.lbTongTien.Location = new System.Drawing.Point(112, 485);
-            this.lbTongTien.Name = "lbTongTien";
-            this.lbTongTien.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbTongTien.Size = new System.Drawing.Size(15, 16);
-            this.lbTongTien.TabIndex = 23;
-            this.lbTongTien.Text = "0";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(302, 487);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(26, 13);
-            this.label17.TabIndex = 24;
-            this.label17.Text = "vnđ";
             // 
             // frmChiTietHoaDonNhapHang
             // 

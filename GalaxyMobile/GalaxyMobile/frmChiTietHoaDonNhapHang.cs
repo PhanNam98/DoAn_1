@@ -271,6 +271,22 @@ namespace GalaxyMobile
         {
             frmChiTietSanPham ctsp = new frmChiTietSanPham(null, "ts", null, false);
             ctsp.ShowDialog();
+            try
+            {
+                cmBoxSP.DataSource = null;
+                string id = cmBoxDSP.SelectedValue.ToString();
+
+
+                if (SanPhamBUS.GetSanPhamByMaDSP(id).Count != 0)
+                {
+                    cmBoxSP.DataSource = SanPhamBUS.GetSanPhamByMaDSP(id);
+                    cmBoxSP.DisplayMember = "TenSP";
+                    cmBoxSP.ValueMember = "MaSP";
+                }
+                else
+                    cmBoxSP.DataSource = null;
+            }
+            catch { cmBoxSP.DataSource = null; }
 
         }
         private bool IsAddSP;

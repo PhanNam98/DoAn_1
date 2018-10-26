@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
+using DAO;
 namespace DAO
 {
     public class HoaDonDAO
@@ -201,6 +202,20 @@ namespace DAO
             using (GalaxyMobileEntities db = new GalaxyMobileEntities())
             {
                 return db.HoaDons.Where(p => p.MaHoaDon.Contains(id) || p.MaKH.Contains(id)||p.MaNV.Contains(id)).ToList();
+            }
+        }
+        public bool KiemTraSL_SP_trong_Kho_va_HoaDon(string mahd,string mach)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                var ct = db.ChiTietHoaDons.Where(p => p.MaHoaDon == mahd && p.MaCuaHang == mach).ToList();
+                foreach(ChiTietHoaDon t in ct)
+                {
+                    var kh = db.KhoHangs.Where(p => p.MaKieu == t.MaKieu && p.MaCuaHang == mach).SingleOrDefault();
+                    if (t.SoluongSP > kh.SoLuong)
+                        return false;
+                }
+                return true;
             }
         }
     }

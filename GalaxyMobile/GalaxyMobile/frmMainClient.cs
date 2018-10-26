@@ -138,9 +138,12 @@ namespace GalaxyMobile
         }
         private void btnCTHD_Click(object sender, EventArgs e)
         {
-            frmChiTietHoaDon hd = new frmChiTietHoaDon((hoaDonBindingSource.Current as HoaDon), User.MaCuaHang, User.UserName, false);
-            hd.Show();
-            LoadHoaDon();
+            if (hoaDonBindingSource.DataSource != null)
+            {
+                frmChiTietHoaDon hd = new frmChiTietHoaDon((hoaDonBindingSource.Current as HoaDon), User.MaCuaHang, User.UserName, false);
+                hd.Show();
+                LoadHoaDon();
+            }
 
         }
         private void btnThemHD_Click(object sender, EventArgs e)
@@ -423,49 +426,52 @@ namespace GalaxyMobile
 
         private void txtboxTimKiem_TextChanged(object sender, EventArgs e)
         {
-            string i = cmBoxTimKiemTheo.SelectedItem.ToString();
+            try {
+                string i = cmBoxTimKiemTheo.SelectedItem.ToString();
 
-            if (i == "Dòng Sản Phẩm")
-            {
-                tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[2];
-                dongSanPhamBindingSource.DataSource = DongSanPhamBUS.TimKiemDongSP(txtboxTimKiem.Text);
-            }
-            //else
-            //    if (i == "Nhân Viên")
-            //{
-            //    if (MaTruyCap == 2)
-            //        tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[0];
-            //    else
-            //        tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[4];
-            //    nhanVienBindingSource.DataSource = NhanVienBUS.TimKiemNV(txtboxTimKiem.Text);
-            //}
-            else if (i == "Sản Phẩm")
-            {
-                tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[1];
-                sanPhamBindingSource.DataSource = SanPhamBUS.TimKiemSP(txtboxTimKiem.Text);
-            }
-            else if (i == "Khách Hàng")
-            {
-                tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[1];
-                if (MaTruyCap == 3)
+                if (i == "Dòng Sản Phẩm")
+                {
+                    tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[2];
+                    dongSanPhamBindingSource.DataSource = DongSanPhamBUS.TimKiemDongSP(txtboxTimKiem.Text);
+                }
+                //else
+                //    if (i == "Nhân Viên")
+                //{
+                //    if (MaTruyCap == 2)
+                //        tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[0];
+                //    else
+                //        tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[4];
+                //    nhanVienBindingSource.DataSource = NhanVienBUS.TimKiemNV(txtboxTimKiem.Text);
+                //}
+                else if (i == "Sản Phẩm")
+                {
+                    tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[1];
+                    sanPhamBindingSource.DataSource = SanPhamBUS.TimKiemSP(txtboxTimKiem.Text);
+                }
+                else if (i == "Khách Hàng")
+                {
+                    tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[1];
+                    if (MaTruyCap == 3)
 
-                    tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[6];
-                else
-                    tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[4];
-                khachHangBindingSource.DataSource = KHBUS.TimKiemKhachHang(txtboxTimKiem.Text);
-            }
-            else if (i == "Nhà Sản Xuất")
-            {
-                tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[3];
-                hSXBindingSource.DataSource = HSXBUS.TimKiemHSX(txtboxTimKiem.Text);
-            }
-            else if (i == "Hóa Đơn")
-            {
+                        tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[6];
+                    else
+                        tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[4];
+                    khachHangBindingSource.DataSource = KHBUS.TimKiemKhachHang(txtboxTimKiem.Text);
+                }
+                else if (i == "Nhà Sản Xuất")
+                {
+                    tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[3];
+                    hSXBindingSource.DataSource = HSXBUS.TimKiemHSX(txtboxTimKiem.Text);
+                }
+                else if (i == "Hóa Đơn")
+                {
 
-                tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[0];
+                    tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[0];
 
-                hoaDonBindingSource.DataSource = HoaDonBUS.TimKiemHD(txtboxTimKiem.Text);
+                    hoaDonBindingSource.DataSource = HoaDonBUS.TimKiemHD(txtboxTimKiem.Text);
+                }
             }
+            catch { MessageBox.Show("Bạn Chưa Chọn Đối Tượng Tìm Kiếm!"); }
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

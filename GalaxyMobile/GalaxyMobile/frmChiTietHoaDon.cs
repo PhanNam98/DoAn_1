@@ -355,7 +355,12 @@ namespace GalaxyMobile
             textBoxSP.Visible = false;
             numericSL.Value = 1;
             numericSL.Minimum = 0;
-
+            textboxGiaBan.Text = "";
+            textBoxSLTon.Text = "";
+            textBoxSLMua.Text = "";
+            textBoxTenSP.Text = "";
+            comboBoxMaKieu.DataSource = null;
+            comboBoxSP.DataSource = null;
             comboBoxNSX.DataSource = HSXBUS.GetAllHSX();
             comboBoxNSX.ValueMember = "MaHSX";
             comboBoxNSX.DisplayMember = "TenHSX";
@@ -369,44 +374,51 @@ namespace GalaxyMobile
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (btnThanhToan.Text == "Giao Hàng")
+            if (HoaDonBUS.KiemTraSL_SP_trong_Kho_va_HoaDon(textBoxMaHD.Text, textBoxMaCH.Text))
             {
-                if (GiaoHangBUS.KiemTraGiaoHang(textBoxMaHD.Text, textBoxMaCH.Text))
+                if (btnThanhToan.Text == "Giao Hàng")
                 {
-                    MessageBox.Show("Đã Có Thông Tin Giao Hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    frmThongTinGiaoHang frm = new frmThongTinGiaoHang(textBoxMaHD.Text, textBoxMaCH.Text, true);
-                    frm.Show();
-                    btnThemSPMua.Visible = false;
-                    btnLuuEditSL.Visible = false;
-                    btnXoaSPMua.Visible = false;
-                    btnLuuTam.Visible = false;
-                    frmInHoaDon frm2 = new frmInHoaDon(textBoxMaHD.Text, textBoxMaCH.Text);
-                    frm2.ShowDialog();
-                }
-            }
-            else if (btnThanhToan.Text == "Thanh Toán")
-            {
-                if (MessageBox.Show("Bạn Muốn Thanh Toán?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                {
-                    try
+                    if (GiaoHangBUS.KiemTraGiaoHang(textBoxMaHD.Text, textBoxMaCH.Text))
                     {
-                        HoaDonBUS.ThanhToanHoaDon(textBoxMaHD.Text, textBoxMaCH.Text);
-                        MessageBox.Show("Thanh Toán Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Đã Có Thông Tin Giao Hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        frmThongTinGiaoHang frm = new frmThongTinGiaoHang(textBoxMaHD.Text, textBoxMaCH.Text, true);
+                        frm.Show();
                         btnThemSPMua.Visible = false;
                         btnLuuEditSL.Visible = false;
                         btnXoaSPMua.Visible = false;
                         btnLuuTam.Visible = false;
-                        frmInHoaDon frm1 = new frmInHoaDon(textBoxMaHD.Text, textBoxMaCH.Text);
-                        frm1.ShowDialog();
-                        this.Close();
+                        frmInHoaDon frm2 = new frmInHoaDon(textBoxMaHD.Text, textBoxMaCH.Text);
+                        frm2.ShowDialog();
                     }
-                    catch { MessageBox.Show("Không Thể Thực Hiện Thao Tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
+                else if (btnThanhToan.Text == "Thanh Toán")
+                {
+                    if (MessageBox.Show("Bạn Muốn Thanh Toán?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        try
+                        {
+                            HoaDonBUS.ThanhToanHoaDon(textBoxMaHD.Text, textBoxMaCH.Text);
+                            MessageBox.Show("Thanh Toán Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            btnThemSPMua.Visible = false;
+                            btnLuuEditSL.Visible = false;
+                            btnXoaSPMua.Visible = false;
+                            btnLuuTam.Visible = false;
+                            frmInHoaDon frm1 = new frmInHoaDon(textBoxMaHD.Text, textBoxMaCH.Text);
+                            frm1.ShowDialog();
+                            this.Close();
+                        }
+                        catch { MessageBox.Show("Không Thể Thực Hiện Thao Tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                    }
+                }
+
             }
-           
+            else
+            {
+                MessageBox.Show("Một số sản phẩm bạn thanh toán hiện không đủ để cung cấp!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnLuuEditSL_Click(object sender, EventArgs e)
@@ -421,31 +433,31 @@ namespace GalaxyMobile
                 ct.SoluongSP = Convert.ToInt32(numericSL.Value);
                 if (ChiTietHoaDonBUS.KiemTraTonTaiChiTietHoaDon(ct))
                 {
-                    //try
-                    //{
+                    try
+                    {
                         ChiTietHoaDonBUS.ThemChiTietHoaDon(ct);
                         chiTietHoaDonBindingSource.DataSource = ChiTietHoaDonBUS.GetChieTietHD_ByMaHD(textBoxMaHD.Text, textBoxMaCH.Text);
-                    //}
-                    //catch
-                    //{
-                    //    MessageBox.Show("Không Thể Thực Hiện Thao Tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //}
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Không Thể Thực Hiện Thao Tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    //try
-                    //{
+                    try
+                    {
                         ChiTietHoaDonBUS.thayDoiSLChiTietHoaDon(textBoxMaHD.Text, textBoxMaCH.Text, comboBoxMaKieu.SelectedValue.ToString(), Convert.ToInt32(numericSL.Value));
                         chiTietHoaDonBindingSource.DataSource = ChiTietHoaDonBUS.GetChieTietHD_ByMaHD(textBoxMaHD.Text, textBoxMaCH.Text);
-                    //}
-                    //catch { MessageBox.Show("Không Thể Thực Hiện Thao Tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                    }
+                    catch { MessageBox.Show("Không Thể Thực Hiện Thao Tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
             }
             else
             {
                 try
                 {
-                    ChiTietHoaDonBUS.thayDoiSLChiTietHoaDon(textBoxMaHD.Text, textBoxMaCH.Text, comboBoxMaKieu.SelectedValue.ToString(), Convert.ToInt32(numericSL.Value));
+                    ChiTietHoaDonBUS.thayDoiSLChiTietHoaDon(textBoxMaHD.Text, textBoxMaCH.Text, textBoxMaKieuSP.Text, Convert.ToInt32(numericSL.Value));
                     chiTietHoaDonBindingSource.DataSource = ChiTietHoaDonBUS.GetChieTietHD_ByMaHD(textBoxMaHD.Text, textBoxMaCH.Text);
                 }
                 catch { MessageBox.Show("Không Thể Thực Hiện Thao Tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
