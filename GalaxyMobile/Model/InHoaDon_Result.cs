@@ -13,12 +13,11 @@ namespace Model
     
     public partial class InHoaDon_Result
     {
+        public decimal Giá { get; set; }
         public string Mã_Sản_Phẩm { get; set; }
         public string Tên_Sản_Phẩm { get; set; }
         public string Màu_Sắc { get; set; }
-        public decimal Giá { get; set; }
         public int Số_Lượng_Mua { get; set; }
         public Nullable<decimal> Tổng_Tiền { get; set; }
- 
     }
 }

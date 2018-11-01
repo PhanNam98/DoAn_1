@@ -1,0 +1,11 @@
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Release\BUS.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Release\BUS.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Release\DAO.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Release\Model.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Release\EntityFramework.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Release\DAO.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Release\Model.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\bin\Release\EntityFramework.xml
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\obj\Release\BUS.csprojResolveAssemblyReference.cache
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\obj\Release\BUS.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn_1\DoAn_1\GalaxyMobile\BUS\obj\Release\BUS.pdb

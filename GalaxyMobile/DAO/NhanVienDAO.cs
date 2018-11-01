@@ -15,6 +15,13 @@ namespace DAO
                 return dbs.NhanViens.ToList();
             }
         }
+        public List<NhanVien> GetallNV(string ch)
+        {
+            using (GalaxyMobileEntities dbs = new GalaxyMobileEntities())
+            {
+                return dbs.NhanViens.Where(p=>p.MaCuaHang==ch).ToList();
+            }
+        }
         public List<NhanVien> TimKiemNV(string id)
         {
             using (GalaxyMobileEntities db = new GalaxyMobileEntities())

@@ -407,6 +407,18 @@
           <Parameter Name="diachi" Type="nvarchar" Mode="In" />
           <Parameter Name="sdt" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="spSPBanDuoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ten" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spSPBanDuocTheoThoiGian" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ten" Type="varchar" Mode="In" />
+          <Parameter Name="date" Type="date" Mode="In" />
+          <Parameter Name="date2" Type="date" Mode="In" />
+        </Function>
+        <Function Name="spSPBanDuocTrongNgay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ten" Type="varchar" Mode="In" />
+          <Parameter Name="date" Type="date" Mode="In" />
+        </Function>
         <Function Name="spThemNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="manv" Type="varchar" Mode="In" />
           <Parameter Name="macuahang" Type="varchar" Mode="In" />
@@ -915,6 +927,18 @@
             <Parameter Name="idhd" Mode="In" Type="String" />
             <Parameter Name="idch" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="spSPBanDuoc" ReturnType="Collection(GalaxyMobileModel.spSPBanDuoc_Result)">
+          <Parameter Name="ten" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spSPBanDuocTheoThoiGian" ReturnType="Collection(GalaxyMobileModel.spSPBanDuocTheoThoiGian_Result)">
+            <Parameter Name="ten" Mode="In" Type="String" />
+            <Parameter Name="date" Mode="In" Type="DateTime" />
+            <Parameter Name="date2" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spSPBanDuocTrongNgay" ReturnType="Collection(GalaxyMobileModel.spSPBanDuocTrongNgay_Result)">
+            <Parameter Name="ten" Mode="In" Type="String" />
+            <Parameter Name="date" Mode="In" Type="DateTime" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1321,6 +1345,18 @@
           <Property Type="Int32" Name="Số_Lượng_Mua" Nullable="false" />
           <Property Type="Decimal" Name="Tổng_Tiền" Nullable="true" Precision="29" Scale="2" />
         </ComplexType>
+        <ComplexType Name="spSPBanDuoc_Result">
+          <Property Type="Int32" Name="SoLuong" Nullable="true" />
+          <Property Type="String" Name="TenSP" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="spSPBanDuocTheoThoiGian_Result">
+          <Property Type="Int32" Name="SoLuong" Nullable="true" />
+          <Property Type="String" Name="TenSP" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="spSPBanDuocTrongNgay_Result">
+          <Property Type="Int32" Name="SoLuong" Nullable="true" />
+          <Property Type="String" Name="TenSP" Nullable="false" MaxLength="30" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1582,6 +1618,30 @@
                 <ScalarProperty Name="Màu_Sắc" ColumnName="Màu Sắc" />
                 <ScalarProperty Name="Số_Lượng_Mua" ColumnName="Số Lượng Mua" />
                 <ScalarProperty Name="Tổng_Tiền" ColumnName="Tổng Tiền" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spSPBanDuoc" FunctionName="GalaxyMobileModel.Store.spSPBanDuoc">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GalaxyMobileModel.spSPBanDuoc_Result">
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spSPBanDuocTheoThoiGian" FunctionName="GalaxyMobileModel.Store.spSPBanDuocTheoThoiGian">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GalaxyMobileModel.spSPBanDuocTheoThoiGian_Result">
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spSPBanDuocTrongNgay" FunctionName="GalaxyMobileModel.Store.spSPBanDuocTrongNgay">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GalaxyMobileModel.spSPBanDuocTrongNgay_Result">
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="TenSP" ColumnName="TenSP" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

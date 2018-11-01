@@ -14,6 +14,10 @@ namespace BUS
         {
             db = new NhanVienDAO();
         }
+        public static List<NhanVien> GetallNV(string ch)
+        {
+          return  db.GetallNV(ch);
+        }
         public static List<NhanVien> TimKiemNV(string id)
         {
             return db.TimKiemNV(id);

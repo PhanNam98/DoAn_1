@@ -442,5 +442,44 @@ namespace Model
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<InHoaDon_Result>("InHoaDon", idhdParameter, idchParameter);
         }
+    
+        public virtual ObjectResult<spSPBanDuoc_Result> spSPBanDuoc(string ten)
+        {
+            var tenParameter = ten != null ?
+                new ObjectParameter("ten", ten) :
+                new ObjectParameter("ten", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spSPBanDuoc_Result>("spSPBanDuoc", tenParameter);
+        }
+    
+        public virtual ObjectResult<spSPBanDuocTheoThoiGian_Result> spSPBanDuocTheoThoiGian(string ten, Nullable<System.DateTime> date, Nullable<System.DateTime> date2)
+        {
+            var tenParameter = ten != null ?
+                new ObjectParameter("ten", ten) :
+                new ObjectParameter("ten", typeof(string));
+    
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("date", date) :
+                new ObjectParameter("date", typeof(System.DateTime));
+    
+            var date2Parameter = date2.HasValue ?
+                new ObjectParameter("date2", date2) :
+                new ObjectParameter("date2", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spSPBanDuocTheoThoiGian_Result>("spSPBanDuocTheoThoiGian", tenParameter, dateParameter, date2Parameter);
+        }
+    
+        public virtual ObjectResult<spSPBanDuocTrongNgay_Result> spSPBanDuocTrongNgay(string ten, Nullable<System.DateTime> date)
+        {
+            var tenParameter = ten != null ?
+                new ObjectParameter("ten", ten) :
+                new ObjectParameter("ten", typeof(string));
+    
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("date", date) :
+                new ObjectParameter("date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spSPBanDuocTrongNgay_Result>("spSPBanDuocTrongNgay", tenParameter, dateParameter);
+        }
     }
 }

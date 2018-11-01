@@ -20,7 +20,7 @@ namespace GalaxyMobile
             User = username;
             MaTruyCap = matruycap;
         }
-      
+
 
         private TaiKhoan User;
         private int MaTruyCap;
@@ -28,11 +28,19 @@ namespace GalaxyMobile
         private void frmMainServer_Load(object sender, EventArgs e)
         {
             LoadKhoHang();
+            LoadSer();
             PhanQuyen();
             CH = CuaHangBUS.GetThongTinCuaHang(User.MaCuaHang);
             this.Text = CH.TenCuaHang;
         }
         #region method
+        void LoadSer()
+        {
+            dateTimePickerTrongNgay.Value = DateTime.Now;
+            comboBoxTKSP.DataSource = CuaHangBUS.GetCuaHangChiNhanh();
+            comboBoxTKSP.DisplayMember = "TenCuaHang";
+            comboBoxTKSP.ValueMember = "MaCuaHang";
+        }
         public void PhanQuyen()
         {
             if (MaTruyCap == 1)
@@ -70,6 +78,7 @@ namespace GalaxyMobile
             }
             label12.Text = User.UserName;
             loadCmboxDongSanPham();
+            
         }
         public void loadCmboxDongSanPham()
         {
@@ -454,6 +463,7 @@ namespace GalaxyMobile
         private void btnLoadDSP_Click(object sender, EventArgs e)
         {
             LoadDongSP();
+            loadCmboxDongSanPham();
         }
 
         public void LoadDongSP()
@@ -1103,7 +1113,8 @@ namespace GalaxyMobile
         }
         private void txtboxTimKiem_TextChanged(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 string i = cmBoxTimKiemTheo.SelectedItem.ToString();
 
                 if (i == "Dòng Sản Phẩm")
@@ -1186,8 +1197,119 @@ namespace GalaxyMobile
 
 
 
+
         #endregion
 
-      
+        private void btnloadtksp_Click(object sender, EventArgs e)
+        {
+            string id = comboBoxTKSP.SelectedValue.ToString();
+            try
+            {
+                string i = comboBoxTKTheoThoiGian.SelectedItem.ToString();
+
+                if (i == "Trong ngày")
+                {
+                   
+                    chart1.DataSource = thongkea.SPBanTrongNgay(id, dateTimePickerTrongNgay.Value);
+                }
+                else
+                    if (i == "Theo tháng")
+                {
+                    try
+                    {
+                       
+                        DateTime date = new DateTime(dateTimePickerTheoThang.Value.Year, dateTimePickerTheoThang.Value.Month, 1);
+
+                        chart1.DataSource = thongkea.SPBanTheoTG(id, date, date.AddMonths(1).AddDays(-1));
+                    }
+                    catch { }
+                }
+
+                else if (i == "Trong quý")
+                {
+                  
+                    string ids = comboBoxQuy.SelectedItem.ToString();
+                    if (ids == null)
+                        return;
+                    if (ids == "Quý I")
+                    {
+                        DateTime date1 = new DateTime(dateTimePickerNam.Value.Year, 1, 1);
+                        DateTime date2 = new DateTime(dateTimePickerNam.Value.Year, 3, 31);
+                        chart1.DataSource = thongkea.SPBanTheoTG(id, date1, date2);
+                    }
+                    else
+                        if (ids == "Quý II")
+                    {
+                        DateTime date1 = new DateTime(dateTimePickerNam.Value.Year, 4, 1);
+                        DateTime date2 = new DateTime(dateTimePickerNam.Value.Year, 6, 30);
+                        chart1.DataSource = thongkea.SPBanTheoTG(id, date1, date2);
+                    }
+                    else
+                        if (ids == "Quý III")
+                    {
+                        DateTime date1 = new DateTime(dateTimePickerNam.Value.Year, 7, 1);
+                        DateTime date2 = new DateTime(dateTimePickerNam.Value.Year, 9, 30);
+                        chart1.DataSource = thongkea.SPBanTheoTG(id, date1, date2);
+                    }
+                    else
+                        if (ids == "Quý VI")
+                    {
+                        DateTime date1 = new DateTime(dateTimePickerNam.Value.Year, 10, 1);
+                        DateTime date2 = new DateTime(dateTimePickerNam.Value.Year, 12, 31);
+                        chart1.DataSource = thongkea.SPBanTheoTG(id, date1, date2);
+                    }
+
+                }
+
+            }
+            catch { MessageBox.Show("Bạn Chưa Chọn Đối Tượng Tìm Kiếm!"); return; }
+           
+            chart1.ChartAreas[0].AxisY.Title = "Số lượng";
+            chart1.ChartAreas[0].AxisX.Title = "Tên sản phẩm";
+            chart1.Series["Số lượng"].XValueMember = "TenSP";
+            chart1.Series["Số lượng"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            chart1.Series["Số lượng"].YValueMembers = "SoLuong";
+            chart1.Series["Số lượng"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+        }
+
+        private void comboBoxTKTheoThoiGian_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string i = comboBoxTKTheoThoiGian.SelectedItem.ToString();
+
+                if (i == "Trong ngày")
+                {
+                    dateTimePickerTrongNgay.Visible = true;
+                    dateTimePickerNam.Visible = false;
+                    dateTimePickerTheoThang.Visible = false;
+                    comboBoxQuy.Visible = false;
+
+                }
+                else
+                    if (i == "Theo tháng")
+                {
+                    dateTimePickerTrongNgay.Visible = false;
+                    dateTimePickerNam.Visible = false;
+                    dateTimePickerTheoThang.Visible = true;
+                    comboBoxQuy.Visible = false;
+                    DateTime d= new DateTime(dateTimePickerTheoThang.Value.Year, dateTimePickerTheoThang.Value.Month, 1);
+                    dateTimePickerTheoThang.Value = d;
+
+                }
+
+                else if (i == "Trong quý")
+                {
+                    dateTimePickerTrongNgay.Visible = false;
+                    dateTimePickerNam.Visible = true;
+                    dateTimePickerTheoThang.Visible = false;
+                    comboBoxQuy.Visible = true;
+
+
+                }
+            }
+            catch { }
+        }
     }
 }
+

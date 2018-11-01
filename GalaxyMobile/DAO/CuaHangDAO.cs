@@ -15,6 +15,13 @@ namespace DAO
                 return db.USP_GetAllCuaHang().ToList();
             }
         }
+        public List<CuaHang> GetCuaHangChiNhanh()
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                return db.CuaHangs.Where(p => p.MaCuaHang != "ts").ToList();
+            }
+        }
         public KhoHang GetMaKieuByMaCH(string id,string makieu)
         {
             using (GalaxyMobileEntities db = new GalaxyMobileEntities())
